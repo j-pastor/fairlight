@@ -1,0 +1,84 @@
+FAIRLIGHT PC PORT
+
+Special Source-Available License
+
+
+Preamble
+
+This software project is made available to the public under a special permission granted by EDGE Games, Inc. to the developer, in accordance with the terms and conditions established in such authorization.
+
+
+1. Definitions
+
+For the purposes of this license:
+
+“Code” refers exclusively to the source code developed by the author of this project (Juan-Antonio Pastor-Sánchez).
+
+“Fairlight Content” refers to the game design, graphic design, characters, story, original levels, trademarks, names, visual assets, and any other identifiable elements associated with the video games Fairlight and Fairlight II, the rights to which belong to EDGE Games, Inc.
+
+
+2. Permitted Uses of “Fairlight Content”
+
+The following uses of the Fairlight Content are expressly permitted, provided that they are non-commercial in nature:
+
+• Educational and academic use.  
+• Research and experimentation.  
+• Preservation and divulgative projects.  
+• Non-commercial derivative works of Fairlight, including modifications, alternate versions, or experimental adaptations.
+
+In all cases, the corresponding legal notices and attributions to EDGE Games, Inc. must be preserved.
+
+
+3. Permitted Uses of the “Code”
+
+The Code developed by the author of this project may be used, studied, modified, adapted, and reused freely for the following purposes:
+
+• Creation of original games, including games for commercial purposes.  
+• Development of engines, tools, or independent software projects.  
+• Research, teaching, or technical experimentation.
+
+provided that such uses simultaneously comply with the following conditions:
+
+a) They do not use the name Fairlight or any trademark associated with that game.  
+b) They do not incorporate any Fairlight Content or derivative works thereof.  
+c) They are not presented explicitly or implicitly as versions, adaptations, or derivatives of Fairlight or Fairlight II.
+
+Use of the Code, including its use for commercial purposes, does not imply in any case the granting of rights over the intellectual property of Fairlight or Fairlight II.
+
+
+4. Prohibited Uses
+
+The following are expressly prohibited, unless written authorization is obtained from EDGE Games, Inc.:
+
+• Any commercial use of the Fairlight Content.  
+• Sale, distribution, or monetization of Fairlight, Fairlight II, or derivative works thereof.  
+• Use of the name Fairlight, Fairlight II, or any elements that may cause confusion regarding the authorship or ownership of such works.
+
+
+5. Intellectual Property
+
+The Code is the intellectual property of its author.
+
+All Fairlight Content is the exclusive intellectual property of EDGE Games, Inc.
+
+Nothing in this license shall be interpreted as a transfer, implied license, or waiver of any rights of EDGE Games, Inc. over Fairlight or Fairlight II.
+
+
+6. Mandatory Legal Notice
+
+Any redistribution of the Software or parts thereof that include Fairlight Content must literally include, without any modification, an informational document containing the following notice:
+
+“Fairlight and Fairlight II are registered trademarks of EDGE Games, Inc., all rights reserved. All Fairlight game design and graphic design are copyright EDGE Games, Inc. and may not be used for commercial purposes other than by EDGE Games, Inc. Anyone is welcome to explore this code and assets and improve on it, or create alternate versions of it. You are invited to submit any work you do on this code and assets to EDGE Games through its website (https://www.edgegames.com).”
+
+
+7. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+
+8. Limitation of Liability
+
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY DAMAGES, LOSSES, OR CLAIMS ARISING FROM THE USE OF THE SOFTWARE OR FROM THE INABILITY TO USE THE SOFTWARE.
+
+
+
