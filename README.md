@@ -28,6 +28,7 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
 
 
 
+
 ## Technology
 
 - **Engine:** Godot 4.5  
