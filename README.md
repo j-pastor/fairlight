@@ -48,7 +48,7 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
     <td>
       <figure>
         <img src="images/f-ss-02.png" width="240" alt="Carnivore plants room (Chapter 1)"><br>
-        <figcaption>Carnivore plants room (Chapter 1)</figcaption>
+        <figcaption>Carnivore plants (Chapter 1)</figcaption>
       </figure>
     </td>
   </tr>
