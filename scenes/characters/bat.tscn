@@ -1,11 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://d26g6fcowsb6k"]
+[gd_scene load_steps=22 format=3 uid="uid://d26g6fcowsb6k"]
 
 [ext_resource type="Texture2D" uid="uid://3bpoa4vhpvr3" path="res://assets/characters/bat-down-001.png" id="1_fc0x5"]
 [ext_resource type="Texture2D" uid="uid://hidj42jdhc16" path="res://assets/characters/bat-down-002.png" id="2_qov6m"]
 [ext_resource type="Texture2D" uid="uid://dr4ltt7svykcv" path="res://assets/characters/bat-down-003.png" id="3_wnq08"]
 [ext_resource type="Texture2D" uid="uid://cmskuna0jebxy" path="res://assets/characters/bubble-none.png" id="5_cq3a3"]
 [ext_resource type="Script" uid="uid://bsm8q08diyf6r" path="res://scripts/bat.gd" id="5_fc0x5"]
+[ext_resource type="Texture2D" uid="uid://b2myvir085rkx" path="res://assets/characters/dark-lord-left-001.png" id="6_fc0x5"]
 [ext_resource type="AudioStream" uid="uid://2tpuehnbmnxa" path="res://assets/sounds/wing-flaps-1.mp3" id="6_lol2x"]
+[ext_resource type="Texture2D" uid="uid://b22mko1c7viye" path="res://assets/fx/exp-001-low.png" id="6_yskqp"]
+[ext_resource type="Texture2D" uid="uid://d0s7h0d1x5hy" path="res://assets/fx/exp-002-low.png.png" id="7_cokf2"]
+[ext_resource type="Texture2D" uid="uid://b7wyy7xt2p2lc" path="res://assets/fx/exp-003-low.png" id="8_ymnek"]
+[ext_resource type="Texture2D" uid="uid://dopvbpp51ehpf" path="res://assets/fx/exp-004-low.png" id="9_xbuwp"]
+[ext_resource type="Texture2D" uid="uid://bir3mbs0jf5ag" path="res://assets/fx/exp-005-low.png.png" id="10_dhk85"]
+[ext_resource type="Texture2D" uid="uid://dq6kn7ca56a3t" path="res://assets/fx/exp-006-low.png" id="11_ohgnl"]
+[ext_resource type="Texture2D" uid="uid://bgdd5akkqfttm" path="res://assets/fx/exp-007-low.png" id="12_bui6u"]
+[ext_resource type="Texture2D" uid="uid://cr24jrt0v88wf" path="res://assets/fx/exp-008-low.png" id="13_x0y42"]
+[ext_resource type="Texture2D" uid="uid://04kdrd6gt0aj" path="res://assets/fx/exp-009-low.png" id="14_5qr8m"]
+[ext_resource type="Texture2D" uid="uid://pejefo6so3t6" path="res://assets/fx/exp-010-low.png" id="15_rxtxe"]
+[ext_resource type="AudioStream" uid="uid://6buuyg0n7utp" path="res://assets/sounds/explosion-312361.mp3" id="18_cokf2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
 animations = [{
@@ -35,9 +47,121 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7gsq"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("1_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_qov6m")
+}, {
+"duration": 0.51,
+"texture": ExtResource("3_wnq08")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_qov6m")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qov6m"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("6_yskqp")
+}, {
+"duration": 0.51,
+"texture": ExtResource("7_cokf2")
+}, {
+"duration": 0.51,
+"texture": ExtResource("8_ymnek")
+}, {
+"duration": 0.51,
+"texture": ExtResource("9_xbuwp")
+}, {
+"duration": 0.51,
+"texture": ExtResource("10_dhk85")
+}, {
+"duration": 0.51,
+"texture": ExtResource("11_ohgnl")
+}, {
+"duration": 0.51,
+"texture": ExtResource("12_bui6u")
+}, {
+"duration": 0.51,
+"texture": ExtResource("13_x0y42")
+}, {
+"duration": 0.51,
+"texture": ExtResource("14_5qr8m")
+}, {
+"duration": 0.51,
+"texture": ExtResource("15_rxtxe")
+}, {
+"duration": 0.51,
+"texture": ExtResource("5_cq3a3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="Sprite" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_m0ick")
-animation = &"bat"
+animation = &"none"
 script = ExtResource("5_fc0x5")
 metadata/type = "bat"
 metadata/subtype = "bat"
@@ -48,5 +172,16 @@ metadata/weight = 1
 metadata/direction_init_x = ""
 metadata/direction_init_y = ""
 
+[node name="Intro" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_i7gsq")
+
+[node name="Explossion" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qov6m")
+frame_progress = 0.43779036
+
 [node name="Flap" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_lol2x")
+
+[node name="Soundexp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_cokf2")
+volume_db = 0.82

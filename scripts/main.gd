@@ -7,11 +7,11 @@ func _ready() -> void:
 	Mainglobal.music_a = $/root/Main/music_player_a
 	Mainglobal.music_b = $/root/Main/music_player_b
 
-	#var initial_room_name := "z-forest-door-3"
-	#var initial_player_position := Vector3(90,90,4)
+	var initial_room_name := "x-tower-final-room"
+	var initial_player_position := Vector3(90,90,50)
 
-	var initial_room_name := "yard"
-	var initial_player_position := Vector3(100,140,0)
+	#var initial_room_name := "yard"
+	#var initial_player_position := Vector3(100,140,0)
 	
 	if Mainglobal.current_chapter == 1 and Mainglobal.action_from_instructions != "load":
 		Mainglobal.set_inventory = ["","","","",""]

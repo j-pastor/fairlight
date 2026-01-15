@@ -22,7 +22,7 @@ var passive_move : Vector3 = Vector3.ZERO
 
 func _ready() :
 	self_id = self.get_instance_id()
-	self.play("bat")
+	self.play("none")
 	just_started = true
 	randomize()
 
@@ -30,17 +30,26 @@ func _physics_process(_delta: float) -> void:
 	obj = Mainglobal.characters_repository[Mainglobal.scene_objects[self_id]["name"]]
 	var obj_scene = Mainglobal.scene_objects[self_id]
 	Mainglobal.update_object_z_index(self_id)
-	
-	if obj["pos"].z < -20 :
-		self.queue_free()
-		Mainglobal.characters_repository[Mainglobal.scene_objects[self.get_instance_id()]["name"]]["room"] = "none"
+
+	if just_started :
+		$Explossion.play()
+		if $Explossion.frame == 0 : $Soundexp.play()
+		$Intro.play()
+		if $Intro.frame == 15 : 
+			just_started = false
+			$Explossion.pause()
+			$Intro.pause()
+		return
+			
+	else :
+		self.play("bat")
 
 	frame_counter += 1
 	
 	if frame_counter > 2 :
 		frame_counter = 0
 		return
-		
+
 	var prev_pos_iso = obj_scene["pos"]
 	var new_pos_iso = prev_pos_iso
 	
@@ -52,7 +61,7 @@ func _physics_process(_delta: float) -> void:
 		
 	Mainglobal.characters_repository[Mainglobal.scene_objects[self_id]["name"]]["pos"]=Mainglobal.scene_objects[self_id]["pos"]
 	
-	var reached_limit : bool = Mainglobal.check_reached_limit(new_pos_iso,obj_scene["size"], false,false)
+	var reached_limit : bool = Mainglobal.check_reached_limit(new_pos_iso,obj_scene["size"]-Vector3(47,0,0), false,false)
 
 	if reached_limit : self.queue_free()
 	Mainglobal.scene_objects[self_id]["pos"] = new_pos_iso
@@ -60,7 +69,6 @@ func _physics_process(_delta: float) -> void:
 		var pos_iso_center = Mainglobal.iso_object_center(Mainglobal.scene_objects[self_id]["pos"],obj_scene["size"])
 		var pos_screen = Mainglobal.iso_to_screen(pos_iso_center, Mainglobal.origin, Mainglobal.SCALE)
 		global_position = pos_screen
-
 
 func load_data(uid_object) :
 	obj = Mainglobal.characters_repository[uid_object]
