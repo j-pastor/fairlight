@@ -2,7 +2,7 @@
 
 PC port of *Fairlight – A Prelude* and *Fairlight II – A Trail of Darkness* developed with Godot.
 
----
+
 
 ## About the project
 
@@ -17,6 +17,8 @@ The port has been developed **from scratch**, with all the programming work carr
 
 Fairlight – A Prelude and Fairlight II – A Trail of Darkness were originally developed in the 1980s for 8-bit home computers, including ZX Spectrum, Amstrad CPC, Amstrad PCW and Commodore 64. Both games are considered landmark titles of the isometric adventure genre, notable for their advanced game engine, systemic design, and technical ambition on very limited hardware.
 
+This PC port of Fairlight – A Prelude and Fairlight II – A Trail of Darkness has been developed by organizing the game progression into three distinct chapters. The first chapter, A Prelude, includes the full content of the original Fairlight game. The second chapter, A Trail of Darkness, covers the first part of Fairlight II. Finally, the third chapter, A Quest in the Shadows, is based on the content of the second part of Fairlight II, extending and completing the narrative arc of the original games.
+
 For reference and historical context, full walkthroughs of the original games can be found online:
 
 - Fairlight – A Prelude (original version): https://www.youtube.com/watch?v=eWe7dhAWF-A
@@ -26,7 +28,73 @@ A video showing the final result of this PC port is also available online: https
 
 The project is published with the **explicit permission of EDGE Games, Inc.**, respecting all rights related to the original games.
 
----
+
+## Screenshots
+
+<table border="0">
+  <tr>
+    <td>
+      <figure>
+        <img src="images/fairlight-front.png" width="240" alt="Splash Screen"><br>
+        <figcaption>Splash Screen</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-01.png" width="240" alt="Start room (Chapter 1)"><br>
+        <figcaption>Start room (Chapter 1)</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-02.png" width="240" alt="Carnivore plants room (Chapter 1)"><br>
+        <figcaption>Carnivore plants (Chapter 1)</figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img src="images/f-ss-03.png" width="240" alt="Entry to cave (Chapter 1)"><br>
+        <figcaption>Entry to cave (Chapter 1)</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-04.png" width="240" alt="Outdoor bridge (Chapter 2)"><br>
+        <figcaption>Outdoor bridge (Chapter 2)</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-05.png" width="240" alt="Forbidden City (Chapter 2)"><br>
+        <figcaption>Forbidden City (Chapter 2)</figcaption>
+      </figure>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <figure>
+        <img src="images/f-ss-06.png" width="240" alt="Entry to Dark Lord Castle (Chapter 3)"><br>
+        <figcaption>Entry to Dark Lord Castle (Chapter 3)</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-07.png" width="240" alt="Flying on a magic carpet (Chapter 3)"><br>
+        <figcaption>Flying on a magic carpet (Chapter 3)</figcaption>
+      </figure>
+    </td>
+    <td>
+      <figure>
+        <img src="images/f-ss-08.png" width="240" alt="Using a magic crystal (Chapter 3)"><br>
+        <figcaption>Using a magic crystal (Chapter 3)</figcaption>
+      </figure>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Technology
 
@@ -34,7 +102,7 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
 - **Platform:** PC (Windows binaries provided)  
 - **Programming:** Original implementation developed for this PC port  
 
----
+
 
 ## Project scope
 
@@ -46,7 +114,7 @@ This repository includes:
 
 The project is made available for **educational, preservation, and development purposes**, and follows a **custom source-available license**. Please read the `LICENSE.txt` file carefully before using the code or assets.
 
----
+
 
 ## License
 
@@ -57,7 +125,7 @@ This project is released under a **custom Source-Available License**.
 
 See the `LICENSE.txt` file for the full license terms.
 
----
+
 
 ## ⚠️ Important notice
 
@@ -68,7 +136,93 @@ See the `LICENSE.txt` file for the full license terms.
 > Anyone is welcome to explore this code and assets and improve on it, or create alternate versions of it.  
 > You are invited to submit any work you do on this code and assets to EDGE Games through its website (https://www.edgegames.com).”
 
----
+
+
+## How to use this repository
+
+This section explains how to obtain the source code, open the project in Godot, and run or explore the PC port.
+
+
+
+### 1️⃣ Clone the repository
+
+Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/j-pastor/fairlight.git
+```
+
+Alternatively, you can download the repository as a ZIP file using **Code → Download ZIP** on GitHub.
+
+
+
+### 2️⃣ Open the project in Godot
+
+This project has been developed using **Godot 4.5**.
+
+* Download and install Godot 4.5 from the official website:
+  👉 [https://godotengine.org/download](https://godotengine.org/download)
+* Launch Godot and select **Import**.
+* Choose the folder where you cloned or extracted the repository.
+* Godot will automatically detect the `project.godot` file and import the project.
+
+
+
+### 3️⃣ Run the project
+
+Once the project is open in Godot:
+
+* Open the main scene (if it is not already set).
+* Press **F5** or click **Run Project**.
+* The game should start and run directly from the editor.
+
+
+
+### 4️⃣ Explore and modify the code
+
+The repository is intended to be **explored, studied, and experimented with**:
+
+* Scripts are written in **GDScript**.
+* Scenes and assets are organized by functionality.
+* The project structure is suitable for learning, experimentation, and further development.
+
+> ⚠️ **Important**
+> While the **code may be reused and adapted**, any reuse of *Fairlight – A Prelude* or *Fairlight II – A Trail of Darkness* content is subject to the limitations described in the `LICENSE.txt` file.
+
+
+
+### 5️⃣ Exporting / building the project
+
+To build your own executable using Godot:
+
+1. Open **Project → Export**.
+2. Configure the desired platform (Windows, Linux, macOS).
+3. Make sure the appropriate export templates for **Godot 4.5** are installed.
+4. Export the project.
+
+
+
+### ℹ️ Notes
+
+* ✔️ Compiled executables for Windows, Linux, and macOS are provided separately for convenience.
+* ✔️ This repository is intended for **educational, preservation, and development purposes**.
+* ✔️ Please read the license carefully before redistributing the project or its contents.
+
+
+
+<details>
+<summary><strong>Need help?</strong></summary>
+
+If you are new to Godot or GitHub projects, you can:
+
+* Open the project in read-only mode and explore the scenes.
+* Use the compiled executables instead of building the project.
+* Consult the official Godot documentation: [https://docs.godotengine.org](https://docs.godotengine.org)
+
+</details>
+
+
+
 
 ## Credits
 
@@ -77,7 +231,7 @@ See the `LICENSE.txt` file for the full license terms.
 - **Music and sound effects:** All music and sound effects included in this project are distributed under the Pixabay License.
 - **Engine:** Godot Engine
 
----
+
 
 ## Acknowledgements
 
