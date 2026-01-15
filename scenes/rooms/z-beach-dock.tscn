@@ -1,0 +1,280 @@
+[gd_scene load_steps=15 format=4 uid="uid://cghfjtsoyaq00"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_du7e0"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_2lphm"]
+[ext_resource type="Texture2D" uid="uid://bew0hhal7k3xx" path="res://assets/textures/sand.png" id="3_1mmnh"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="3_2o24d"]
+[ext_resource type="Texture2D" uid="uid://doyjuldrs6n5g" path="res://assets/textures/texture-floor-002.png" id="4_l37us"]
+[ext_resource type="Texture2D" uid="uid://bgopm4chruv0x" path="res://assets/decoration/well3.png" id="4_r130x"]
+[ext_resource type="Texture2D" uid="uid://cx2c4cl3t7o2y" path="res://assets/decoration/block-wood-small.png" id="4_xx1hp"]
+[ext_resource type="Texture2D" uid="uid://bk8ar7xr8qwub" path="res://assets/chof/chof-012.png" id="6_24nof"]
+[ext_resource type="Texture2D" uid="uid://rh1iv53pn8i3" path="res://assets/chof/chof-011.png" id="7_7blit"]
+[ext_resource type="Texture2D" uid="uid://b3n8dr7u08ald" path="res://assets/chof/chof-010.png" id="9_3qf82"]
+[ext_resource type="Texture2D" uid="uid://co1uwhpkfov2k" path="res://assets/chof/chof-004.png" id="12_ial4q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr7l5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_du7e0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hxua6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_24nof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7blit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3qf82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ial4q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7rdd1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3qf82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7blit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_24nof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ial4q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+position = Vector2(0, 2)
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "z-beach-1"
+metadata/west = "none"
+metadata/east = "z-ship-dock"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAABAAIARgAAAAAAAAACAAIARgAAAAAAAAADAAIARgAAAAAAAAAEAAIARgAAAAAAAAAEAAMAQQAAAAAAAAADAAMAQQAAAAAAAAACAAMAQQAAAAAAAAABAAMAQQAAAAAAAAAAAAMAQQAAAAAAAAD//wMAQQAAAAAAAAD+/wMAQQAAAAAAAAD9/wMAQQAAAAAAAAAEAAQAQQAAAAAAAAADAAQAQQAAAAAAAAACAAQAQQAAAAAAAAABAAQAQQAAAAAAAAAAAAQAQQAAAAAAAAD//wQAQQAAAAAAAAD+/wQAQQAAAAAAAAD9/wQAQQAAAAAAAAD8/wQAQQAAAAAAAAD8/wUAQQAAAAAAAAD9/wUAQQAAAAAAAAD+/wUAQQAAAAAAAAD//wUAQQAAAAAAAAAAAAUAQQAAAAAAAAD8/wMAQQAAAAAAAAD7/wMAQQAAAAAAAAD7/wQAQQAAAAAAAAD6/wMAQQAAAAAAAAD6/wQAQQAAAAAAAAD7/wUAQQAAAAAAAAA=")
+tile_set = ExtResource("2_2lphm")
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(-235, -48)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_nr7l5")
+autoplay = "default"
+script = ExtResource("3_2o24d")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-154, -78)
+
+[node name="floor2" type="Polygon2D" parent="Polygons"]
+position = Vector2(-76.8342, -151.541)
+color = Color(0, 0.40784314, 0.77254903, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 305.625, 204.539, 313.193, 206.385, 319.33734, 207.68665, 329.345, 210.354, 348, 216, 349.903, 216.915, 470.25, 277.516, 323.766, 352.914, 92.3081, 240.443, 96.646, 230.382, 102.009796, 218.20644, 105.44347, 212.97418, 111.00603, 207.79288, 115.82838, 203.22885, 119.1868, 200.55934, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor3" type="Polygon2D" parent="Polygons"]
+position = Vector2(-76.8342, -148.541)
+color = Color(0, 0.47058824, 0.8117647, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 212.54117, 185.28448, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 305.625, 204.539, 313.193, 206.385, 319.33734, 207.68665, 329.345, 210.354, 348, 216, 349.903, 216.915, 470.25, 277.516, 323.766, 352.914, 92.3081, 240.443, 96.646, 230.382, 102.66383, 220.27518, 105.770485, 214.3889, 111.00274, 208.33911, 115.58096, 204.0879, 119.50515, 201.30826, 127.19002, 196.56653, 134.05736, 194.11392, 145.009, 191.341, 154.82286, 189.20868)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor4" type="Polygon2D" parent="Polygons"]
+position = Vector2(-76.8342, -145.541)
+color = Color(0.5568628, 0.8117647, 1, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 212.70467, 185.39114, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 305.625, 204.539, 313.193, 206.385, 319.33734, 207.68665, 329.345, 210.354, 348, 216, 349.903, 216.915, 470.25, 277.516, 323.766, 352.914, 92.3081, 240.443, 96.646, 230.382, 104.29891, 219.89131, 107.07855, 214.82257, 111.65677, 208.44576, 116.56201, 204.03104, 120.649704, 201.0879, 126.535995, 197.32721, 134.7114, 194.38408, 145.009, 191.341, 154.82286, 189.15182)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor5" type="Polygon2D" parent="Polygons"]
+position = Vector2(-76.8342, -142.541)
+color = Color(0.8117647, 0.6156863, 0.13333334, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.03168, 185.33429, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 305.625, 204.539, 313.193, 206.385, 319.33734, 207.68665, 329.345, 210.354, 348, 216, 349.903, 216.915, 470.25, 277.516, 323.766, 352.914, 92.3081, 240.443, 96.646, 230.382, 102.39468, 217.05006, 107.24206, 215.74677, 110.83923, 209.86047, 115.41745, 205.11874, 119.668655, 202.01208, 126.69949, 197.43387, 134.54788, 194.49072, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-74.8342, -138.541)
+texture = ExtResource("3_1mmnh")
+polygon = PackedVector2Array(165.874, 185.85107, 183.0667, 184.32767, 200.69464, 183.45715, 213.53476, 184.11005, 223.5457, 184.98056, 233.339, 186.50397, 241.17365, 187.37448, 252.49036, 188.89789, 260.9779, 191.2918, 269.46542, 193.68571, 279.0411, 196.5149, 286.4405, 198.0383, 294.49277, 200.2146, 303.19794, 201.95563, 316.03806, 205.43768, 327.13712, 208.70212, 347.37662, 216.2778, 443.13342, 264.1562, 470.25, 277.516, 323.766, 352.914, 92.3081, 240.443, 96.646, 230.382, 102.39468, 217.05006, 106.05959, 215.34393, 111.00603, 207.79288, 115.82838, 203.22885, 121.04241, 199.12643, 126.273, 196.233, 133.22964, 193.03284, 144.54636, 189.55077, 154.99255, 187.37448)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="chof" type="AnimatedSprite2D" parent="."]
+position = Vector2(152.00832, -43.03039)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_hxua6")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof2" type="AnimatedSprite2D" parent="."]
+position = Vector2(120.00833, -31.030396)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_7rdd1")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Mastil3" type="Sprite2D" parent="."]
+position = Vector2(24, 4)
+texture = ExtResource("4_r130x")
+
+[node name="Mastil4" type="Sprite2D" parent="."]
+position = Vector2(56, -12)
+texture = ExtResource("4_r130x")
+
+[node name="Mastil5" type="Sprite2D" parent="."]
+position = Vector2(85, -27)
+texture = ExtResource("4_r130x")
+
+[node name="Mastil6" type="Sprite2D" parent="."]
+position = Vector2(120, -39)
+texture = ExtResource("4_r130x")
+
+[node name="Mastil7" type="Sprite2D" parent="."]
+position = Vector2(152, -50)
+texture = ExtResource("4_r130x")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+position = Vector2(227, -34)
+points = PackedVector2Array(-359.539, 39.5504, -358.233, 28.4514, -354.751, 22.1401, -348.005, 14.3055, -341.00583, 7.4725723, -332.118, 1.24773, -325.07483, -1.2248917, -302.52, -6.15166, -283.151, -8.11032, -253.031, -9.87263, -239.923, -10.0078, -225.329, -8.3862, -208.438, -5.81873, -177.763, 1.74859, -162.358, 4.72146, -132.232, 13.4717, -113.949, 19.1202, -101.612, 24.4714, 43.6651, 96.9724)
+width = 1.0
+default_color = Color(0.883429, 0.643523, 0.159252, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="bridgeblock6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(149.618, -64.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(135.618, -57.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(121.618, -50.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(107.618, -43.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(93.6185, -36.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(79.6185, -29.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(65.6185, -22.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(51.6185, -15.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(37.6185, -8.72703)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(23.6185, -1.72703)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="floor2" type="Polygon2D" parent="."]
+z_index = 4096
+position = Vector2(-364.061, -233.453)
+texture = ExtResource("4_l37us")
+polygon = PackedVector2Array(157.221, 185.935, 513.923, 363.618, 172.735, 323.038, 58.1468, 263.768, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Line2D2" type="Line2D" parent="."]
+z_index = 4096
+position = Vector2(4, -17.5)
+points = PackedVector2Array(-211.194, -30.3817, 136.456, 141.991)
+width = 1.0
+default_color = Color(0, 0.23529412, 0, 1)

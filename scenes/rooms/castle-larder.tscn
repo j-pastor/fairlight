@@ -1,0 +1,253 @@
+[gd_scene load_steps=8 format=4 uid="uid://b7g8srx6ss7uv"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_eyw8g"]
+[ext_resource type="Texture2D" uid="uid://dhnsng8b5xfkv" path="res://assets/decoration/table-001-right.png" id="2_juuad"]
+[ext_resource type="Texture2D" uid="uid://dj1be8ih0dpr1" path="res://assets/decoration/shelf-001.png" id="7_juuad"]
+[ext_resource type="Texture2D" uid="uid://bmp3sh14ugf5k" path="res://assets/decoration/meat.png" id="8_6i7g1"]
+[ext_resource type="Texture2D" uid="uid://da03ry6msx1jl" path="res://assets/decoration/onions.png" id="9_etgud"]
+[ext_resource type="Texture2D" uid="uid://dff6qebljapg0" path="res://assets/doors/door-001-left-open.png" id="10_sejtf"]
+[ext_resource type="Texture2D" uid="uid://bx2yndmp5ga2o" path="res://assets/objects/bread.png" id="11_sejtf"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(120, 120)
+metadata/north = "+none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/light = 0.75
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-29, -83)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD8/wEADQAAAAAAAAD9/wEADQAAAAAAAAD+/wEADQAAAAAAAAD//wEADQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAD///7/DQAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD8//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD+//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAD7/wEABAAAAAAAAAD///3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAD+//3/HAAAAAAAAAD9//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_eyw8g")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, -37)
+points = PackedVector2Array(-151.984, -0.272705, -15.9128, 67.8155, 112.911, 3.17078)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="shelf" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, -93.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 10)
+metadata/type = "fixed"
+
+[node name="shelf2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-14, -85.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 10)
+metadata/type = "fixed"
+
+[node name="shelf3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, -108.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 25)
+metadata/type = "fixed"
+
+[node name="shelf4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-14, -100.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 25)
+metadata/type = "fixed"
+
+[node name="shelf5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, -123.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 40)
+metadata/type = "fixed"
+
+[node name="shelf6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-14, -115.5)
+texture = ExtResource("7_juuad")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 40)
+metadata/type = "fixed"
+
+[node name="door-to-bar" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(72.588745, -41.440002)
+texture = ExtResource("10_sejtf")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "castle-bar"
+metadata/target_pos = Vector3(-0.646, 63.266, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="Table2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-125, -30)
+texture = ExtResource("2_juuad")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+metadata/subtype = "table"
+metadata/uid = "table-lander-1"
+metadata/weight = 90
+
+[node name="Table" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-97, -16)
+texture = ExtResource("2_juuad")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+metadata/subtype = "table"
+metadata/uid = "table-lander-2"
+metadata/weight = 90
+
+[node name="Table3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-69, -2)
+texture = ExtResource("2_juuad")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+metadata/subtype = "table"
+metadata/uid = "table-lander-3"
+metadata/weight = 90
+
+[node name="Table4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-40, 12)
+texture = ExtResource("2_juuad")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+metadata/subtype = "table"
+metadata/uid = "table-lander-3"
+metadata/weight = 90
+
+[node name="onions2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-63, -12)
+texture = ExtResource("9_etgud")
+metadata/size = Vector3(4, 4, 17)
+metadata/pos = Vector3(0, 0, 14)
+metadata/type = "fixed"
+
+[node name="onions" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-70, -16)
+texture = ExtResource("9_etgud")
+metadata/size = Vector3(4, 4, 17)
+metadata/pos = Vector3(0, 0, 14)
+metadata/type = "fixed"
+
+[node name="meat" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-53, -7)
+texture = ExtResource("8_6i7g1")
+metadata/size = Vector3(7, 7, 17)
+metadata/pos = Vector3(0, 0, 14)
+metadata/type = "fixed"
+
+[node name="meat2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-79, -20)
+texture = ExtResource("8_6i7g1")
+metadata/size = Vector3(7, 7, 17)
+metadata/pos = Vector3(0, 0, 14)
+metadata/type = "fixed"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="bread" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-91, -22)
+texture = ExtResource("11_sejtf")
+metadata/size = Vector3(11, 5, 3)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "bread-lader-1"
+metadata/weight = 1
+
+[node name="bread2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-115, -34)
+texture = ExtResource("11_sejtf")
+metadata/size = Vector3(11, 5, 3)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "bread-lader-2"
+metadata/weight = 1
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(962.174, -35.1512)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(1302.03, -34.8295)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

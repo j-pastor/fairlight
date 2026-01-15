@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=4 uid="uid://dx5uh0ux81y5l"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_3il0m"]
+[ext_resource type="Texture2D" uid="uid://bvbjy7jtotimd" path="res://assets/decoration/mountain-02.png" id="2_3il0m"]
+[ext_resource type="Texture2D" uid="uid://druqmeq1sln7g" path="res://assets/decoration/mountain-04.png" id="2_nb6ho"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="4_1pj12"]
+[ext_resource type="Texture2D" uid="uid://d1jrrr6ripdtx" path="res://assets/decoration/mountain-3.png" id="4_nb6ho"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 6
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(180, 90)
+metadata/north = "forest-cross-road"
+metadata/south = "forest-deadly"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 30, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(79, -89)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_wall_s3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, 60)
+tile_map_data = PackedByteArray("AAD9//3/JwAAAAAAAAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_s2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, 40)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAD9//3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_s1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, 20)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAD9//3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAABAP7/KgAAAAAAAAABAP//KgAAAAAAAAACAP7/AQAAAAAAAAACAP//AQAAAAAAAAADAP7/AQAAAAAAAAADAP//AQAAAAAAAAAEAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAACAP3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAD+//3/JwAAAAAAAAABAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_10" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -180)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_11" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -180)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Layer_wall_12" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -200)
+tile_map_data = PackedByteArray("AAD+//3/JwAAAAAAAAD///3/JwAAAAAAAAAAAP3/JwAAAAAAAAABAP3/JwAAAAAAAAACAP3/JwAAAAAAAAA=")
+tile_set = ExtResource("1_3il0m")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(60, -188)
+polygon = PackedVector2Array(123, 267, 127, 265, 4, 204, 2, 208)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Polygon2D3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-152, -82)
+polygon = PackedVector2Array(50, -49, 42, -45, 26, -36, 50, -19, 56, -15, 64, -12, 72, -12, 83, -7, 91, 2, 115, 12, 127, 21, 144, 30, 198, 32, 207, 34, 88, -58)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(94, 20)
+polygon = PackedVector2Array(50, -49, 40, -53, 26, -36, 53, -20, 56, -15, 63, -13, 71, -7, 77, 5, 86, 25, 99, 33, 125, 44, 207, 34, 88, -58)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-269, -344)
+polygon = PackedVector2Array(90, 243, 115, 260, 129, 267, 149, 275, 167, 282, 175, 290, 184, 294, 205, 298, 215, 310, 223, 313, 237, 317, 249, 318, 267, 326, 267, 342, 324, 370, 333, 365, 457, 426, 445, 432, 318, 373, 229.051, 333.583, 222, 331, 195, 319, 90, 256)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-174, -221)
+texture = ExtResource("4_1pj12")
+polygon = PackedVector2Array(236, 146, 230, 173, 228, 176, 225, 179, 219, 182, 214, 184, 209, 185, 200, 191, 196, 192, 191, 194, 188, 197, 183, 200, 175, 203, 172, 205, 153, 198, 141, 197, 132, 193, 123, 191, 119, 189, 115, 185, 113, 182, 110, 178, 93, 175, 86, 173, 79, 169, 72, 163, 32, 141, 8, 128, 11, 83, 94.5477, 123.624, 120, 136, 133, 129, 145, 124, 158, 118, 183, 110)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Mountain-02" type="Sprite2D" parent="."]
+position = Vector2(-20, -165)
+texture = ExtResource("2_3il0m")
+
+[node name="Mountain-04" type="Sprite2D" parent="."]
+position = Vector2(39, -19)
+texture = ExtResource("2_nb6ho")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-16, -92)
+points = PackedVector2Array(-188, -24, -144, 8, -127, 16, -113, 22, -84.93379, 34.581966, -78.45749, 39.91958, -70, 45, -48.472244, 49.228527, -43.249527, 55.527817, -39, 60, -34, 62, -26, 64, -17, 68, -5, 69, 12.081177, 75.84541, 71.668625, 105.603294, 78.621506, 108.434944, 80.85507, 110.05935, 208.67183, 173.75928)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Mountain-3" type="Sprite2D" parent="."]
+position = Vector2(219, -84)
+texture = ExtResource("4_nb6ho")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(59, -73)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(0, -271)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(327, 78, 263, 81, 214, 69, 127, 54, 87, 55, 49, 35, 28, 31, -7, 15, -42, 6, -136, 4, -135, -114, 372, -92)
+
+[node name="FixedObjects" type="Node2D" parent="."]

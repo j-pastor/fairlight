@@ -1,0 +1,143 @@
+[gd_scene load_steps=21 format=3 uid="uid://bfll438u25whp"]
+
+[ext_resource type="Texture2D" uid="uid://c01fa4uactovg" path="res://assets/characters/ogre-none.png" id="1_80ubo"]
+[ext_resource type="Texture2D" uid="uid://r43wdgm1ivr2" path="res://assets/characters/wolf-down-001.png" id="2_80ubo"]
+[ext_resource type="Texture2D" uid="uid://mo7y4dud4dml" path="res://assets/characters/wolf-down-002.png" id="3_vmval"]
+[ext_resource type="Texture2D" uid="uid://ivqxtr12w0t7" path="res://assets/characters/wolf-down-003.png" id="4_cay0k"]
+[ext_resource type="Texture2D" uid="uid://bog1s1e8xfqnu" path="res://assets/characters/wolf-left-001.png" id="5_kyg8c"]
+[ext_resource type="Texture2D" uid="uid://c4nd3cakux126" path="res://assets/characters/wolf-left-003.png" id="6_coy5a"]
+[ext_resource type="Texture2D" uid="uid://cptjgam86vwpi" path="res://assets/characters/wolf-left-002.png" id="7_uidvl"]
+[ext_resource type="Texture2D" uid="uid://cd4t2oe2jrr7x" path="res://assets/characters/wolf-right-001.png" id="8_2qq1b"]
+[ext_resource type="Texture2D" uid="uid://cy83gra8ikys2" path="res://assets/characters/wolf-right-002.png" id="9_387hm"]
+[ext_resource type="Texture2D" uid="uid://cd83y1tgut8ad" path="res://assets/characters/wolf-right-003.png" id="10_y4cgk"]
+[ext_resource type="Texture2D" uid="uid://di5v172sw22lw" path="res://assets/characters/wolf-up-001.png" id="11_vj63v"]
+[ext_resource type="Texture2D" uid="uid://dqfm413gtihr5" path="res://assets/characters/wolf-up-002.png" id="12_2o84d"]
+[ext_resource type="Texture2D" uid="uid://dppypmovhqx0i" path="res://assets/characters/wolf-up-003.png" id="13_lasem"]
+[ext_resource type="Script" uid="uid://dla7rggsopm15" path="res://scripts/enemy.gd" id="14_80ubo"]
+[ext_resource type="AudioStream" uid="uid://28glefmb7j63" path="res://assets/sounds/running-6358.mp3" id="15_6404y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_80ubo")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_80ubo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cay0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_80ubo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vmval")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kyg8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_coy5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kyg8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uidvl")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_2qq1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_387hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2qq1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y4cgk")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_vj63v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2o84d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_vj63v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_lasem")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_80ubo"]
+polygon = PackedVector2Array(-5, 6, 1, 0, 4, 3, 2, 10, 5, 11, 2, 12, -5, 8, -7, 5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vmval"]
+polygon = PackedVector2Array(-6, 4, -6, -3, 1, 1, 2, 8, 5, 9, 0, 9, -6, 6, -9, 2)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cay0k"]
+polygon = PackedVector2Array(-7, 4, -6, -3, 0, -8, 0, 0, 4, -2, -2, 4, -6, 6, -10, 5)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kyg8c"]
+polygon = PackedVector2Array(13, 4, 9, -1, 4, 3, 4, 6, 8, 9, 5, 10, 11, 10, 17, 4)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-right"
+script = ExtResource("14_80ubo")
+metadata/type = "wolf"
+metadata/subtype = "wolf"
+metadata/size = Vector3(14, 14, 19)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 8
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_6404y")
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, 3)
+occluder = SubResource("OccluderPolygon2D_80ubo")
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, 3)
+occluder = SubResource("OccluderPolygon2D_vmval")
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(7, 7)
+occluder = SubResource("OccluderPolygon2D_cay0k")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-7, 4)
+occluder = SubResource("OccluderPolygon2D_kyg8c")

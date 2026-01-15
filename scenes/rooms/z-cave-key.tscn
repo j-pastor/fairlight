@@ -1,0 +1,195 @@
+[gd_scene load_steps=11 format=4 uid="uid://cm8ghrmro3xl2"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_p55m7"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_3hlo7"]
+[ext_resource type="Texture2D" uid="uid://dff6qebljapg0" path="res://assets/doors/door-001-left-open.png" id="6_cekbi"]
+[ext_resource type="Texture2D" uid="uid://c15i641121jrl" path="res://assets/tmp/Sin nombre-7.png" id="7_gn581"]
+[ext_resource type="Texture2D" uid="uid://duywo4nohwrw7" path="res://assets/decoration/caverns-wall-002.png" id="8_gn581"]
+[ext_resource type="Texture2D" uid="uid://c6bc6vwsmiv33" path="res://assets/objects/boulder-001.png" id="9_2xnjr"]
+[ext_resource type="Texture2D" uid="uid://dj8l6016r7heu" path="res://assets/objects/boulder-003.png" id="10_lqmir"]
+[ext_resource type="Texture2D" uid="uid://d1083qsisru2t" path="res://assets/objects/key.png" id="11_v1er4"]
+[ext_resource type="Texture2D" uid="uid://cqr14adkwnid1" path="res://assets/objects/chicken.png" id="12_lqmir"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="13_v1er4"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/light = 0.5
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-28, -48)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAD9//7/AQAAAAAAAAD+//7/AQAAAAAAAAD///7/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAD//wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD+////AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD+/wAAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAA=")
+tile_set = ExtResource("1_p55m7")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_p55m7")
+
+[node name="Layer_floor_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -30)
+tile_set = ExtResource("1_p55m7")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+points = PackedVector2Array(-193.71, -22.3192, 88.1368, 120.444)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="SinNombre-7" type="Sprite2D" parent="Polygons"]
+visible = false
+position = Vector2(-28, -44)
+scale = Vector2(0.268, 0.255)
+texture = ExtResource("7_gn581")
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-155, -289)
+texture = ExtResource("2_3hlo7")
+polygon = PackedVector2Array(38.5823, 222.161, 70, 230, 77, 229, 108, 226, 148, 238, 201, 250, 239, 270, 277, 250, 130, 174, 76, 197)
+metadata/type = "floor"
+metadata/z = 23
+
+[node name="floor2" type="Polygon2D" parent="Polygons"]
+position = Vector2(-204, -240)
+texture = ExtResource("2_3hlo7")
+polygon = PackedVector2Array(24, 224, 60, 245, 96, 269, 133, 284, 173, 303, 213, 289, 247, 271, 288.857, 244.538, 250, 221, 130, 174, 85, 193)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-146, -272)
+polygon = PackedVector2Array(10, 225, 45, 230, 63, 233, 80, 231, 96.8257, 230.251, 117, 236, 138, 243, 187, 255, 234, 279, 197, 221, 116, 180)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 24
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-cave-corner" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-78, -109.311)
+texture = ExtResource("6_cekbi")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 24)
+metadata/target = "z-cave-corner"
+metadata/target_pos = Vector3(98.719, 20.63, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="Caverns-wall-002" type="Sprite2D" parent="."]
+position = Vector2(-16, -31)
+scale = Vector2(1.18, 1.25)
+texture = ExtResource("8_gn581")
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(680.105, -19.0221)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(991.656, -44.2135)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="rock3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-102.781, 10.0754)
+texture = ExtResource("9_2xnjr")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-1-cave-key"
+metadata/weight = 9
+
+[node name="rock4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-17.0931, -31.2849)
+texture = ExtResource("9_2xnjr")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-3-cave-key"
+metadata/weight = 9
+
+[node name="rock2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-94.943, 12.662)
+texture = ExtResource("10_lqmir")
+metadata/size = Vector3(6, 6, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-2-cave-key"
+metadata/weight = 6
+
+[node name="key" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(73.4788, 4.65718)
+texture = ExtResource("11_v1er4")
+metadata/size = Vector3(8, 2, 1)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "key"
+metadata/uid = "key-cave"
+metadata/weight = 1
+
+[node name="chicken1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(61.5942, -1.94724)
+texture = ExtResource("12_lqmir")
+metadata/size = Vector3(6, 6, 6)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "chicken-cave"
+metadata/weight = 1
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-92, -40.2891)
+points = PackedVector2Array(-95, 20.2891, -47, 48.2891, -27, 62.2891, -14, 70.2891, 2, 76.2891, 22, 84.2891, 62, 103.289, 95, 91.2891, 109, 85.2891, 142, 67.2891, 175.997, 45.1708, 178, 20.2891, 219, -1.7109)
+width = 1.5
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(680.119, -18.2692)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(991.748, -42.4421)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-cave-key" parent="Characters" instance=ExtResource("13_v1er4")]
+position = Vector2(-51.62303, -36.072414)
+animation = &"walk-left"
+frame_progress = 0.0
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-cave-key"
+metadata/direction_init = "left"

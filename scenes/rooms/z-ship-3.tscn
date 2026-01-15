@@ -1,0 +1,148 @@
+[gd_scene load_steps=10 format=4 uid="uid://csbkj4e40fnqe"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_28t6c"]
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_y3qu8"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_usynw"]
+[ext_resource type="Texture2D" uid="uid://bop1gellcdt4i" path="res://assets/textures/wood-02.png" id="3_lrmf3"]
+[ext_resource type="Texture2D" uid="uid://dhksu1yi877o4" path="res://assets/decoration/anchoreye.png" id="4_28t6c"]
+[ext_resource type="Texture2D" uid="uid://d1cp0qyelwxns" path="res://assets/decoration/rail-2.png" id="4_lrmf3"]
+[ext_resource type="Texture2D" uid="uid://bi2wjt40qgtp2" path="res://assets/decoration/anchor.png" id="5_3fovs"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="7_3fovs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f35ca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_y3qu8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(140, 180)
+metadata/north = "none"
+metadata/south = "z-ship-1"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-57, -53)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(1, 1)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_f35ca")
+autoplay = "default"
+script = ExtResource("2_usynw")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+color = Color(0.494118, 0.764706, 1, 1)
+texture = ExtResource("1_y3qu8")
+texture_scale = Vector2(2, 2)
+polygon = PackedVector2Array(-256, -153, -249, -38, -258, 67, -62, 66, -31, 65, 201, -52, 201, -153)
+uv = PackedVector2Array(789.671, 369.835, 796.671, 484.835, 894.671, 583.835, 983.671, 588.835, 1014.67, 587.835, 1246.67, 470.835, 1246.67, 369.835)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(10, 8)
+points = PackedVector2Array(-215, -171, -111, -58)
+width = 5.0
+default_color = Color(0.376471, 0.278431, 0.152941, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(12, 5)
+points = PackedVector2Array(-216, -169, -111, -58)
+width = 3.0
+default_color = Color(0.435294, 0.32549, 0.196078, 1)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8/wIAGAAAAAAAAAD9/wIAGAAAAAAAAAD+/wIAGAAAAAAAAAD//wIAGAAAAAAAAAD8/wEAGAAAAAAAAAD9/wEAGAAAAAAAAAD8/wAAGAAAAAAAAAD8////GAAAAAAAAAD8//7/GAAAAAAAAAAAAAIAGAAAAAAAAAAAAAEAGAAAAAAAAAAAAAAAGAAAAAAAAAD//wAAGAAAAAAAAAD/////GAAAAAAAAAAAAP//GAAAAAAAAAAAAP7/GAAAAAAAAAD///7/GAAAAAAAAAD+//7/GAAAAAAAAAD9//7/GAAAAAAAAAD//wEAGAAAAAAAAAD+/wEAGAAAAAAAAAD+/wAAGAAAAAAAAAD9/wAAGAAAAAAAAAD9////GAAAAAAAAAD+////GAAAAAAAAAA=")
+tile_set = ExtResource("1_28t6c")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-29.4126, -309.353)
+polygon = PackedVector2Array(162.413, 306.353, 163.413, 296.353, -31.5874, 236.353, -97.5874, 265.353, -95.5874, 275.353, -31.5874, 247.353, 8.4126, 257.353, 76.4126, 278.353)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-95.4126, -275.353)
+polygon = PackedVector2Array(189.413, 411.353, 188.413, 399.353, 105.937, 365.517, 71.4126, 351.353, 48.4126, 337.353, 31.4126, 313.353, 6.4126, 279.353, -14.5874, 248.353, -27.5874, 228.353, -33.5874, 235.353, 24.4126, 323.353, 45.4126, 347.353, 98.4126, 372.353, 142.413, 389.353)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-227, -231)
+texture = ExtResource("3_lrmf3")
+texture_scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(165, 166, 196, 173, 230, 183, 281, 198, 347, 220, 385, 322, 317, 360, 239, 328, 179, 298, 163, 278, 114.338, 207.903, 105, 193)
+uv = PackedVector2Array(165, 166, 345, 221, 347, 295, 196.101, 292.709, 114.338, 207.903, 105, 193)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+texture_filter = 2
+position = Vector2(60.6866, 96.7712)
+color = Color(0.0886949, 0.0527446, 0.0140901, 1)
+polygon = PackedVector2Array(-183.287, -135.371, -170.879, -66.6822, -164.325, -45.8628, -156.228, -23.1158, -144.277, -1.13982, -130.783, 11.9687, 28.3286, 111.598, 28.3286, 30.6344, -91.6866, -21.7712, -102.687, -26.7712, -111.687, -33.7712, -124.687, -49.7712)
+
+[node name="Anchoreye" type="Sprite2D" parent="."]
+position = Vector2(-75.329, 63.8507)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_28t6c")
+
+[node name="Anchor" type="Sprite2D" parent="."]
+position = Vector2(-77.192, 86.8723)
+texture = ExtResource("5_3fovs")
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(115, 37)
+points = PackedVector2Array(-237, -76, -223.452, -54.8433, -211.865, -38.2534, -175, 15, -165.847, 26.2949, -158.648, 31.7403, -152.741, 35.8013, -146.834, 39.8624, -142.496, 43.185, -137.697, 46.4154, -131.605, 50.4764, -122.376, 56.1988, -97.7955, 68.6599, -81.5798, 75.9078, -75.069, 78.3647, -65.487, 81.313, -53.3252, 85.2441, -42.5148, 88.0696, -23.9643, 89.8623)
+width = 1.5
+default_color = Color(0.367438, 0.231513, 0.110604, 1)
+
+[node name="Rail-3" type="Sprite2D" parent="."]
+position = Vector2(-1.00001, -55)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_lrmf3")
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-ship-3" parent="Characters" instance=ExtResource("7_3fovs")]
+position = Vector2(17, -45)
+animation = &"walk-left"
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-ship-3"
+metadata/direction_init = "left"

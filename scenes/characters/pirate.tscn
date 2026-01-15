@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://l0gv07rskdfg"]
+
+[ext_resource type="Texture2D" uid="uid://dv58xf41eud5i" path="res://assets/characters/pirate-down-003.png" id="6_5a6hf"]
+[ext_resource type="Texture2D" uid="uid://rsbt5cfmtp07" path="res://assets/characters/pirate-down-001.png" id="7_hprto"]
+[ext_resource type="Texture2D" uid="uid://c16vei3efv1jn" path="res://assets/characters/pirate-left-002.png" id="8_df3qc"]
+[ext_resource type="Texture2D" uid="uid://blay1guit7ass" path="res://assets/characters/pirate-down-002.png" id="8_inrwl"]
+[ext_resource type="Texture2D" uid="uid://dom4j4ekekqxv" path="res://assets/characters/pirate-left-001.png" id="9_5a6hf"]
+[ext_resource type="Texture2D" uid="uid://d3r8ij2xk20nf" path="res://assets/characters/pirate-left-003.png" id="10_hprto"]
+[ext_resource type="Texture2D" uid="uid://dgkknqup2qcr" path="res://assets/characters/pirate-right-003.png" id="11_df3qc"]
+[ext_resource type="Texture2D" uid="uid://b1urdxv83uf8x" path="res://assets/characters/pirate-right-001.png" id="12_5a6hf"]
+[ext_resource type="Script" uid="uid://b3tvshbxcnmbi" path="res://scripts/guard-pirate.gd" id="13_h6trg"]
+[ext_resource type="Texture2D" uid="uid://bqpp6hf5jqxdi" path="res://assets/characters/pirate-right-002.png" id="13_hprto"]
+[ext_resource type="Texture2D" uid="uid://wv0oobkadus" path="res://assets/characters/pirate-up-003.png" id="15_eb7rd"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="15_h6trg"]
+[ext_resource type="Texture2D" uid="uid://ct5mgsdnbvbo2" path="res://assets/characters/pirate-up-001.png" id="16_uv13i"]
+[ext_resource type="Texture2D" uid="uid://smrmax2sx708" path="res://assets/characters/pirate-up-002.png" id="17_fjy27"]
+[ext_resource type="AudioStream" uid="uid://28glefmb7j63" path="res://assets/sounds/running-6358.mp3" id="18_7dxx0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5a6hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hprto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_inrwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hprto")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_df3qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5a6hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_hprto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5a6hf")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_df3qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5a6hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hprto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5a6hf")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_eb7rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uv13i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fjy27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uv13i")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h6trg"]
+polygon = PackedVector2Array(4, 29, 4, 26, 2, 27, 0, 26, 0, 29)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-down"
+script = ExtResource("13_h6trg")
+metadata/type = "pirate"
+metadata/subtype = ""
+metadata/size = Vector3(10, 10, 26)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 6
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_7dxx0")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("15_h6trg")
+texture_scale = 4.0
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -17)
+occluder = SubResource("OccluderPolygon2D_h6trg")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-4, -16)
+occluder = SubResource("OccluderPolygon2D_h6trg")
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -16)
+occluder = SubResource("OccluderPolygon2D_h6trg")
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-4, -17)
+occluder = SubResource("OccluderPolygon2D_h6trg")

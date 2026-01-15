@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=4 uid="uid://cxff05bmi4o44"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_vkuhk"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_7em32"]
+[ext_resource type="Texture2D" uid="uid://dtss2jixqk1in" path="res://assets/decoration/mountain-sea-1.png" id="2_cfg11"]
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="2_vkuhk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrfrs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vkuhk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 4
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(14, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-2, -146)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(86, -66)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_nrfrs")
+autoplay = "default"
+script = ExtResource("2_7em32")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+position = Vector2(0, -10)
+tile_map_data = PackedByteArray("AAD4//7/JwAAAAAAAAD3//7/JwAAAAAAAAD2//7/JwAAAAAAAAD1//7/JwAAAAAAAAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wMAAQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD///z/AQAAAAAAAAD///3/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAAAAPz/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wQAAQAAAAAAAAD6//7/AQAAAAAAAAD6////AQAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD6/wMAAQAAAAAAAAD6/wQAAQAAAAAAAAD7//7/AQAAAAAAAAD7////AQAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wMAAQAAAAAAAAD7/wQAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAA=")
+tile_set = ExtResource("1_vkuhk")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Polygon2D5" type="Polygon2D" parent="."]
+position = Vector2(0, 5)
+color = Color(0, 0.40784314, 0.77254903, 1)
+polygon = PackedVector2Array(-180, -132, -140, -137, -78, -126, -14, -121, 67, -94, 73, -94, 112, -99, 117, -99, 181, -88, 188, -107, -146, -161, -179, -144)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(0, 2)
+color = Color(0, 0.47058824, 0.8117647, 1)
+polygon = PackedVector2Array(-180, -132, -140, -137, -78, -126, -14, -121, 67, -94, 73, -94, 112, -99, 117, -99, 181, -88, 188, -107, -146, -161, -179, -144)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(0, -2)
+color = Color(0.5568628, 0.8117647, 1, 1)
+polygon = PackedVector2Array(-180, -132, -140, -137, -78, -126, -14, -121, 67, -94, 73, -94, 112, -99, 117, -99, 181, -88, 188, -107, -146, -161, -179, -144)
+
+[node name="Mountain-sea-1" type="Sprite2D" parent="."]
+position = Vector2(48, -194)
+texture = ExtResource("2_cfg11")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-18, -123)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(332, 24)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-159, -358, -160, 30, -89, -51, -49, -61, -11, -380)
+
+[node name="MountainSea1" type="Sprite2D" parent="."]
+position = Vector2(-207, -232)
+texture = ExtResource("2_cfg11")

@@ -1,0 +1,112 @@
+[gd_scene load_steps=5 format=4 uid="uid://bc2o1gb6mtmiy"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_mqsyj"]
+[ext_resource type="Texture2D" uid="uid://dhf8g1lhk0utw" path="res://assets/decoration/mountain-07.png" id="2_7gpix"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_kbhbm"]
+[ext_resource type="Texture2D" uid="uid://bb2m2en3yxklh" path="res://assets/doors/bigdoor-invisible.png" id="4_mqsyj"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+position = Vector2(1, 0)
+metadata/wall_levels = 1
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(60, 180)
+metadata/north = "forest-west"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "forest-cross-road"
+metadata/north_offset = Vector3(120, -42, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(120, 25, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-97, -74)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="zero" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8////LwAAAAAAAAD9////LwAAAAAAAAD+////LwAAAAAAAAD6////LwAAAAAAAAD5////LwAAAAAAAAD7////LwAAAAAAAAD8/wMALwAAAAAAAAD8/wIALwAAAAAAAAD8/wEALwAAAAAAAAD8/wAALwAAAAAAAAA=")
+tile_set = ExtResource("1_mqsyj")
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//z/AQAAAAAAAAD9//v/AQAAAAAAAAA=")
+tile_set = ExtResource("1_mqsyj")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD7//7/AQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wMAAQAAAAAAAAA=")
+tile_set = ExtResource("1_mqsyj")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-243, -250)
+texture = ExtResource("2_kbhbm")
+polygon = PackedVector2Array(240, 121, 243, 173, 250, 184, 244, 193, 210, 204, 184, 225, 168, 230, 153, 238, 108, 250, 71, 270, 60, 267, 53, 261, 46, 260, 39, 258, 35, 253, 32, 250, 37, 220, 158.707, 121.382)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-289, -227)
+polygon = PackedVector2Array(31, 221, 65, 224, 80, 230, 102, 218, 119, 214, 133, 200, 148, 198, 158, 195, 169, 189, 170, 167, 222, 149, 225, 164, 245, 154, 254, 142, 254, 122, 200, 73, 204, 126, 209, 135, 206, 143, 171, 154, 146, 176, 128, 181, 116, 187, 72, 199)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-206, -202)
+polygon = PackedVector2Array(32, 222, 65, 224, 79, 229, 125, 217, 137, 216, 199, 223, 328, 179, 203, 73, 206, 125, 213, 136, 206, 145, 172, 155, 146, 176, 128, 182, 115, 188, 72, 200)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Mountain-07" type="Sprite2D" parent="."]
+position = Vector2(-124, -63)
+texture = ExtResource("2_7gpix")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-cross-2" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(-190, -21)
+texture = ExtResource("4_mqsyj")
+metadata/type = "door"
+metadata/size = Vector3(35, 2, 60)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "forest-cross-road2"
+metadata/target_pos = Vector3(7, 16.5, 0)
+metadata/target_direction = "left"
+
+[node name="to-cross-road" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(-19, -110)
+texture = ExtResource("4_mqsyj")
+metadata/type = "door"
+metadata/size = Vector3(35, 1, 60)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "forest-cross-road"
+metadata/target_pos = Vector3(112.5, 149.5, 0)
+metadata/target_direction = "right"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-164, -53)
+points = PackedVector2Array(-56, 45, -41, 60, -34, 63, -26, 64, -18, 70, -8, 73, 31, 52, 74, 41, 87, 34, 106, 28, 131, 7, 164, -3, 171, -13)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Line2D"]
+position = Vector2(164, 53)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-211, 0, -210, -60, -208, -78, -206, -91, -199, -99, -190, -108, -174, -114, -159, -118, -140, -126, -116, -131, -89, -127, -39, -126, -16, -125, -4, -122, 2, -112, 1, -101, 1, -96, 3, -85, 11, -78, 13, -65, 10, -55, 4, -48, -11, -40, -22, -30, -31, -19, -44, -9, -48, -2, -69, 44, 177, 59, 173, -215, 49, -218, -250, -173, -239, -47, -249, -19, -211, 5)

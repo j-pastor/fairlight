@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=4 uid="uid://bmxj2mge6ggk4"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_h05f0"]
+[ext_resource type="Texture2D" uid="uid://bm7l0x2e6il3r" path="res://assets/doors/door-005-right-closed.png" id="4_debpe"]
+[ext_resource type="Texture2D" uid="uid://cbdogrrpryjop" path="res://assets/doors/door-005-left-open.png" id="6_05r5s"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="10_38fe3"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 120)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = false
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-4, -83)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//7/DAAAAAAAAAD8////FwAAAAAAAAD8/wAADAAAAAAAAAD9//7/FwAAAAAAAAD9////DAAAAAAAAAD9/wAAFwAAAAAAAAD+//7/DAAAAAAAAAD+////FwAAAAAAAAD+/wAAFwAAAAAAAAD/////DAAAAAAAAAAAAAAADAAAAAAAAAAAAP7/DAAAAAAAAAD//wAAFwAAAAAAAAAAAP//FwAAAAAAAAD///7/FwAAAAAAAAD8/wEAFwAAAAAAAAD9/wEADAAAAAAAAAD+/wEAFwAAAAAAAAA=")
+tile_set = ExtResource("1_h05f0")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/TAAAAAAAAAD9//3/TAAAAAAAAAD8//3/TAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD///3/TAAAAAAAAAAAAP3/TAAAAAAAAAD7/wEABAAAAAAAAAA=")
+tile_set = ExtResource("1_h05f0")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/TAAAAAAAAAD9//3/TAAAAAAAAAD8//3/TAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAAAAP3/TAAAAAAAAAD///3/TAAAAAAAAAD7/wEABAAAAAAAAAA=")
+tile_set = ExtResource("1_h05f0")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/TAAAAAAAAAD9//3/TAAAAAAAAAD8//3/TAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAAAAP3/TAAAAAAAAAD///3/TAAAAAAAAAD7/wEABAAAAAAAAAA=")
+tile_set = ExtResource("1_h05f0")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/TAAAAAAAAAD9//3/TAAAAAAAAAD8//3/TAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAAAAP3/TAAAAAAAAAD///3/TAAAAAAAAAD7/wEABAAAAAAAAAA=")
+tile_set = ExtResource("1_h05f0")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="Polygon2D4" type="Polygon2D" parent="Polygons"]
+position = Vector2(-138.994, 59.2347)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(109.258286, -66.0076, 88.59801, -55.228024, 4.9940033, -98.234695, 4.9940033, -184.2347, -21.005997, -174.2347, -23.425964, -85.46951, 49.6267, -27.5175, 181.61163, -30.376245)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-14, -7)
+points = PackedVector2Array(-125.32114, -34.444954, -36.507675, 10.783318, -15.659439, 0.37965775, 50.42714, 32.953045, 138.68149, -10.939611)
+width = 1.5
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-forest-door-2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(44.5, -71.5)
+texture = ExtResource("4_debpe")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "z-forest-door-2"
+metadata/target_pos = Vector3(36.586, 149.086, 0)
+metadata/target_direction = "right"
+metadata/has_frame = true
+
+[node name="door-to-small-left" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(74.75, -14.44)
+texture = ExtResource("6_05r5s")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-fc-small-left"
+metadata/target_pos = Vector3(-0.94, 95.56, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-room-door-2" parent="Characters" instance=ExtResource("10_38fe3")]
+position = Vector2(-23.823097, -80.943886)
+animation = &"walk-left"
+frame_progress = 0.0
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-room-door-2"
+metadata/direction_init = "left"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.27057, -22.63531)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(834.88226, -178.52913)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1319.2281, -44.76105)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

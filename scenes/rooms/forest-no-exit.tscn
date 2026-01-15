@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://wqfsep22gxjm"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_alcmo"]
+[ext_resource type="Texture2D" uid="uid://cgefboswjui5a" path="res://assets/decoration/mountain-11.png" id="2_alcmo"]
+[ext_resource type="Texture2D" uid="uid://by26nau5vsro3" path="res://assets/decoration/plant-fixed.png" id="3_v3jar"]
+[ext_resource type="PackedScene" uid="uid://cfetwf834yr7j" path="res://scenes/characters/ogre.tscn" id="4_4qnnv"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="4_6nkbe"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 1
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(200, 150)
+metadata/north = "forest-long-path"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(17, -56)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_alcmo")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_alcmo")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="plant" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(42, -56)
+texture = ExtResource("3_v3jar")
+metadata/size = Vector3(13, 13, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="plant2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(23, 32)
+texture = ExtResource("3_v3jar")
+metadata/size = Vector3(13, 13, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="ogre-noexit" parent="Characters" instance=ExtResource("4_4qnnv")]
+position = Vector2(14, -68)
+animation = &"walk-up"
+metadata/uid = "ogre-noexit"
+metadata/direction_init = "up"
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-251, -320)
+polygon = PackedVector2Array(90, 245, 125, 259, 138, 270, 141, 273, 183, 291, 159, 301, 152, 304, 140, 311, 132, 322, 141, 329, 154, 335, 169, 336, 177, 344, 185, 350, 194, 354, 205, 356, 227, 365, 243, 377, 273, 388, 282, 386, 292, 381, 305, 371, 324, 381, 336, 375, 357, 356, 364, 341, 378, 337, 387, 319, 402, 327, 324, 392, 279, 397, 190, 358, 153, 340, 125, 323, 140, 307, 158.218, 296.931, 90, 256)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-104, -305)
+polygon = PackedVector2Array(55, 239, 67, 234, 73, 231, 121, 248, 139, 260, 154, 271, 159, 274, 167, 276, 179, 282, 189, 289, 198, 295, 207, 298, 223, 301, 241, 309, 280, 302, 72, 212, 4, 204, -4, 223, 8, 229, 25, 236, 43, 244)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-176, -207)
+texture = ExtResource("4_6nkbe")
+polygon = PackedVector2Array(236, 146, 331, 209, 309, 225, 291, 230, 284, 244, 273, 253, 265, 260, 260, 265, 249, 270, 243, 268, 230, 260, 225, 265, 218, 270, 208, 275, 198, 277, 168, 266, 159, 260, 150, 253, 140, 249, 130, 245, 122, 244, 114, 241, 108, 238, 102, 234, 93, 225, 79, 224, 65, 218, 54, 209, 62, 198, 76, 189, 92, 183, 104, 178, 82, 169, 64, 160, 49, 148, 15, 134, 15, 89, 120, 136, 133, 129, 145, 124, 158, 118, 183, 110)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-69, -53)
+points = PackedVector2Array(-55, 40, -41, 50, -29, 56, -14.132393, 57.2891, -5, 66, 3.3920135, 70.954, 17.449791, 76.753624, 24, 77, 37, 83, 44, 86, 60, 98, 90.75721, 108.6748, 94.16133, 108.6748, 100.023994, 107.66617, 106.58009, 104.640274, 112, 102, 123, 92, 129, 96, 134, 99, 138, 101, 142, 102, 147, 100, 153, 97, 157, 93, 163, 88, 169, 83, 174, 79, 177, 77, 184, 62, 190.02992, 60.699463, 202, 57, 219, 44)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Line2D2" type="Line2D" parent="."]
+position = Vector2(-85, -117)
+points = PackedVector2Array(-77.6757, 29.3886, -57.3813, 37.6667, -42.3274, 44.0466, -28.3535, 55.6328, -17.089348, 61.168957, -5.736946, 66.24524, 13, 74)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Mountain-11" type="Sprite2D" parent="."]
+position = Vector2(-22, -93)
+texture = ExtResource("2_alcmo")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(9, 4)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(137, -11, 144, -22, 146, -36, 147, -47, 147, -58, 151, -121, 205, -84, 163, 13, 137, -8)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-332, -85)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(140, -9, 140, -121, 369, -135, 495.27, -30.8109, 490.54, -2.43351, 487.703, -4.32534, 483.378, -7.16308, 479.73, -9.19003, 475.135, -11.7575, 469.19, -14.5953, 462.703, -18.2438, 456.487, -21.0815, 450.677, -23.2436, 443.38, -25.4057, 437.839, -27.1624, 433.11, -32.2974, 427.84, -37.162, 425.272, -39.5944, 419.191, -40.4052, 412.296, -41.4544, 405.148, -42.9062, 400.123, -45.2515, 393.981, -48.6018, 389.067, -51.8405, 381.696, -55.5258, 375.777, -59.2112, 369.635, -62.4499, 363.827, -65.4652, 359.919, -67.9221, 357.144, -70.1997, 174.205, -89.9723, 173.018, 16.8638)
+
+[node name="Polygon2D4" type="Polygon2D" parent="."]
+position = Vector2(738, -14)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

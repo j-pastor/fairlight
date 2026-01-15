@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=4 uid="uid://drsfngl1p7lp3"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_aohu5"]
+[ext_resource type="Texture2D" uid="uid://c8tbrcowucdnq" path="res://assets/doors/door-005-left-closed.png" id="4_xih83"]
+[ext_resource type="Texture2D" uid="uid://fv00etraxj5s" path="res://assets/doors/door-gate-003.png" id="6_kvmuk"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = false
+metadata/light = 0.6
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/AQAAAAAAAAD+//7/AQAAAAAAAAD9/wAAAQAAAAAAAAD9////AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD///7/AQAAAAAAAAD//wEAAQAAAAAAAAD+/wEAAQAAAAAAAAD9/wEAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD//wIAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAP7/AQAAAAAAAAD//wAAAQAAAAAAAAD/////AQAAAAAAAAAAAAAAAQAAAAAAAAAAAP//AQAAAAAAAAA=")
+tile_set = ExtResource("1_aohu5")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-cave-room-2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-106, -71.44)
+texture = ExtResource("4_xih83")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-cave-room-2"
+metadata/target_pos = Vector3(86.56, 20.06, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="gate-to-tower-north-third" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-8.00461, -3.92101)
+texture = ExtResource("6_kvmuk")
+metadata/type = "gate"
+metadata/size = Vector3(18, 20, 0)
+metadata/target = "z-cave-sub-1"
+metadata/target_offset = Vector3(10, 10, 99)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-14, -7)
+points = PackedVector2Array(-184.388, -16.8287, -16.1391, 67.8562, 145, -13)
+width = 1.5
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.075, -19.6541)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1272.02, -23.046)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

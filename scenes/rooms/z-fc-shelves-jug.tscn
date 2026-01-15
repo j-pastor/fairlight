@@ -1,0 +1,148 @@
+[gd_scene load_steps=7 format=4 uid="uid://0mf1xcmf1ft5"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_6v14j"]
+[ext_resource type="Texture2D" uid="uid://f4fovqe3opx8" path="res://assets/decoration/stone-block-cube-2.png" id="2_ka1ut"]
+[ext_resource type="PackedScene" uid="uid://4t0q5xehedv5" path="res://scenes/characters/slab.tscn" id="2_prky6"]
+[ext_resource type="Texture2D" uid="uid://b3uy4vqht1hep" path="res://assets/objects/jug.png" id="3_dorth"]
+[ext_resource type="Texture2D" uid="uid://btm4eq6v25ot6" path="res://assets/decoration/stone-block-mini-long-2.png" id="5_odp8e"]
+[ext_resource type="Texture2D" uid="uid://cbdogrrpryjop" path="res://assets/doors/door-005-left-open.png" id="8_ma7jq"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(120, 120)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = false
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -89)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//7/DQAAAAAAAAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD///7/DQAAAAAAAAD/////DQAAAAAAAAD+////DQAAAAAAAAD9////DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD9/wAADQAAAAAAAAD+/wAADQAAAAAAAAD//wAADQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD7//7/QwAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD7//7/QwAAAAAAAAD7/wEAQwAAAAAAAAD7/wAAQwAAAAAAAAD7////QwAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_6v14j")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-14, -37)
+points = PackedVector2Array(-139.079, 5.86814, -16.3344, 67.4941, 113.045, 2.82238)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(1371.3097, -36.625538)
+scale = Vector2(8.420736, 4.2231126)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 0.82855606, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(3050.1057, -15.74898)
+scale = Vector2(21.34232, 30.75)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="Sprite3" parent="Characters" instance=ExtResource("2_prky6")]
+position = Vector2(-64, -67)
+metadata/subtype = "slab-y"
+metadata/size = Vector3(17, 17, 5)
+metadata/uid = "slab-fc-shelves-jug"
+metadata/direction_init = "right"
+metadata/z_init = 39.0
+metadata/weight = 5
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="jug" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-64.08766, -73.4972)
+texture = ExtResource("3_dorth")
+metadata/size = Vector3(6, 6, 14)
+metadata/pos = Vector3(0, 0, 45)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "jug-fc-shelves-jug"
+metadata/weight = 1
+
+[node name="FixedObjects" type="Node2D" parent="."]
+position = Vector2(13, -35)
+
+[node name="block" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, 13)
+texture = ExtResource("2_ka1ut")
+metadata/type = "fixed"
+metadata/size = Vector3(11, 11, 11)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="block2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, 2)
+texture = ExtResource("2_ka1ut")
+metadata/type = "fixed"
+metadata/size = Vector3(11, 11, 11)
+metadata/pos = Vector3(0, 0, 11)
+
+[node name="block3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, -9)
+texture = ExtResource("2_ka1ut")
+metadata/type = "fixed"
+metadata/size = Vector3(11, 11, 11)
+metadata/pos = Vector3(0, 0, 22)
+
+[node name="block4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, -20)
+texture = ExtResource("5_odp8e")
+metadata/type = "fixed"
+metadata/size = Vector3(20, 11, 11)
+metadata/pos = Vector3(0, 0, 33)
+
+[node name="door-to-fc-small-left" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(15.75, 14.559998)
+texture = ExtResource("8_ma7jq")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-fc-small-left"
+metadata/target_pos = Vector3(-0.94, 27.56, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true

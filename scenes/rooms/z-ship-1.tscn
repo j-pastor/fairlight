@@ -1,0 +1,287 @@
+[gd_scene load_steps=17 format=4 uid="uid://cocubyutwjmof"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_o3opq"]
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="2_s6hlf"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_u0pv0"]
+[ext_resource type="Texture2D" uid="uid://bop1gellcdt4i" path="res://assets/textures/wood-02.png" id="3_i6owf"]
+[ext_resource type="Texture2D" uid="uid://dhksu1yi877o4" path="res://assets/decoration/anchoreye.png" id="3_u0pv0"]
+[ext_resource type="Texture2D" uid="uid://bgogvh3gr0iyk" path="res://assets/decoration/rail.png" id="4_nf0f7"]
+[ext_resource type="Texture2D" uid="uid://cou03vskw4jev" path="res://assets/decoration/canoneye.png" id="5_nf0f7"]
+[ext_resource type="Texture2D" uid="uid://bi2wjt40qgtp2" path="res://assets/decoration/anchor.png" id="6_nf0f7"]
+[ext_resource type="Texture2D" uid="uid://d1cp0qyelwxns" path="res://assets/decoration/rail-2.png" id="7_i6owf"]
+[ext_resource type="Texture2D" uid="uid://dwqdxntfj262o" path="res://assets/decoration/cannon-002-right.png" id="8_u0pv0"]
+[ext_resource type="Texture2D" uid="uid://bu0hr0lhfww17" path="res://assets/decoration/mastil-003.png" id="9_nf0f7"]
+[ext_resource type="Texture2D" uid="uid://cx2c4cl3t7o2y" path="res://assets/decoration/block-wood-small.png" id="9_s6hlf"]
+[ext_resource type="Texture2D" uid="uid://c524bv3bavxte" path="res://assets/characters/captain.png" id="11_easra"]
+[ext_resource type="Texture2D" uid="uid://cbdogrrpryjop" path="res://assets/doors/door-005-left-open.png" id="15_nalo3"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="17_3guca"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_easra"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s6hlf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 180)
+metadata/north = "z-ship-3"
+metadata/south = "none"
+metadata/west = "z-ship-dock"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-42, -53)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(-118, -50)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_easra")
+autoplay = "default"
+script = ExtResource("2_u0pv0")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Polygon2D2" type="Polygon2D" parent="Layers"]
+visible = false
+position = Vector2(-86.862, -8.9111)
+color = Color(0.493941, 0.765935, 1, 1)
+texture = ExtResource("2_s6hlf")
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(-181, -17, -111.926, -24.7019, -11.5507, -6.43118, 121, -16, 197.735, -10.3148, 439.094, 7.56738, 416, -253, 121, -227, -191.141, -225.16, -188.055, -161.822)
+uv = PackedVector2Array(211.58, 361.04, 280.654, 353.338, 381.029, 371.609, 513.58, 362.04, 590.315, 367.725, 831.674, 385.607, 808.58, 125.04, 513.58, 151.04, 201.439, 152.88, 204.525, 216.218)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Layers"]
+visible = false
+position = Vector2(-294.862, 173.089)
+color = Color(0.493941, 0.765935, 1, 1)
+texture = ExtResource("2_s6hlf")
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(-181, -17, -111.926, -24.7019, -11.5507, -6.43118, 121, -16, 197.735, -10.3148, 258.662, -135.989, 374.95844, -232.89735, 121, -227, -191.141, -225.16, -188.055, -161.822)
+uv = PackedVector2Array(211.58, 361.04, 280.654, 353.338, 381.029, 371.609, 513.58, 362.04, 590.315, 367.725, 831.674, 385.607, 808.58, 125.04, 513.58, 151.04, 201.439, 152.88, 204.525, 216.218)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Layers"]
+texture_filter = 2
+position = Vector2(-66.3134, 32.7712)
+color = Color(0.0886949, 0.0527446, 0.0140901, 1)
+polygon = PackedVector2Array(-184.645, -133.018, -170.879, -66.6822, -166.7144, -46.301838, -161.63414, -25.980778, -150.70396, 5.8863487, -135.82237, 34.110043, 28.029099, 158.03772, 28.3286, 30.6344, -103.903, -25.4592)
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8/wIAGAAAAAAAAAD9/wIAGAAAAAAAAAD+/wIAGAAAAAAAAAD//wIAGAAAAAAAAAD8/wEAGAAAAAAAAAD9/wEAGAAAAAAAAAD8/wAAGAAAAAAAAAD8////GAAAAAAAAAD8//7/GAAAAAAAAAAAAAIAGAAAAAAAAAAAAAEAGAAAAAAAAAAAAAAAGAAAAAAAAAAAAP//GAAAAAAAAAAAAP7/GAAAAAAAAAD8/wMAGAAAAAAAAAD9/wMAGAAAAAAAAAD+/wMAGAAAAAAAAAD//wMAGAAAAAAAAAAAAAMAGAAAAAAAAAD9//7/GAAAAAAAAAD+//7/GAAAAAAAAAD///7/GAAAAAAAAAD/////GAAAAAAAAAD+////GAAAAAAAAAD9////GAAAAAAAAAD9/wAAGAAAAAAAAAD+/wAAGAAAAAAAAAD//wAAGAAAAAAAAAD//wEAGAAAAAAAAAD+/wEAGAAAAAAAAAA=")
+tile_set = ExtResource("1_o3opq")
+
+[node name="Anchoreye" type="Sprite2D" parent="Layers"]
+position = Vector2(-203.329, -7.14934)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_u0pv0")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-29.4126, -309.353)
+polygon = PackedVector2Array(141.235, 299.114, 152.413, 284.353, -0.587433, 216.353, -17.5874, 222.353, 8.76402, 228.653, 18.4126, 231.353, 30.4126, 234.353, 43.4126, 239.353, 58.4126, 245.353, 75.4126, 253.353, 91.4126, 263.353, 105.413, 271.353, 124.729, 285.287, 132.904, 291.173)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-95.4126, -275.353)
+polygon = PackedVector2Array(2.13554, 331.856, 11.7298, 325.505, -12.9763, 315.456, -30.6649, 306.537, -41.628784, 300.30252, -52.7966, 293.0942, -60.81711, 287.81488, -68.736115, 282.84012, -81.4268, 273.80435, -87.31528, 267.71283, -93.203766, 261.3167, -104.715, 267.91)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall4" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-95.4126, -275.353)
+polygon = PackedVector2Array(35.4376, 354.744, 64.9129, 336.712, 47.8097, 336.721, 42.4044, 335.91, 24.297, 347.126)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+texture_filter = 4
+position = Vector2(-235, -228)
+texture = ExtResource("3_i6owf")
+texture_scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(190.965, 137.8, 202.916, 141.27, 221, 147, 237, 152, 253, 158, 269, 165, 290.079, 174.599, 314.54, 190.067, 333.999, 204.515, 348, 216, 197, 292, 175, 289, 158, 284, 140, 278, 124, 271, 105, 261, 88, 251, 70, 238, 56, 228, 45, 216, -15.6461, 126.555, 35.2978, 100.523, 48.7434, 101.639, 66.3714, 105.992, 86.6109, 110.997, 100.322, 114.044, 118.385, 118.179, 147.765, 126.667, 163.652, 129.931)
+uv = PackedVector2Array(710.143, 308.795, 780.987, 350.468, 755.984, 433.814, 647.634, 471.319, 553.87, 437.981, 495.528, 433.814, 620.547, 308.795)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Rail2" type="Sprite2D" parent="Polygons"]
+visible = false
+position = Vector2(39, -67)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("4_nf0f7")
+
+[node name="Rail" type="Sprite2D" parent="Polygons"]
+position = Vector2(39, -66)
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("4_nf0f7")
+
+[node name="Eyebull" type="Sprite2D" parent="."]
+position = Vector2(93.1785, -40.8298)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nf0f7")
+
+[node name="Eyebull2" type="Sprite2D" parent="."]
+position = Vector2(60.1785, -63.8298)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nf0f7")
+
+[node name="Eyebull3" type="Sprite2D" parent="."]
+position = Vector2(24.1785, -80.8298)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nf0f7")
+
+[node name="Eyebull4" type="Sprite2D" parent="."]
+position = Vector2(-11.8215, -93.8298)
+rotation = -0.0523599
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_nf0f7")
+
+[node name="Anchor" type="Sprite2D" parent="."]
+position = Vector2(-205.192, 15.8723)
+texture = ExtResource("6_nf0f7")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="cannon" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-24.7378, -84.0332)
+texture = ExtResource("8_u0pv0")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 30, 10)
+metadata/pos = Vector3(100, 20.5, 0)
+
+[node name="cannon2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(11.0062, -71.3388)
+texture = ExtResource("8_u0pv0")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 30, 10)
+metadata/pos = Vector3(100, 20.5, 0)
+
+[node name="cannon3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(47.052, -54.4608)
+texture = ExtResource("8_u0pv0")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 30, 10)
+metadata/pos = Vector3(100, 20.5, 0)
+
+[node name="cannon4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(80, -31)
+texture = ExtResource("8_u0pv0")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 30, 10)
+metadata/pos = Vector3(100, 20.5, 0)
+
+[node name="Rail-3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-147.458, -120.586)
+rotation = -0.0698132
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_i6owf")
+
+[node name="Polygon2D" type="Polygon2D" parent="FixedObjects"]
+color = Color(0, 0, 0, 0.172549)
+polygon = PackedVector2Array(-47.7788, -13.3684, -50.4895, -12.675, -52.1285, -11.4773, -52.6328, -10.0904, -52.2546, -8.95568, -50.6786, -8.38832, -48.4722, -8.32529, -45.9507, -8.5144, -43.303, -8.95568, -40.4032, -9.39695, -37.1252, -10.5317, -34.4775, -11.9185, -38.8903, -10.7208, -43.5552, -10.5317, -46.0137, -11.6033)
+
+[node name="mast" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-40.727, -97.918)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_nf0f7")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 175)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="captain" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-33.54174, -24.403427)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("11_easra")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 6, 30)
+metadata/pos = Vector3(100, 20.5, 0)
+
+[node name="bridgeblock3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-51.5788, 36.1087)
+texture = ExtResource("9_s6hlf")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-65.5788, 43.1087)
+texture = ExtResource("9_s6hlf")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-79.5788, 50.1087)
+texture = ExtResource("9_s6hlf")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-93.5788, 57.1087)
+texture = ExtResource("9_s6hlf")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="door-to-cabin" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(33.75, 6.5600004)
+texture = ExtResource("15_nalo3")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-ship-2"
+metadata/target_pos = Vector3(-0.44, 63.06, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-ship-1" parent="Characters" instance=ExtResource("17_3guca")]
+position = Vector2(-46.59581, -76.529655)
+animation = &"walk-left"
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-ship-1"
+metadata/direction_init = "left"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(11766.976, -128.83516)
+scale = Vector2(76.661835, 41.57724)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 0.82855606, -150, 3, -154.03836, 6.742695, -154.0291, 4.6939793, -151.99918, 2.7957516, -152, -1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(-13, -26)
+points = PackedVector2Array(-237.021, -73.0482, -223.452, -54.8433, -211.865, -38.2534, -177.199, 14.2964, -165.847, 26.2949, -158.648, 31.7403, -152.741, 35.8013, -146.834, 39.8624, -142.496, 43.185, -137.697, 46.4154, -131.605, 50.4764, -122.376, 56.1988, -97.7955, 68.6599, -81.5798, 75.9078, -75.069, 78.3647, -65.487, 81.313, -53.3252, 85.2441, -42.5148, 88.0696, -23.9643, 89.8623, 125.436, 14.0058)
+width = 1.5
+default_color = Color(0.367438, 0.231513, 0.110604, 1)
+
+[node name="NonFixedObjects" type="Node2D" parent="."]

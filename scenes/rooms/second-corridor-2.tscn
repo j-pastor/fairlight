@@ -1,0 +1,175 @@
+[gd_scene load_steps=15 format=4 uid="uid://cmqv4wmk7044c"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_igxwq"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_f8swa"]
+[ext_resource type="Texture2D" uid="uid://boptjijjewe5d" path="res://assets/decoration/torch-001-right.png" id="3_1guy4"]
+[ext_resource type="Texture2D" uid="uid://bhoas7sokxjka" path="res://assets/decoration/torch-002-right.png" id="4_k25rs"]
+[ext_resource type="Texture2D" uid="uid://dt0f4fr3jtphv" path="res://assets/decoration/torch-003-right.png" id="5_nsdw2"]
+[ext_resource type="Texture2D" uid="uid://bj5vpbv8wqo13" path="res://assets/decoration/torch-004-right.png" id="6_d0daf"]
+[ext_resource type="Texture2D" uid="uid://bcclxa47pjx4" path="res://assets/decoration/armour-right.png" id="7_u8nst"]
+[ext_resource type="Texture2D" uid="uid://bqbt373dmx0xk" path="res://assets/doors/door-frame-far-001-right.png" id="8_8a548"]
+[ext_resource type="Texture2D" uid="uid://3hu8ivigicap" path="res://assets/doors/door-001-right.png" id="9_ljbd8"]
+[ext_resource type="Texture2D" uid="uid://h5atn383u13t" path="res://assets/doors/door-001-right-open.png" id="10_0ms0a"]
+[ext_resource type="Texture2D" uid="uid://cn402tf41vml5" path="res://assets/doors/door-frame-near-001-right.png" id="10_bgbk7"]
+[ext_resource type="Texture2D" uid="uid://bsj54xwgl7gwf" path="res://assets/doors/door-frame-top-001-right.png" id="11_jnxon"]
+[ext_resource type="Texture2D" uid="uid://c0cvp3txi3u1a" path="res://assets/decoration/spears-002-right.png" id="16_udbao"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg767"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1guy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k25rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nsdw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d0daf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 60)
+metadata/north = "none"
+metadata/south = "second-corridor-1"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(84, -95)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8////DQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD/////DQAAAAAAAAAAAP//DQAAAAAAAAD8//7/DQAAAAAAAAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD///7/DQAAAAAAAAAAAP7/DQAAAAAAAAABAP//DQAAAAAAAAABAP7/DQAAAAAAAAACAP7/DQAAAAAAAAACAP//DQAAAAAAAAADAP7/DQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_igxwq")
+
+[node name="GlowTorch3" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(5, -115)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_f8swa")
+texture_scale = 1.5
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(76, -53)
+points = PackedVector2Array(-203, -25.5, 79.5642, 116.319)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="torch" type="AnimatedSprite2D" parent="FixedObjects"]
+position = Vector2(6, -111)
+sprite_frames = SubResource("SpriteFrames_vg767")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Armour1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-13, -97)
+texture = ExtResource("7_u8nst")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 38)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Spears" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(88, -71)
+texture = ExtResource("16_udbao")
+metadata/type = "fixed"
+metadata/size = Vector3(20, 5, 48)
+metadata/pos = Vector3(0, 0, 15)
+
+[node name="Door-frame-far-001-right3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(4, -31.073)
+texture = ExtResource("8_8a548")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 6, 36)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="*" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(13, -27)
+texture = ExtResource("9_ljbd8")
+metadata/type = "door"
+metadata/size = Vector3(14, 0.5, 34)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "second-bedroom-2"
+metadata/target_pos = Vector3(68, 5, 0)
+metadata/target_direction = "left"
+
+[node name="door-to-bedroom" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(13.943909, -28.913513)
+texture = ExtResource("10_0ms0a")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "second-bedroom-2"
+metadata/target_pos = Vector3(57.721, -0.589, 0)
+metadata/target_direction = "left"
+metadata/has_frame = true
+
+[node name="Door-frame-near-001-right3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(23.406, -21.7967)
+texture = ExtResource("10_bgbk7")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 6, 36)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Door-frame-top-001-right3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(13.948, -46.5)
+texture = ExtResource("11_jnxon")
+metadata/type = "fixed"
+metadata/size = Vector3(19.5, 5, 5)
+metadata/pos = Vector3(0, 0, 35)

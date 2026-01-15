@@ -1,0 +1,158 @@
+[gd_scene load_steps=14 format=3 uid="uid://bcyda0at2vyth"]
+
+[ext_resource type="Texture2D" uid="uid://b0k1mli5byu76" path="res://assets/characters/monk-down-001.png" id="1_o4mlt"]
+[ext_resource type="Texture2D" uid="uid://b4wp2au3vrdng" path="res://assets/characters/monk-left-001.png" id="2_vwfsv"]
+[ext_resource type="Texture2D" uid="uid://crid7gh03t5kd" path="res://assets/characters/monk-right-001.png" id="3_7kooe"]
+[ext_resource type="Texture2D" uid="uid://dyx01eqbfyl56" path="res://assets/characters/monk-up-001.png" id="4_wcnp6"]
+[ext_resource type="Texture2D" uid="uid://8ncv5g4thi3" path="res://assets/characters/wizard.png" id="5_vwfsv"]
+[ext_resource type="Script" uid="uid://dla7rggsopm15" path="res://scripts/enemy.gd" id="6_3qxq0"]
+[ext_resource type="AudioStream" uid="uid://3n6xkms3s2aw" path="res://assets/sounds/ghost-6979.mp3" id="7_7kooe"]
+[ext_resource type="AudioStream" uid="uid://decl4ou7sauxp" path="res://assets/sounds/bisbiseo-26262.mp3" id="8_3qxq0"]
+[ext_resource type="AudioStream" uid="uid://ewu48gieein4" path="res://assets/sounds/whisper-fluisteren-212192.mp3" id="9_ewf1v"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="10_ewf1v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4mlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_o4mlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_o4mlt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_o4mlt")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vwfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vwfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vwfsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vwfsv")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7kooe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7kooe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7kooe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7kooe")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_wcnp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wcnp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wcnp6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wcnp6")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_vwfsv")
+}],
+"loop": true,
+"name": &"wizard",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ewf1v"]
+polygon = PackedVector2Array(3, 27, 5, 25, 3, 26, 1, 26, -2, 24, 1, 27)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f7h75"]
+polygon = PackedVector2Array(3, 27, 6, 24, 3, 26, 1, 26, -1, 25, 1, 27)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-up"
+script = ExtResource("6_3qxq0")
+metadata/type = "monk"
+metadata/subtype = ""
+metadata/size = Vector3(6, 6, 32)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 8
+
+[node name="Ghost" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_7kooe")
+volume_db = -6.0
+
+[node name="Ghost1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_3qxq0")
+volume_db = -6.0
+
+[node name="Ghost2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ewf1v")
+volume_db = -6.0
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("10_ewf1v")
+texture_scale = 4.0
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -11)
+occluder = SubResource("OccluderPolygon2D_ewf1v")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -11)
+occluder = SubResource("OccluderPolygon2D_f7h75")
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -11)
+occluder = SubResource("OccluderPolygon2D_f7h75")
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -11)
+occluder = SubResource("OccluderPolygon2D_f7h75")

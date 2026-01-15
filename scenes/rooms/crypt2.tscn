@@ -1,0 +1,202 @@
+[gd_scene load_steps=11 format=4 uid="uid://dryadtxjef77u"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_dqul0"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_dqul0"]
+[ext_resource type="Texture2D" uid="uid://b6t3qxif8gc56" path="res://assets/decoration/tomb-002.png" id="3_4pjkx"]
+[ext_resource type="Texture2D" uid="uid://bs50tvqgcp1ne" path="res://assets/decoration/tomb-004.png" id="4_k427j"]
+[ext_resource type="Texture2D" uid="uid://dff6qebljapg0" path="res://assets/doors/door-001-left-open.png" id="5_4pjkx"]
+[ext_resource type="Texture2D" uid="uid://dhn02dt27jorh" path="res://assets/decoration/tomb-003.png" id="6_0cq6b"]
+[ext_resource type="Texture2D" uid="uid://c4fcq6sh3no3q" path="res://assets/decoration/tomb-001.png" id="7_cxwyr"]
+[ext_resource type="Texture2D" uid="uid://bnu5ap3wnogrj" path="res://assets/decoration/tomb-000.png" id="10_dqul0"]
+[ext_resource type="Texture2D" uid="uid://cyjuksil4gi4v" path="res://assets/objects/book-light.png" id="11_wacp5"]
+[ext_resource type="Texture2D" uid="uid://bdm71u0nqa3m1" path="res://assets/decoration/mummy.png" id="12_54e35"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(120, 120)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/light = 0.4
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-31, -80)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="zero" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAD9//7/LwAAAAAAAAD+//7/LwAAAAAAAAD9/wAALwAAAAAAAAD9////LwAAAAAAAAD+////LwAAAAAAAAD+/wAALwAAAAAAAAD8//7/LwAAAAAAAAD8////LwAAAAAAAAD8/wAALwAAAAAAAAD///7/LwAAAAAAAAD//wEALwAAAAAAAAD+/wEALwAAAAAAAAD9/wEALwAAAAAAAAD//wAALwAAAAAAAAD/////LwAAAAAAAAD8/wEALwAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/GgAAAAAAAAD+//7/GQAAAAAAAAD9/wAAGgAAAAAAAAD9////GQAAAAAAAAD+////GgAAAAAAAAD+/wAAGQAAAAAAAAD8//7/GQAAAAAAAAD8////GgAAAAAAAAD8/wAAGQAAAAAAAAD///7/GgAAAAAAAAD//wEAGQAAAAAAAAD+/wEAGgAAAAAAAAD9/wEAGQAAAAAAAAD//wAAGgAAAAAAAAD/////GQAAAAAAAAD8/wEAGgAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD///3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dqul0")
+
+[node name="GlowTorch3" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-30, -187)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_dqul0")
+texture_scale = 1.95
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-chasm" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-17, -86.318)
+texture = ExtResource("5_4pjkx")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "forest-chasm"
+metadata/target_pos = Vector3(60, 40, 20)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="tom3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-23.9191, -40.4738)
+texture = ExtResource("3_4pjkx")
+metadata/type = "fixed"
+metadata/size = Vector3(43, 3, 14)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="tom1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-52, -47)
+texture = ExtResource("4_k427j")
+metadata/type = "fixed"
+metadata/size = Vector3(3, 15, 14)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="tom2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-39.5621, -33.4666)
+texture = ExtResource("3_4pjkx")
+metadata/type = "fixed"
+metadata/size = Vector3(43, 3, 14)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="tom4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-12.082, -26.9238)
+texture = ExtResource("6_0cq6b")
+metadata/type = "fixed"
+metadata/size = Vector3(3, 15, 14)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="tom5b" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-39.5878, -48.5756)
+scale = Vector2(1.01111, 1.02)
+texture = ExtResource("10_dqul0")
+metadata/type = "fixed"
+metadata/size = Vector3(27, 16, 3)
+metadata/pos = Vector3(0, 0, 14)
+
+[node name="crypt-tape" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-18, -38)
+texture = ExtResource("7_cxwyr")
+metadata/size = Vector3(16, 16, 3)
+metadata/pos = Vector3(0, 0, 14)
+metadata/type = "fixed"
+metadata/subtype = "crypt-tape"
+metadata/uid = "crypt-tape"
+metadata/weight = 80
+
+[node name="mummy" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-32, -49)
+texture = ExtResource("12_54e35")
+metadata/size = Vector3(36, 10, 6)
+metadata/pos = Vector3(0, 0, 17)
+metadata/type = "fixed"
+metadata/subtype = "mummy"
+metadata/uid = "nummy"
+metadata/weight = 80
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="book3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(10, -12)
+texture = ExtResource("11_wacp5")
+metadata/size = Vector3(8.9, 13, 4)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "key"
+metadata/uid = "book-light"
+metadata/weight = 2
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-13.6304, -38.4076)
+points = PackedVector2Array(-143.084, 4.5813, -16.485, 68.0563, 109.397, 4.9659)
+width = 1.5
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(962.062, -36.5466)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(1301.99, -36.3589)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

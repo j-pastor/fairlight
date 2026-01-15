@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://0usgh67r1tdx"]
+
+[ext_resource type="Script" uid="uid://b5qs2mwfvidkf" path="res://scripts/object.gd" id="1_pkda2"]
+[ext_resource type="AudioStream" uid="uid://mfbk0o12i6ip" path="res://assets/sounds/vanishing-sfx-37098.mp3" id="2_cbfvs"]
+
+[node name="Sprite" type="Sprite2D"]
+script = ExtResource("1_pkda2")
+
+[node name="Vanish" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cbfvs")
+volume_db = 0.82

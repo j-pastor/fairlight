@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=4 uid="uid://b0gue155m5jif"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_2xtyw"]
+[ext_resource type="Texture2D" uid="uid://c48ltf02h6um8" path="res://assets/decoration/treetrunk-2.png" id="2_5l8gv"]
+[ext_resource type="Texture2D" uid="uid://jgmwdkrngmuu" path="res://assets/decoration/bigdoor.png" id="2_bkki5"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="3_1xcou"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 4
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "yard-big"
+metadata/south = "none"
+metadata/west = "yard-entry"
+metadata/east = "yard"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-54, -57)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(-1, 0)
+tile_map_data = PackedByteArray("AAD9/wIAKQAAAAAAAAD+/wIAKQAAAAAAAAD//wIAKQAAAAAAAAAAAAIAKQAAAAAAAAD9//7/KQAAAAAAAAD+//7/KQAAAAAAAAD///7/KQAAAAAAAAAAAP7/KQAAAAAAAAAAAP//KQAAAAAAAAAAAAAAKQAAAAAAAAAAAAEAKQAAAAAAAAD//wEAKQAAAAAAAAD+/wEAKQAAAAAAAAD9/wEAKQAAAAAAAAD9/wAAKQAAAAAAAAD9////KQAAAAAAAAD+////KQAAAAAAAAD/////KQAAAAAAAAD//wAAKQAAAAAAAAD+/wAAKQAAAAAAAAD8//7/KQAAAAAAAAD8////KQAAAAAAAAD8/wAAKQAAAAAAAAD8/wEAKQAAAAAAAAD8/wIAKQAAAAAAAAD7/wIAKQAAAAAAAAD7/wEAKQAAAAAAAAD6/wEAKQAAAAAAAAD7/wAAKQAAAAAAAAD6/wAAKQAAAAAAAAD5/wAAKQAAAAAAAAD7////KQAAAAAAAAD6////KQAAAAAAAAD5////KQAAAAAAAAD4////KQAAAAAAAAD7//7/KQAAAAAAAAD6//7/KQAAAAAAAAD5//7/KQAAAAAAAAD4//7/KQAAAAAAAAD3//7/KQAAAAAAAAD6/wIAKQAAAAAAAAD5/wEAKQAAAAAAAAD4/wAAKQAAAAAAAAD3////KQAAAAAAAAD2//7/KQAAAAAAAAD5/wIAKQAAAAAAAAD4/wEAKQAAAAAAAAD3/wAAKQAAAAAAAAD2////KQAAAAAAAAAAAAMAKQAAAAAAAAD//wMAKQAAAAAAAAD+/wMAKQAAAAAAAAD9/wMAKQAAAAAAAAD8/wMAKQAAAAAAAAD7/wMAKQAAAAAAAAAAAAQAKQAAAAAAAAD//wQAKQAAAAAAAAD+/wQAKQAAAAAAAAD9/wQAKQAAAAAAAAD8/wQAKQAAAAAAAAAAAAUAKQAAAAAAAAD//wUAKQAAAAAAAAD+/wUAKQAAAAAAAAD9/wUAKQAAAAAAAAD8/wUAKQAAAAAAAAD7/wQAKQAAAAAAAAD6/wMAKQAAAAAAAAD7/wUAKQAAAAAAAAD8/wYAKQAAAAAAAAD9/wYAKQAAAAAAAAD9//v/QQAAAAAAAAD8//v/QQAAAAAAAAD8//r/QQAAAAAAAAD7//v/QQAAAAAAAAD7//r/QQAAAAAAAAD7//n/QQAAAAAAAAD9//r/QQAAAAAAAAD8//n/QQAAAAAAAAD6//r/QQAAAAAAAAD6//v/QQAAAAAAAAA=")
+tile_set = ExtResource("1_2xtyw")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//3/BgAAAAAAAAD9//3/BgAAAAAAAAD///3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAD5//3/BgAAAAAAAAD4//3/BgAAAAAAAAD3//3/BgAAAAAAAAD2//3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_2xtyw")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAD5//3/BgAAAAAAAAD4//3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_2xtyw")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAD5//3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_2xtyw")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD+//3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_2xtyw")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-16, -7.25)
+points = PackedVector2Array(-106, 113.25, 135, -7.75)
+width = 1.75
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Treetrunk2" type="Sprite2D" parent="Layers"]
+position = Vector2(97, -156)
+texture = ExtResource("2_5l8gv")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Door-to-yard" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(44, -82)
+texture = ExtResource("2_bkki5")
+metadata/type = "door"
+metadata/size = Vector3(38, 3, 56)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "final-chapter-1"
+metadata/target_pos = Vector3(60, 135, 0)
+metadata/key = "key6"
+metadata/target_direction = "right"
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-yard-gate" parent="Characters" instance=ExtResource("3_1xcou")]
+position = Vector2(-7, -84)
+metadata/type = "guard"
+metadata/subtype = "guard-x"
+metadata/uid = "guard-yard-gate"
+metadata/direction_init = "down"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]

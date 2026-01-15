@@ -1,0 +1,150 @@
+[gd_scene load_steps=8 format=4 uid="uid://c0wuewn42su5"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_jtktb"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_2fsje"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_6ju07"]
+[ext_resource type="Texture2D" uid="uid://bew0hhal7k3xx" path="res://assets/textures/sand.png" id="3_ulydl"]
+[ext_resource type="Texture2D" uid="uid://doyjuldrs6n5g" path="res://assets/textures/texture-floor-002.png" id="4_2fsje"]
+[ext_resource type="Texture2D" uid="uid://be7ymby6y0l7n" path="res://assets/doors/door-005-right-open.png" id="7_ch2uu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cgjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jtktb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "z-beach-3"
+metadata/south = "z-forest-door-4"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(116.00001, -111)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_0cgjs")
+autoplay = "default"
+script = ExtResource("2_2fsje")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD4//7/RgAAAAAAAAD4////RgAAAAAAAAD4/wAARgAAAAAAAAD4/wEARgAAAAAAAAD4/wIARgAAAAAAAAD3/wIARgAAAAAAAAD3/wEARgAAAAAAAAD3/wAARgAAAAAAAAD3////RgAAAAAAAAD3//7/RgAAAAAAAAD2//7/RgAAAAAAAAD5//7/RgAAAAAAAAD5////RgAAAAAAAAD5/wAARgAAAAAAAAD5/wEARgAAAAAAAAD5/wIARgAAAAAAAAD6//7/RgAAAAAAAAD6////RgAAAAAAAAD6/wAARgAAAAAAAAD6/wEARgAAAAAAAAD6/wIARgAAAAAAAAD7//7/RgAAAAAAAAD7////RgAAAAAAAAD7/wAARgAAAAAAAAD7/wEARgAAAAAAAAD7/wMAQQAAAAAAAAAAAAIAQQAAAAAAAAD8/wIAQQAAAAAAAAD9/wIAQQAAAAAAAAD+/wIAQQAAAAAAAAD//wIAQQAAAAAAAAA=")
+tile_set = ExtResource("2_6ju07")
+
+[node name="floor2" type="Polygon2D" parent="Layers"]
+position = Vector2(-304, -154)
+color = Color(0, 0.40784314, 0.77254903, 1)
+polygon = PackedVector2Array(124.597, -13.4424, 147.259, 18.0329, 178.178, 109.728, 124.583, 138.545, -44.0683, 77.9645, -165.201, 33.7249, -46.894, -98.0029)
+uv = PackedVector2Array(1033.26, 541.849, 1055.92, 573.324, 1086.84, 665.02, 1033.24, 693.837, 879.812, 618.319, 772.758, 563.938, 861.764, 457.288)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor4" type="Polygon2D" parent="Layers"]
+position = Vector2(-307, -153)
+color = Color(0, 0.47058824, 0.8117647, 1)
+polygon = PackedVector2Array(124.597, -13.4424, 147.259, 18.0329, 178.178, 109.728, 124.583, 138.545, -44.0683, 77.9645, -165.201, 33.7249, -46.894, -98.0029)
+uv = PackedVector2Array(1033.26, 541.849, 1055.92, 573.324, 1086.84, 665.02, 1033.24, 693.837, 879.812, 618.319, 772.758, 563.938, 861.764, 457.288)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor5" type="Polygon2D" parent="Layers"]
+position = Vector2(-309, -151)
+color = Color(0.5568628, 0.8117647, 1, 1)
+polygon = PackedVector2Array(124.597, -13.4424, 147.259, 18.0329, 178.178, 109.728, 124.583, 138.545, -44.0683, 77.9645, -165.201, 33.7249, -46.894, -98.0029)
+uv = PackedVector2Array(1033.26, 541.849, 1055.92, 573.324, 1086.84, 665.02, 1033.24, 693.837, 879.812, 618.319, 772.758, 563.938, 861.764, 457.288)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor6" type="Polygon2D" parent="Layers"]
+position = Vector2(-312, -149)
+color = Color(0.8117647, 0.6156863, 0.13333334, 1)
+polygon = PackedVector2Array(124.597, -13.4424, 147.259, 18.0329, 178.178, 109.728, 124.583, 138.545, -44.0683, 77.9645, -165.201, 33.7249, -46.894, -98.0029)
+uv = PackedVector2Array(1033.26, 541.849, 1055.92, 573.324, 1086.84, 665.02, 1033.24, 693.837, 879.812, 618.319, 772.758, 563.938, 861.764, 457.288)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor3" type="Polygon2D" parent="Layers"]
+position = Vector2(-310, -142)
+texture = ExtResource("3_ulydl")
+polygon = PackedVector2Array(141.85896, 12.23465, 174.96594, 109.61896, 124.583, 138.545, -44.0683, 77.9645, -165.201, 33.7249, -49.1644, -100.40091, 119.96782, -17.494064)
+uv = PackedVector2Array(498.66028, 251.15814, 531.3934, 347.45987, 482.07303, 376.87167, 313.42172, 316.2912, 192.289, 272.0516, 307.93066, 139.43466, 476.1803, 221.38055)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Polygon2D3" type="Polygon2D" parent="Layers"]
+position = Vector2(1282.0745, -14.188503)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -128.12004, 24.083183, -128.26828, 44.52661, -166.86247, 16.169596, -152, -1)
+
+[node name="Line2D3" type="Line2D" parent="Layers"]
+visible = false
+position = Vector2(-15.2248, -157.929)
+points = PackedVector2Array(-360.447, -105.237, -164.647, -7.64381, -144.107, 21.2741, -133.162, 52.3541, -105.815, 130.724)
+width = 1.5
+default_color = Color(0.883429, 0.643523, 0.159252, 1)
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-154, -78)
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(0, 4)
+texture = ExtResource("4_2fsje")
+polygon = PackedVector2Array(133.983, 57.5776, 189.425, 21.5723, 272.587, 63.6315, 342.199, 142.953, 123.42677, 137.50049, -25.724686, 63.232494, -56.34445, 78.211586, -86.62477, 61.26585, -86.6964, 45.6433, -76.9768, 8.49851, -61.9341, 13.7308, -54.0857, 17.1644, -44.6023, 19.9441, -39.2065, 23.2142, -28.415, 24.5223, -17.0023, 28.7973, -9.89549, 30.6247, -1.87497, 34.4827, 6.7547, 35.2949, 13.6584, 34.8888, 21.679, 34.3812, 26.9229, 34.3175, 64.2027, 40.3715, 111.36, 49.6118)
+uv = PackedVector2Array(304.30096, 113.11606, 359.74298, 77.11076, 442.90497, 119.16997, 512.51697, 198.49147, 293.74475, 193.03896, 143.99005, 118.969444, 113.97351, 133.75005, 83.69319, 116.80431, 83.62156, 101.18176, 93.34116, 64.03697, 108.383865, 69.269264, 116.23226, 72.702866, 125.71567, 75.48256, 131.11147, 78.75266, 141.90295, 80.06076, 153.31566, 84.33576, 160.42247, 86.16316, 168.443, 90.021164, 177.07266, 90.83336, 183.97636, 90.42726, 191.99696, 89.91966, 197.24086, 89.855965, 234.52066, 95.90996, 281.67798, 105.15027)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Line2D3" type="Line2D" parent="Polygons"]
+position = Vector2(290, -1)
+points = PackedVector2Array(-366.802, 13.8843, -344.813, 21.766, -334.74, 24.8372, -328.966, 28.5226, -317.664, 29.6282, -308.696, 33.0679, -300.22, 35.7705, -291.252, 39.9472, -280.687, 40.0701, -263.01355, 39.236385, -178.501, 55.1712, -156.11617, 62.190872, -100.459, 26.9229, -17.468033, 68.90409, 52.25351, 148.35742)
+width = 1.0
+default_color = Color(0, 0.23529412, 0, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-small" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-116.75, -3.914)
+texture = ExtResource("7_ch2uu")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "z-fc-small"
+metadata/target_pos = Vector3(4.5, 0, 0)
+metadata/target_direction = "left"
+metadata/has_frame = true
+
+[node name="Line2D2" type="Line2D" parent="."]
+visible = false
+z_index = 4096
+position = Vector2(4.01723, 30.8407)
+points = PackedVector2Array(-211.194, -30.3817, -186.201, -45.1896, -22.653, 37.9132)
+width = 1.75
+default_color = Color(5.86594e-08, 0.143815, 9.62615e-08, 1)

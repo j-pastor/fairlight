@@ -1,0 +1,143 @@
+[gd_scene load_steps=8 format=4 uid="uid://dsmmdnaabmbhr"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_so8yh"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_qtpj4"]
+[ext_resource type="Texture2D" uid="uid://cbdogrrpryjop" path="res://assets/doors/door-005-left-open.png" id="5_qtpj4"]
+[ext_resource type="Texture2D" uid="uid://durgk1g6jc33r" path="res://assets/objects/barrel.png" id="6_hp0d7"]
+[ext_resource type="Texture2D" uid="uid://cqr14adkwnid1" path="res://assets/objects/chicken.png" id="7_so8yh"]
+[ext_resource type="Texture2D" uid="uid://cfbnhxefyuuvh" path="res://assets/objects/wand.png" id="8_so8yh"]
+[ext_resource type="Texture2D" uid="uid://cdp38pnm0feh3" path="res://assets/decoration/window-008-left.png" id="8_x7m50"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 60)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = false
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(16, -87)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAD9//7/KQAAAAAAAAD+//7/KQAAAAAAAAD9////KQAAAAAAAAD+////KQAAAAAAAAD8//7/KQAAAAAAAAD8////KQAAAAAAAAD///7/KQAAAAAAAAD/////KQAAAAAAAAAAAP//KQAAAAAAAAAAAP7/KQAAAAAAAAA=")
+tile_set = ExtResource("1_so8yh")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/SQAAAAAAAAD9//3/SQAAAAAAAAD8//3/SQAAAAAAAAD7//7/SAAAAAAAAAD7////SAAAAAAAAAD///3/SQAAAAAAAAAAAP3/SQAAAAAAAAA=")
+tile_set = ExtResource("1_so8yh")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/SQAAAAAAAAD9//3/SQAAAAAAAAD8//3/SQAAAAAAAAD7//7/SAAAAAAAAAD7////SAAAAAAAAAD///3/SQAAAAAAAAAAAP3/SQAAAAAAAAA=")
+tile_set = ExtResource("1_so8yh")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/SQAAAAAAAAD9//3/SQAAAAAAAAD8//3/SQAAAAAAAAD7//7/SAAAAAAAAAD7////SAAAAAAAAAD///3/SQAAAAAAAAAAAP3/SQAAAAAAAAA=")
+tile_set = ExtResource("1_so8yh")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/SQAAAAAAAAD9//3/SQAAAAAAAAD8//3/SQAAAAAAAAD7//7/SAAAAAAAAAD7////SAAAAAAAAAD///3/SQAAAAAAAAAAAP3/SQAAAAAAAAA=")
+tile_set = ExtResource("1_so8yh")
+
+[node name="GlowTorch" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-60.999977, -122.50001)
+scale = Vector2(0.31111112, 0.8611111)
+color = Color(1, 0.768627, 0.537255, 1)
+range_z_max = 600
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_qtpj4")
+texture_scale = 1.5
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(64, -11.5)
+points = PackedVector2Array(-161, -51.5, -3, 27.5, 65.4619, -6.77346)
+width = 1.5
+default_color = Color(0.342091, 0.245901, 0.125684, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992, -21)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1362, -68)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-fc-yard-1-up" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(91, -21.439999)
+texture = ExtResource("5_qtpj4")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-fc-yard-1-up"
+metadata/target_pos = Vector3(-0.44, 17.06, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+metadata/key = "key-avars-entry"
+
+[node name="Characters" type="Node2D" parent="."]
+visible = false
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="barrel" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-76, -70)
+texture = ExtResource("6_hp0d7")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel-fc-magic-wand"
+metadata/weight = 9
+
+[node name="chicken" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-81, -82)
+texture = ExtResource("7_so8yh")
+metadata/size = Vector3(6, 6, 6)
+metadata/pos = Vector3(0, 0, 24)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "chicken-magic-wand"
+metadata/weight = 1
+
+[node name="magic-wand" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(11, -58)
+texture = ExtResource("8_so8yh")
+metadata/size = Vector3(2, 13, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "magic-wand"
+metadata/weight = 1
+
+[node name="Window008Left" type="Sprite2D" parent="."]
+position = Vector2(-59, -121)
+texture = ExtResource("8_x7m50")

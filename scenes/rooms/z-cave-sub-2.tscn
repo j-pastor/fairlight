@@ -1,0 +1,173 @@
+[gd_scene load_steps=11 format=3 uid="uid://di0kcv7pkuutf"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_gpf7k"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_bpa0l"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_ue3v6"]
+[ext_resource type="Texture2D" uid="uid://c15i641121jrl" path="res://assets/tmp/Sin nombre-7.png" id="3_605dg"]
+[ext_resource type="Texture2D" uid="uid://cb7f2xmqc3eig" path="res://assets/doors/door-small-semiinvisible-left.png" id="4_1x84y"]
+[ext_resource type="Texture2D" uid="uid://bc6hwv6ncyxx0" path="res://assets/decoration/caverns-wall-003.png" id="4_gpf7k"]
+[ext_resource type="Texture2D" uid="uid://durgk1g6jc33r" path="res://assets/objects/barrel.png" id="5_ue3v6"]
+[ext_resource type="Texture2D" uid="uid://c6bc6vwsmiv33" path="res://assets/objects/boulder-001.png" id="6_4hts2"]
+[ext_resource type="Texture2D" uid="uid://cbdogrrpryjop" path="res://assets/doors/door-005-left-open.png" id="7_bpa0l"]
+[ext_resource type="Texture2D" uid="uid://dj8l6016r7heu" path="res://assets/objects/boulder-003.png" id="8_dqkh2"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/light = 0.5
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-51, -79)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_gpf7k")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+points = PackedVector2Array(-193.71, -22.3192, 88.1368, 120.444)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="GlowTorch3" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-55.060303, -193.16869)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_ue3v6")
+texture_scale = 1.95
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+position = Vector2(-292.351, -167.6)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(281.007, 86.3809, 280.319, 91.1948, 336.69, 121.353, 330.01, 123.834, 335.371, 127.519, 345.491, 121.527)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+position = Vector2(-271.676, -173.911)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(291.802, 147.679, 284.878, 144.328, 267.73, 154.125, 248.002, 161.011, 230.641, 168.118, 217.342, 176.138, 194.498, 190.555, 179.879, 181.215, 157.848, 167.712, 137.644, 160.097, 115.714, 150.351, 142.808, 133.678, 172.405, 116.485, 232.688, 88.1936, 228.336, 86.8878, 171.65, 110.745, 141.182, 127.76, 106.164, 150.908, 195.107, 197.56)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall4" type="Polygon2D" parent="Polygons"]
+position = Vector2(-116.737, -189.649)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(155.401, 146.442, 130.609, 160.625, 136.193, 165.092, 159.198, 150.909)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 32
+
+[node name="floor2" type="Polygon2D" parent="Polygons"]
+position = Vector2(-136.731, -235.115)
+texture = ExtResource("2_bpa0l")
+polygon = PackedVector2Array(-23.2642, 211.658, -11.5123, 217.752, 0.0220947, 223.193, 11.3388, 227.545, 26.8812, 235.032, 59.6155, 254.457, 91.4505, 234.672, 104.296, 228.156, 143.087, 213.941, 185.019, 189.455, 107.873, 142.93, 95.6155, 151.371, 58.2229, 165.22, 25.1828, 175.904, 15.4885, 182.828, 3.61778, 191.731)
+uv = PackedVector2Array(85.5358, 235.125, 97.2878, 241.219, 108.822, 246.659, 120.139, 251.012, 135.681, 258.498, 168.415, 277.923, 200.25, 258.139, 213.096, 251.623, 251.887, 237.408, 293.819, 212.922, 216.673, 166.396, 204.416, 174.837, 167.023, 188.687, 133.983, 199.37, 124.288, 206.295, 112.418, 215.198)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="SinNombre" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-43.0465, -42.6313)
+scale = Vector2(1.17243, 1.18527)
+texture = ExtResource("3_605dg")
+
+[node name="Caverns-wall-001" type="Sprite2D" parent="."]
+position = Vector2(-43.276, -95.847)
+scale = Vector2(1.18, 1.18)
+texture = ExtResource("4_gpf7k")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-cave-sub-1" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(-24.4894, -101.919)
+texture = ExtResource("4_1x84y")
+metadata/type = "door"
+metadata/size = Vector3(14, 1, 34)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "z-cave-sub-1"
+metadata/target_pos = Vector3(62.674, 146.087, 32)
+metadata/target_direction = "right"
+
+[node name="door-to-cave-sub-3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(26, -76.44)
+texture = ExtResource("7_bpa0l")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 25)
+metadata/target = "z-cave-sub-3"
+metadata/target_pos = Vector3(13.954, 108.461, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="rock3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(11.1327, -43.0804)
+texture = ExtResource("6_4hts2")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-1-sub-2"
+metadata/weight = 9
+
+[node name="barrel3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(24.167, -48.2768)
+texture = ExtResource("5_ue3v6")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel-1-sub-2"
+metadata/weight = 9
+
+[node name="rock1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-85.6899, -12.7705)
+texture = ExtResource("8_dqkh2")
+metadata/size = Vector3(6, 6, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-2-sub-2"
+metadata/weight = 6
+
+[node name="Node" type="Line2D" parent="."]
+position = Vector2(-48, 47)
+points = PackedVector2Array(-116.888, -71.9321, -81.9635, -55.8911, -62.9782, -47.363, -28.9586, -27.3508, 8.02722, -50.2255, 29.2545, -58.468, 53.4551, -67.9271, 72.6191, -78.7376, 101.611, -94.9532)
+width = 1.5
+default_color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(919.041, -45.5942)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1292.92, -27.2424)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

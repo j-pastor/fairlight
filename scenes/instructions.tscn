@@ -1,0 +1,522 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsm1pato3nup1"]
+
+[ext_resource type="Script" uid="uid://d3t3drjh0ple5" path="res://scripts/instructions.gd" id="1_njqp3"]
+[ext_resource type="Texture2D" uid="uid://dcstxqk4wucm5" path="res://assets/splash/splash-background.png" id="2_c00ax"]
+[ext_resource type="Texture2D" uid="uid://7wqn0b6l8yb0" path="res://assets/splash/title.png" id="3_jxpsd"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="5_r7su1"]
+[ext_resource type="Texture2D" uid="uid://bmnumm1tlrj7x" path="res://assets/splash/arrow-north-south.png" id="6_c6be6"]
+[ext_resource type="Texture2D" uid="uid://cpwrrw6g7gtnj" path="res://assets/splash/arrow-west-east.png" id="6_i2hxp"]
+[ext_resource type="AudioStream" uid="uid://bmdf75bsxjq75" path="res://assets/sounds/modern-button-click-291234.mp3" id="7_i2hxp"]
+[ext_resource type="Texture2D" uid="uid://duevpvfcxegjk" path="res://assets/splash/speaker.png" id="7_olnwl"]
+[ext_resource type="AudioStream" uid="uid://dhw18tw7fdij3" path="res://assets/music/mountain-knight-castle-medieval-fantasy-orchestral-music-264986.mp3" id="8_2n4j6"]
+[ext_resource type="Texture2D" uid="uid://d3ktcp5xxmpdq" path="res://assets/splash/red-cross.png" id="8_i5xgr"]
+[ext_resource type="Texture2D" uid="uid://l2mea3qwjio2" path="res://assets/splash/music.png" id="11_jxpsd"]
+
+[node name="SplashScreen" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_njqp3")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_c00ax")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -372.0
+offset_right = -6.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jxpsd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message" type="RichTextLabel" parent="."]
+offset_left = 155.0
+offset_top = 234.0
+offset_right = 753.0
+offset_bottom = 729.0
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = ExtResource("5_r7su1")
+theme_override_fonts/bold_italics_font = ExtResource("5_r7su1")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[char=2192]  P
+[char=2190]  L
+[char=2191] Q
+[char=2193] S
+Shift             Jump
+Space            Fight
+1-5                Object
+6                  Pick Up
+7                  Drop
+8                  Use
+F10               Save"
+
+[node name="Arrow-north-south" type="Sprite2D" parent="message"]
+position = Vector2(256, 136)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_c6be6")
+
+[node name="Arrow-west-east" type="Sprite2D" parent="message"]
+position = Vector2(256, 43)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_i2hxp")
+
+[node name="ColorRect_1" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 82.0
+offset_right = -63.0
+offset_bottom = 281.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="message_new_1" type="Label" parent="ColorRect_1"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 60.0
+offset_right = 413.0
+offset_bottom = 144.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "New Game "
+
+[node name="message_load_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 28.0
+offset_right = 413.0
+offset_bottom = 112.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Load Game"
+
+[node name="message_load_info_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 120.0
+offset_right = 461.0
+offset_bottom = 168.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "Life: 99% / Explored: 45%"
+
+[node name="message_delete_icon_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 11.0
+offset_right = 475.0
+offset_bottom = 47.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 30
+text = "❌"
+
+[node name="message_delete_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 135.0
+offset_top = 28.0
+offset_right = 336.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Delete?"
+
+[node name="message_delete_yes_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 144.0
+offset_right = 91.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "YES"
+
+[node name="message_delete_no_1" type="Label" parent="ColorRect_1"]
+visible = false
+layout_mode = 0
+offset_left = 418.0
+offset_top = 144.0
+offset_right = 476.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "NO"
+
+[node name="ColorRect_2" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 306.0
+offset_right = -63.0
+offset_bottom = 505.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="message_new_2" type="Label" parent="ColorRect_2"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 60.0
+offset_right = 413.0
+offset_bottom = 144.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "New Game "
+
+[node name="message_load_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 28.0
+offset_right = 413.0
+offset_bottom = 112.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Load Game"
+
+[node name="message_load_info_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 120.0
+offset_right = 461.0
+offset_bottom = 168.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "Life: 99% / Explored: 45%"
+
+[node name="message_delete_icon_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 11.0
+offset_right = 475.0
+offset_bottom = 47.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 30
+text = "❌"
+
+[node name="message_delete_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 135.0
+offset_top = 28.0
+offset_right = 336.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Delete?"
+
+[node name="message_delete_yes_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 144.0
+offset_right = 91.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "YES"
+
+[node name="message_delete_no_2" type="Label" parent="ColorRect_2"]
+visible = false
+layout_mode = 0
+offset_left = 418.0
+offset_top = 144.0
+offset_right = 476.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "NO"
+
+[node name="ColorRect_3" type="ColorRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -551.0
+offset_top = 530.0
+offset_right = -63.0
+offset_bottom = 729.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="message_new_3" type="Label" parent="ColorRect_3"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 56.0
+offset_right = 413.0
+offset_bottom = 140.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "New Game "
+
+[node name="message_load_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 79.0
+offset_top = 28.0
+offset_right = 413.0
+offset_bottom = 112.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Load Game"
+
+[node name="message_load_info_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 120.0
+offset_right = 461.0
+offset_bottom = 168.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "Life: 99% / Explored: 45%"
+
+[node name="message_delete_icon_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 11.0
+offset_right = 475.0
+offset_bottom = 47.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 30
+text = "❌"
+
+[node name="message_delete_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 135.0
+offset_top = 28.0
+offset_right = 336.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 70
+text = "Delete?"
+
+[node name="message_delete_yes_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 144.0
+offset_right = 91.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "YES"
+
+[node name="message_delete_no_3" type="Label" parent="ColorRect_3"]
+visible = false
+layout_mode = 0
+offset_left = 418.0
+offset_top = 144.0
+offset_right = 476.0
+offset_bottom = 192.0
+mouse_filter = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("5_r7su1")
+theme_override_font_sizes/font_size = 40
+text = "NO"
+
+[node name="sound" type="TextureRect" parent="."]
+offset_left = 41.0
+offset_top = 612.0
+offset_right = 91.0
+offset_bottom = 662.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_olnwl")
+
+[node name="sound_off" type="Sprite2D" parent="sound"]
+position = Vector2(36.6667, 34.9999)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("8_i5xgr")
+
+[node name="music" type="TextureRect" parent="."]
+offset_left = 40.0
+offset_top = 667.0
+offset_right = 90.0
+offset_bottom = 722.0
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("11_jxpsd")
+
+[node name="music_off" type="Sprite2D" parent="music"]
+position = Vector2(42.1212, 38.636)
+scale = Vector2(0.666667, 0.666667)
+texture = ExtResource("8_i5xgr")
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_i2hxp")
+
+[node name="Intro_Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2n4j6")
+
+[connection signal="gui_input" from="ColorRect_1" to="." method="_on_color_rect_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_1" to="." method="_on_color_rect_1_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_1" to="." method="_on_color_rect_1_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_1/message_delete_icon_1" to="." method="_on_message_delete_icon_1_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_1/message_delete_icon_1" to="." method="_on_message_delete_icon_1_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_1/message_delete_icon_1" to="." method="_on_message_delete_icon_1_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_1/message_delete_yes_1" to="." method="_on_message_delete_yes_1_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_1/message_delete_yes_1" to="." method="_on_message_delete_yes_1_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_1/message_delete_yes_1" to="." method="_on_message_delete_yes_1_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_1/message_delete_no_1" to="." method="_on_message_delete_no_1_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_1/message_delete_no_1" to="." method="_on_message_delete_no_1_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_1/message_delete_no_1" to="." method="_on_message_delete_no_1_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_2" to="." method="_on_color_rect_2_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_2" to="." method="_on_color_rect_2_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_2" to="." method="_on_color_rect_2_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_2/message_delete_icon_2" to="." method="_on_message_delete_icon_2_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_2/message_delete_icon_2" to="." method="_on_message_delete_icon_2_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_2/message_delete_icon_2" to="." method="_on_message_delete_icon_2_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_2/message_delete_yes_2" to="." method="_on_message_delete_yes_2_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_2/message_delete_yes_2" to="." method="_on_message_delete_yes_2_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_2/message_delete_yes_2" to="." method="_on_message_delete_yes_2_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_2/message_delete_no_2" to="." method="_on_message_delete_no_2_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_2/message_delete_no_2" to="." method="_on_message_delete_no_2_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_2/message_delete_no_2" to="." method="_on_message_delete_no_2_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_3" to="." method="_on_color_rect_3_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_3" to="." method="_on_color_rect_3_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_3" to="." method="_on_color_rect_3_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_3/message_delete_icon_3" to="." method="_on_message_delete_icon_3_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_3/message_delete_icon_3" to="." method="_on_message_delete_icon_3_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_3/message_delete_icon_3" to="." method="_on_message_delete_icon_3_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_3/message_delete_yes_3" to="." method="_on_message_delete_yes_3_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_3/message_delete_yes_3" to="." method="_on_message_delete_yes_3_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_3/message_delete_yes_3" to="." method="_on_message_delete_yes_3_mouse_exited"]
+[connection signal="gui_input" from="ColorRect_3/message_delete_no_3" to="." method="_on_message_delete_no_3_gui_input"]
+[connection signal="mouse_entered" from="ColorRect_3/message_delete_no_3" to="." method="_on_message_delete_no_3_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect_3/message_delete_no_3" to="." method="_on_message_delete_no_3_mouse_exited"]
+[connection signal="gui_input" from="sound" to="." method="_on_sound_gui_input"]
+[connection signal="gui_input" from="music" to="." method="_on_music_gui_input"]

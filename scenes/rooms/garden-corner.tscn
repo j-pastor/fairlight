@@ -1,0 +1,105 @@
+[gd_scene load_steps=2 format=4 uid="uid://bt32auf7mk7o5"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_iih4f"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(60, 30)
+metadata/north = "garden-yard"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "garden-tower-yard"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(-30, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-10, -137)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(119.395, -102.398)
+scale = Vector2(0.742737, 0.934654)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -67.3337, -159.706, -46.0512, -13.6818, -160, 30, -321.166, -33.8942, -251, -206)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//7/KQAAAAAAAAD9//7/KQAAAAAAAAD9//3/KQAAAAAAAAD7//7/KQAAAAAAAAD9//z/KQAAAAAAAAD6//7/KQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAD8//3/FAAAAAAAAAD7//3/BQAAAAAAAAD8//z/BAAAAAAAAAD6//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_iih4f")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(16, -112)
+points = PackedVector2Array(-195, -22, -15.9664, 67.797, 109.389, 5.42844)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(86.8829, -85.9368)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(215.528, -98.989)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -81.2865, 25.8999, -118.589, -222.179)
+
+[node name="FixedObjects" type="Node2D" parent="."]

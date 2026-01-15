@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://6mdsnve05tm5"]
+
+[ext_resource type="Script" uid="uid://dtl3fu1x083rp" path="res://scripts/chapter_change.gd" id="1_ssmwr"]
+[ext_resource type="Texture2D" uid="uid://byccoa8ytndxa" path="res://assets/splash/black-background.png" id="2_m2r07"]
+[ext_resource type="Texture2D" uid="uid://cbb0dm42vjbj3" path="res://assets/splash/chapter-3-an.png" id="3_ssmwr"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="4_7x8xw"]
+[ext_resource type="AudioStream" uid="uid://x4hoyhlagm0f" path="res://assets/music/stellar-guardian-medieval-music-282967.mp3" id="5_h26nv"]
+
+[node name="chapter3" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_ssmwr")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_m2r07")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -528.0
+offset_top = 58.0
+offset_right = -80.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_ssmwr")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message_wizard" type="Label" parent="."]
+offset_left = 555.0
+offset_top = 243.0
+offset_right = 1172.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_7x8xw")
+theme_override_font_sizes/font_size = 92
+text = "A Quest in
+the Shadows"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="message_result" type="Label" parent="."]
+offset_left = 752.0
+offset_top = 143.0
+offset_right = 978.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_7x8xw")
+theme_override_font_sizes/font_size = 40
+text = "Chapter 3"
+uppercase = true
+
+[node name="message_result2" type="Label" parent="."]
+offset_left = 526.0
+offset_top = 495.0
+offset_right = 1198.0
+offset_bottom = 726.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_7x8xw")
+theme_override_font_sizes/font_size = 40
+text = "About how Isvar arrives at
+the Dark Tower to retrieves
+the Book of Light and
+the Magic Crown"
+horizontal_alignment = 1
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="chapter_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_h26nv")

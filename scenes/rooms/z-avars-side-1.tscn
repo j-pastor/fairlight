@@ -1,0 +1,554 @@
+[gd_scene load_steps=9 format=4 uid="uid://d14soyrmvwd56"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_k3nf1"]
+[ext_resource type="Texture2D" uid="uid://cutarae3dgwx4" path="res://assets/decoration/treetrunk-1.png" id="2_eud5p"]
+[ext_resource type="Texture2D" uid="uid://uv1wylaylelt" path="res://assets/decoration/bush-003.png" id="3_2upb7"]
+[ext_resource type="Texture2D" uid="uid://b1ldqt77r6e76" path="res://assets/decoration/treetop-2.png" id="4_qt3gp"]
+[ext_resource type="Texture2D" uid="uid://cdgn3vmoa0n6o" path="res://assets/decoration/treetop-3.png" id="5_1j38i"]
+[ext_resource type="Texture2D" uid="uid://d24xenax2erts" path="res://assets/decoration/treetop-1.png" id="6_uthtm"]
+[ext_resource type="Texture2D" uid="uid://c48ltf02h6um8" path="res://assets/decoration/treetrunk-2.png" id="7_vxdbc"]
+[ext_resource type="Texture2D" uid="uid://21arpp4ydbk0" path="res://assets/decoration/bush-001.png" id="8_g7fj4"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "z-forest-near-chasm-1"
+metadata/west = "z-avars-entry"
+metadata/east = "z-avars-side-2"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-6, -57)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Polygon2D3" type="Polygon2D" parent="Layers"]
+position = Vector2(0, 121)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-194.277, -147.984, -150.315, -123.61, -98.5111, -143.416, -59.9994, -162.506, 189.686, -95.4761, 209, -199, -191.141, -225.16)
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9/wIAQQAAAAAAAAD+/wIAQQAAAAAAAAD//wIAQQAAAAAAAAAAAAIAQQAAAAAAAAD9//7/QQAAAAAAAAD+//7/QQAAAAAAAAD///7/QQAAAAAAAAAAAP7/QQAAAAAAAAAAAP//QQAAAAAAAAAAAAAAQQAAAAAAAAAAAAEAQQAAAAAAAAD//wEAQQAAAAAAAAD+/wEAQQAAAAAAAAD9/wEAQQAAAAAAAAD9/wAAQQAAAAAAAAD9////QQAAAAAAAAD+////QQAAAAAAAAD/////QQAAAAAAAAD//wAAQQAAAAAAAAD+/wAAQQAAAAAAAAD8//7/QQAAAAAAAAD8////QQAAAAAAAAD8/wAAQQAAAAAAAAD8/wEAQQAAAAAAAAD8/wIAQQAAAAAAAAD8//3/QQAAAAAAAAD9//3/QQAAAAAAAAD+//3/QQAAAAAAAAD///3/QQAAAAAAAAAAAP3/QQAAAAAAAAD8//z/QQAAAAAAAAD9//z/QQAAAAAAAAD+//z/QQAAAAAAAAD///z/QQAAAAAAAAAAAPz/QQAAAAAAAAD8//v/QQAAAAAAAAD9//v/QQAAAAAAAAD+//v/QQAAAAAAAAD///v/QQAAAAAAAAD8//r/QQAAAAAAAAD9//r/QQAAAAAAAAD+//r/QQAAAAAAAAD8//n/QQAAAAAAAAD9//n/QQAAAAAAAAD8//j/QQAAAAAAAAABAAIAQQAAAAAAAAABAAEAQQAAAAAAAAABAAAAQQAAAAAAAAABAP//QQAAAAAAAAABAP7/QQAAAAAAAAABAP3/QQAAAAAAAAACAAIAQQAAAAAAAAACAAEAQQAAAAAAAAACAAAAQQAAAAAAAAACAP//QQAAAAAAAAACAP7/QQAAAAAAAAADAAIAQQAAAAAAAAADAAEAQQAAAAAAAAADAAAAQQAAAAAAAAADAP//QQAAAAAAAAAEAAIAQQAAAAAAAAAEAAEAQQAAAAAAAAAEAAAAQQAAAAAAAAAEAP//QQAAAAAAAAADAP7/QQAAAAAAAAACAP3/QQAAAAAAAAADAP3/QQAAAAAAAAACAPz/QQAAAAAAAAABAPz/QQAAAAAAAAABAPv/QQAAAAAAAAAAAPv/QQAAAAAAAAAAAPr/QQAAAAAAAAD///r/QQAAAAAAAAD///n/QQAAAAAAAAD+//n/QQAAAAAAAAD+//j/QQAAAAAAAAD9//j/QQAAAAAAAAD8//f/QQAAAAAAAAD9//f/QQAAAAAAAAAEAP7/QQAAAAAAAAD8/wMAQQAAAAAAAAD9/wMAQQAAAAAAAAD9/wQAQQAAAAAAAAD+/wQAQQAAAAAAAAD+/wMAQQAAAAAAAAD//wMAQQAAAAAAAAAAAAMAQQAAAAAAAAD//wQAQQAAAAAAAAD+/wUAQQAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAD7//3/BwAAAAAAAAD7//z/BwAAAAAAAAD7//v/BwAAAAAAAAD7//r/BwAAAAAAAAD7//n/BwAAAAAAAAD7//j/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAD7//3/BwAAAAAAAAD7//z/BwAAAAAAAAD7//v/BwAAAAAAAAD7//r/BwAAAAAAAAD7//n/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAD7//3/BwAAAAAAAAD7//z/BwAAAAAAAAD7//v/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Layers"]
+position = Vector2(0, 1)
+color = Color(4.81308e-08, 0.352548, 0.570839, 1)
+polygon = PackedVector2Array(-190.928, -101.482, -98.5111, -143.416, -39, -171, 28, -227, -191.141, -225.16)
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAD7//3/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_set = ExtResource("1_k3nf1")
+
+[node name="Polygon2D" type="Polygon2D" parent="Layers"]
+position = Vector2(-60, 23)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-121, -39, -120, -234, -156, -238, -156, -47)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Treetrunk" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-113, -44)
+texture = ExtResource("2_eud5p")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="brush" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-169, -27)
+texture = ExtResource("3_2upb7")
+metadata/size = Vector3(9, 9, 28)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="brush2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-155, -34)
+texture = ExtResource("3_2upb7")
+metadata/size = Vector3(9, 9, 28)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="brush3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-141, -41)
+texture = ExtResource("3_2upb7")
+metadata/size = Vector3(9, 9, 28)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-129, -64)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-97, -64)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-113, -72)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-113, -59)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-119, -78)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-105, -79)
+texture = ExtResource("6_uthtm")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-114, -71)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-113, -91)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 68)
+metadata/type = "fixed"
+
+[node name="Treetrunk2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-33, 20)
+texture = ExtResource("7_vxdbc")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-49, 0)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-17, 0)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-11" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-33, -8)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-12" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-33, -2)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-13" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-41, -14)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-14" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-26, -18)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetrunk4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(92, 33)
+texture = ExtResource("7_vxdbc")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-23" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(76, 13)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-24" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(108, 13)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-25" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(92, 5)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-26" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(92, 11)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-27" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(84, -1)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-28" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(99, -5)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="brush4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-186, -21)
+texture = ExtResource("3_2upb7")
+metadata/size = Vector3(9, 9, 28)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetrunk3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-180, 28)
+texture = ExtResource("2_eud5p")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-15" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-196, 8)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-16" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-164, 8)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-17" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-180, 0)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-18" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-180, 13)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-19" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-186, -6)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-20" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-172, -7)
+texture = ExtResource("6_uthtm")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-21" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-181, 1)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-22" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-180, -19)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 68)
+metadata/type = "fixed"
+
+[node name="venon-brush2" type="Sprite2D" parent="."]
+position = Vector2(161, -97)
+texture = ExtResource("8_g7fj4")
+metadata/size = Vector3(15, 15, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="venon-brush3" type="Sprite2D" parent="."]
+position = Vector2(134, -96)
+texture = ExtResource("8_g7fj4")
+metadata/size = Vector3(15, 15, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="venon-brush4" type="Sprite2D" parent="."]
+position = Vector2(169, -81)
+texture = ExtResource("8_g7fj4")
+metadata/size = Vector3(15, 15, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="venon-brush" type="Sprite2D" parent="."]
+position = Vector2(136, -78)
+texture = ExtResource("8_g7fj4")
+metadata/size = Vector3(15, 15, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetrunk" type="Sprite2D" parent="."]
+position = Vector2(148, 25)
+texture = ExtResource("2_eud5p")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-2" type="Sprite2D" parent="."]
+position = Vector2(132, 5)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-3" type="Sprite2D" parent="."]
+position = Vector2(164, 5)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-4" type="Sprite2D" parent="."]
+position = Vector2(148, -3)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-1" type="Sprite2D" parent="."]
+position = Vector2(148, 10)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-5" type="Sprite2D" parent="."]
+position = Vector2(142, -9)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-6" type="Sprite2D" parent="."]
+position = Vector2(156, -10)
+texture = ExtResource("6_uthtm")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-7" type="Sprite2D" parent="."]
+position = Vector2(147, -2)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-8" type="Sprite2D" parent="."]
+position = Vector2(148, -22)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 68)
+metadata/type = "fixed"
+
+[node name="Treetrunk3" type="Sprite2D" parent="."]
+position = Vector2(164, 57)
+texture = ExtResource("2_eud5p")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-15" type="Sprite2D" parent="."]
+position = Vector2(148, 37)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-16" type="Sprite2D" parent="."]
+position = Vector2(180, 37)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-17" type="Sprite2D" parent="."]
+position = Vector2(164, 29)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-18" type="Sprite2D" parent="."]
+position = Vector2(164, 42)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-19" type="Sprite2D" parent="."]
+position = Vector2(158, 23)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-20" type="Sprite2D" parent="."]
+position = Vector2(172, 22)
+texture = ExtResource("6_uthtm")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-21" type="Sprite2D" parent="."]
+position = Vector2(163, 30)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-22" type="Sprite2D" parent="."]
+position = Vector2(164, 10)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 68)
+metadata/type = "fixed"
+
+[node name="Treetrunk2" type="Sprite2D" parent="."]
+position = Vector2(140, 89)
+texture = ExtResource("7_vxdbc")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-9" type="Sprite2D" parent="."]
+position = Vector2(124, 69)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-10" type="Sprite2D" parent="."]
+position = Vector2(156, 69)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-11" type="Sprite2D" parent="."]
+position = Vector2(140, 61)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-12" type="Sprite2D" parent="."]
+position = Vector2(140, 67)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-13" type="Sprite2D" parent="."]
+position = Vector2(132, 55)
+texture = ExtResource("4_qt3gp")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-14" type="Sprite2D" parent="."]
+position = Vector2(147, 51)
+texture = ExtResource("5_1j38i")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"

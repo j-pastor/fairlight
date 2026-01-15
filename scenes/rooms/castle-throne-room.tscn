@@ -1,0 +1,357 @@
+[gd_scene load_steps=20 format=4 uid="uid://rgt751l0j0kd"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_py5mr"]
+[ext_resource type="Texture2D" uid="uid://bcclxa47pjx4" path="res://assets/decoration/armour-right.png" id="2_bivx7"]
+[ext_resource type="Texture2D" uid="uid://b8kcpphfcy7pd" path="res://assets/decoration/metaltable.png" id="2_nd48l"]
+[ext_resource type="Texture2D" uid="uid://dt5tar51e58gt" path="res://assets/decoration/fire2.png" id="11_asmxs"]
+[ext_resource type="Texture2D" uid="uid://bu6ugt0do8dpo" path="res://assets/decoration/fire4.png" id="12_qaugy"]
+[ext_resource type="Texture2D" uid="uid://dmf5tap4be5sb" path="res://assets/decoration/stone-block-mini-long.png" id="12_rdts0"]
+[ext_resource type="Texture2D" uid="uid://beapay0eqa41w" path="res://assets/decoration/throneback-right.png" id="13_fsb55"]
+[ext_resource type="Texture2D" uid="uid://cpe8jpohp1kdj" path="res://assets/decoration/fire1.png" id="13_oeh1j"]
+[ext_resource type="Texture2D" uid="uid://d16306xh3ntgt" path="res://assets/decoration/thronebase.png" id="13_r5sbi"]
+[ext_resource type="Texture2D" uid="uid://oescwehrxats" path="res://assets/decoration/fire3.png" id="14_88wjv"]
+[ext_resource type="Texture2D" uid="uid://cgxjobse87or3" path="res://assets/decoration/stone-block-tape.png" id="14_bivx7"]
+[ext_resource type="Texture2D" uid="uid://ctfr1ny7wnitu" path="res://assets/decoration/spears-002-left.png" id="15_6ej70"]
+[ext_resource type="Texture2D" uid="uid://cucconya6106y" path="res://assets/decoration/throneside.png" id="15_py5mr"]
+[ext_resource type="Texture2D" uid="uid://h5atn383u13t" path="res://assets/doors/door-001-right-open.png" id="16_5qv2u"]
+[ext_resource type="Texture2D" uid="uid://dff6qebljapg0" path="res://assets/doors/door-001-left-open.png" id="20_fn7rn"]
+[ext_resource type="Texture2D" uid="uid://d22pq5sh7njha" path="res://assets/objects/crux.png" id="22_fvdfp"]
+[ext_resource type="PackedScene" uid="uid://bcyda0at2vyth" path="res://scenes/characters/monk.tscn" id="24_fn7rn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04pv7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_oeh1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_asmxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_88wjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qaugy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pol1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_asmxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qaugy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_oeh1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_asmxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_88wjv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="zero" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAD9//7/LwAAAAAAAAD+//7/LwAAAAAAAAD9/wAALwAAAAAAAAD9////LwAAAAAAAAD+////LwAAAAAAAAD+/wAALwAAAAAAAAD8//7/LwAAAAAAAAD8////LwAAAAAAAAD8/wAALwAAAAAAAAD///7/LwAAAAAAAAD//wEALwAAAAAAAAD+/wEALwAAAAAAAAD9/wEALwAAAAAAAAD8/wIALwAAAAAAAAD+/wIALwAAAAAAAAD//wIALwAAAAAAAAAAAAIALwAAAAAAAAAAAAEALwAAAAAAAAAAAP7/LwAAAAAAAAD//wAALwAAAAAAAAD/////LwAAAAAAAAAAAAAALwAAAAAAAAAAAP//LwAAAAAAAAD9/wIALwAAAAAAAAD8/wEALwAAAAAAAAD7////GQAAAAAAAAD7/wAAGgAAAAAAAAD6////GgAAAAAAAAD6//7/GQAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/GgAAAAAAAAD+//7/GQAAAAAAAAD9/wAAGgAAAAAAAAD9////GQAAAAAAAAD+////GgAAAAAAAAD+/wAAGQAAAAAAAAD8//7/GQAAAAAAAAD8////GgAAAAAAAAD8/wAAGQAAAAAAAAD///7/GgAAAAAAAAD//wEAGQAAAAAAAAD+/wEAGgAAAAAAAAD9/wEAGQAAAAAAAAD8/wIAGQAAAAAAAAD+/wIAGQAAAAAAAAD//wIAGgAAAAAAAAAAAAIAGQAAAAAAAAAAAAEAGgAAAAAAAAAAAP7/GQAAAAAAAAD//wAAGgAAAAAAAAD/////GQAAAAAAAAAAAAAAGQAAAAAAAAAAAP//GgAAAAAAAAD9/wIAGgAAAAAAAAD8/wEAGgAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//3/HAAAAAAAAAD8//3/HAAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/HAAAAAAAAAAAAP3/HAAAAAAAAAD+//3/HAAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD9//3/HgAAAAAAAAD8//3/HgAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/HgAAAAAAAAAAAP3/HgAAAAAAAAD+//3/HgAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/HgAAAAAAAAD9//3/HgAAAAAAAAD8//3/HgAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/HgAAAAAAAAAAAP3/HgAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/HgAAAAAAAAD9//3/HgAAAAAAAAD8//3/HgAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/HgAAAAAAAAAAAP3/HgAAAAAAAAA=")
+tile_set = ExtResource("1_py5mr")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, -8.5)
+points = PackedVector2Array(-171.882, -9.73134, -16, 68, 144.147, -12.0492)
+width = 1.75
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Spears" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-133, -78)
+texture = ExtResource("15_6ej70")
+metadata/type = "fixed"
+metadata/size = Vector3(5, 20, 48)
+metadata/pos = Vector3(0, 0, 15)
+
+[node name="Spears2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-68, -111)
+texture = ExtResource("15_6ej70")
+metadata/type = "fixed"
+metadata/size = Vector3(5, 20, 48)
+metadata/pos = Vector3(0, 0, 15)
+
+[node name="Armour2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(0.5, -87.5)
+texture = ExtResource("2_bivx7")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 38)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="firetable" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-90, -22)
+texture = ExtResource("2_nd48l")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 13)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="fire4" type="AnimatedSprite2D" parent="FixedObjects"]
+position = Vector2(-90, -30)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_04pv7")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(5, 5, 0)
+metadata/pos = Vector3(0, 0, 14)
+
+[node name="Stone-block-tape3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(17.5, -68)
+texture = ExtResource("14_bivx7")
+metadata/size = Vector3(4, 20, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Stone-block-tape4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-0.5, -59)
+texture = ExtResource("14_bivx7")
+metadata/size = Vector3(4, 20, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Stone-block-small6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(31, -66)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(19, -60)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(7, -54)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small11" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-5, -43)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Stone-block-small5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(49, -57)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(37, -51)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(25, -45)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 5)
+metadata/type = "fixed"
+
+[node name="Stone-block-small12" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(13, -34)
+texture = ExtResource("12_rdts0")
+metadata/size = Vector3(20, 13.5, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="throne-base" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(37, -72)
+texture = ExtResource("13_r5sbi")
+metadata/size = Vector3(16, 16, 14)
+metadata/pos = Vector3(0, 0, 17)
+metadata/type = "fixed"
+
+[node name="throne-back" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(43, -93)
+texture = ExtResource("13_fsb55")
+metadata/size = Vector3(17, 4, 24)
+metadata/pos = Vector3(0, 0, 31)
+metadata/type = "fixed"
+
+[node name="throne-side" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(28, -83)
+texture = ExtResource("15_py5mr")
+metadata/size = Vector3(3, 12, 6)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="throne-side2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(41, -77)
+texture = ExtResource("15_py5mr")
+metadata/size = Vector3(3, 12, 6)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="door-to-round-tables" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-102.05609, 2.0864868)
+texture = ExtResource("16_5qv2u")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "castle-round-tables"
+metadata/target_pos = Vector3(64.221, -1.089, 0)
+metadata/target_direction = "left"
+metadata/has_frame = true
+
+[node name="Stone-block-tape" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(56, -47.25)
+texture = ExtResource("14_bivx7")
+metadata/size = Vector3(4, 16, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="firetable2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, 9)
+texture = ExtResource("2_nd48l")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 13)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="fire3" type="AnimatedSprite2D" parent="FixedObjects"]
+position = Vector2(-30, 1)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_pol1u")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(5, 5, 0)
+metadata/pos = Vector3(0, 0, 13)
+
+[node name="Armour1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(78.5, -48.5)
+texture = ExtResource("2_bivx7")
+metadata/type = "fixed"
+metadata/size = Vector3(8, 8, 38)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="door-to-firetables" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(42.588745, 2.5599976)
+texture = ExtResource("20_fn7rn")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "castle-firetables"
+metadata/target_pos = Vector3(0, 61, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="crux" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(32, -35)
+texture = ExtResource("22_fvdfp")
+metadata/size = Vector3(12, 8, 1)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "crux"
+metadata/uid = "crux-throne"
+metadata/weight = 1
+
+[node name="Stone-block-tape2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(37.5, -38)
+texture = ExtResource("14_bivx7")
+metadata/size = Vector3(4, 20, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "tape"
+metadata/uid = "throne-tape"
+metadata/weight = 10
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="monk-throne" parent="Characters" instance=ExtResource("24_fn7rn")]
+position = Vector2(-108, -56)
+animation = &"walk-down"
+metadata/subtype = "monk-walk"
+metadata/uid = "monk-throne"
+metadata/direction_init = "down"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.061, -20.7694)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(1272.16, -23.4263)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

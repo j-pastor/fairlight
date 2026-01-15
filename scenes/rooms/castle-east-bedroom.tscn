@@ -1,0 +1,238 @@
+[gd_scene load_steps=11 format=4 uid="uid://c8q8bg43qnn38"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_yk3vq"]
+[ext_resource type="Texture2D" uid="uid://b2p2rhd1uigos" path="res://assets/doors/door-001-left-closed.png" id="5_5lbo0"]
+[ext_resource type="Texture2D" uid="uid://dhnsng8b5xfkv" path="res://assets/decoration/table-001-right.png" id="6_5lbo0"]
+[ext_resource type="Texture2D" uid="uid://coa5tbkmhde1i" path="res://assets/decoration/bed-head.png" id="7_ims2e"]
+[ext_resource type="Texture2D" uid="uid://c3fck2wf0c1f8" path="res://assets/decoration/bed-001-right.png" id="8_sknno"]
+[ext_resource type="Texture2D" uid="uid://dj1be8ih0dpr1" path="res://assets/decoration/shelf-001.png" id="9_ns7fk"]
+[ext_resource type="Texture2D" uid="uid://b3uy4vqht1hep" path="res://assets/objects/jug.png" id="10_ns7fk"]
+[ext_resource type="Texture2D" uid="uid://bx2yndmp5ga2o" path="res://assets/objects/bread.png" id="11_7nc6o"]
+[ext_resource type="Texture2D" uid="uid://d1083qsisru2t" path="res://assets/objects/key.png" id="12_b7083"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="13_yk3vq"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD///7/DQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAD8/wIADQAAAAAAAAD9/wIADQAAAAAAAAD+/wIADQAAAAAAAAD//wIADQAAAAAAAAAAAAIADQAAAAAAAAAAAAEADQAAAAAAAAAAAP7/DQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAAAAAAADQAAAAAAAAAAAP//DQAAAAAAAAA=")
+tile_set = ExtResource("1_yk3vq")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/GwAAAAAAAAD7////GwAAAAAAAAD7/wAAGwAAAAAAAAD7/wEAGwAAAAAAAAD7/wIAGwAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_yk3vq")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/GwAAAAAAAAD7////GwAAAAAAAAD7/wAAGwAAAAAAAAD7/wEAGwAAAAAAAAD7/wIAGwAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_yk3vq")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/GwAAAAAAAAD7////GwAAAAAAAAD7/wAAGwAAAAAAAAD7/wEAGwAAAAAAAAD7/wIAGwAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_yk3vq")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/GwAAAAAAAAD7////GwAAAAAAAAD7/wAAGwAAAAAAAAD7/wEAGwAAAAAAAAD7/wIAGwAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_yk3vq")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, -7)
+points = PackedVector2Array(-184.388, -16.8287, -16.1391, 67.8562, 145, -13)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Layers"]
+position = Vector2(992.075, -19.6541)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Layers"]
+position = Vector2(1272.02, -23.046)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="shelf" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-29, -122)
+texture = ExtResource("9_ns7fk")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 40)
+metadata/type = "fixed"
+
+[node name="shelf2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-13, -114)
+texture = ExtResource("9_ns7fk")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 40)
+metadata/type = "fixed"
+
+[node name="door-to-castle-east-corridor" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, -76.44)
+texture = ExtResource("5_5lbo0")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "castle-east-corridor"
+metadata/target_pos = Vector3(88.06, 120.56, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="bedhead" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(49, -16.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(61, -7.5)
+texture = ExtResource("8_sknno")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(72, -5.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(1, 7.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(13, 16.5)
+texture = ExtResource("8_sknno")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(24, 18.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-47, 31.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-35, 40.5)
+texture = ExtResource("8_sknno")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-24, 42.5)
+texture = ExtResource("7_ims2e")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="Table2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-92, -24)
+texture = ExtResource("6_5lbo0")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-east-bedroom-2"
+metadata/weight = 7
+
+[node name="Table" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-37, -52)
+texture = ExtResource("6_5lbo0")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-east-bedroom-1"
+metadata/weight = 7
+
+[node name="jug" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-45, -68)
+texture = ExtResource("10_ns7fk")
+metadata/size = Vector3(6, 6, 14)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "jug1"
+metadata/weight = 1
+
+[node name="bread" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-89, -28)
+texture = ExtResource("11_7nc6o")
+metadata/size = Vector3(11, 5, 3)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "bread1"
+metadata/weight = 1
+
+[node name="key" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-21, -120)
+texture = ExtResource("12_b7083")
+metadata/size = Vector3(8, 2, 1)
+metadata/pos = Vector3(0, 0, 43)
+metadata/type = "portable"
+metadata/subtype = "key"
+metadata/uid = "key1"
+metadata/weight = 1
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-east-bedroom-1" parent="Characters" instance=ExtResource("13_yk3vq")]
+position = Vector2(1, -41)
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-east-bedroom-1"
+metadata/direction_init = "down"
+
+[node name="guard-east-bedroom-2" parent="Characters" instance=ExtResource("13_yk3vq")]
+position = Vector2(-132, -21)
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-east-bedroom-2"
+metadata/direction_init = "down"

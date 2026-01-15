@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://vp0mqw6xgyto"]
+
+[ext_resource type="Script" uid="uid://dtl3fu1x083rp" path="res://scripts/chapter_change.gd" id="1_xltt4"]
+[ext_resource type="Texture2D" uid="uid://byccoa8ytndxa" path="res://assets/splash/black-background.png" id="2_xltt4"]
+[ext_resource type="Texture2D" uid="uid://cmoakcqmwq15i" path="res://assets/splash/chapter-1-an.png" id="3_xltt4"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="4_mbemq"]
+[ext_resource type="AudioStream" uid="uid://x4hoyhlagm0f" path="res://assets/music/stellar-guardian-medieval-music-282967.mp3" id="5_xltt4"]
+
+[node name="chapter1" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_xltt4")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xltt4")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -533.0
+offset_top = 61.0
+offset_right = -85.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xltt4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message_wizard" type="Label" parent="."]
+offset_left = 627.0
+offset_top = 242.0
+offset_right = 1107.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mbemq")
+theme_override_font_sizes/font_size = 92
+text = "A Prelude"
+uppercase = true
+
+[node name="message_result" type="Label" parent="."]
+offset_left = 752.0
+offset_top = 142.0
+offset_right = 978.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mbemq")
+theme_override_font_sizes/font_size = 40
+text = "Chapter 1"
+uppercase = true
+
+[node name="message_result2" type="Label" parent="."]
+offset_left = 526.0
+offset_top = 406.0
+offset_right = 1198.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mbemq")
+theme_override_font_sizes/font_size = 40
+text = "About how Isvar begins the
+quest for the Book of Light
+to free the Wizard
+and for the Magic Crown
+to save the Kingdom"
+horizontal_alignment = 1
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="chapter_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xltt4")

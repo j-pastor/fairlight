@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlghyplx1p8tt"]
+
+[ext_resource type="Texture2D" uid="uid://ds4h60bufldsr" path="res://assets/characters/bubble.png" id="1_b34v0"]
+[ext_resource type="Texture2D" uid="uid://cmskuna0jebxy" path="res://assets/characters/bubble-none.png" id="2_b5f3g"]
+[ext_resource type="Script" uid="uid://dhxvajnn30lms" path="res://scripts/bubble-blob.gd" id="3_b34v0"]
+[ext_resource type="AudioStream" uid="uid://cl8oyjm3p5a4m" path="res://assets/sounds/bubble-pop-04-323580.mp3" id="4_h13bv"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="5_xfhnd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b34v0")
+}],
+"loop": true,
+"name": &"bubble",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b5f3g")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xfhnd"]
+polygon = PackedVector2Array(3, 11, 8, 8, 5, 11, 3, 12, -1, 12, -3, 11, -6, 8, -1, 11)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"bubble"
+script = ExtResource("3_b34v0")
+metadata/type = "bubble"
+metadata/subtype = "bubble"
+metadata/size = Vector3(8, 8, 20)
+metadata/uid = ""
+metadata/z_init = 0.0
+metadata/weight = 1
+metadata/direction_init_x = ""
+metadata/direction_init_y = ""
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_h13bv")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("5_xfhnd")
+texture_scale = 4.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -1)
+occluder = SubResource("OccluderPolygon2D_xfhnd")

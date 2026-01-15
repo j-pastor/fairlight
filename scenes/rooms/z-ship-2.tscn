@@ -1,0 +1,182 @@
+[gd_scene load_steps=8 format=4 uid="uid://cbxhxnxa3aaxy"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_yi35k"]
+[ext_resource type="Texture2D" uid="uid://bop1gellcdt4i" path="res://assets/textures/wood-02.png" id="2_pof7k"]
+[ext_resource type="Texture2D" uid="uid://c8tbrcowucdnq" path="res://assets/doors/door-005-left-closed.png" id="6_yi35k"]
+[ext_resource type="Texture2D" uid="uid://dueob2ioyiik2" path="res://assets/tmp/ship-003-tmp.png" id="7_fcbiq"]
+[ext_resource type="Texture2D" uid="uid://dvpjnlpqf8tr3" path="res://assets/decoration/window-005.png" id="8_qnsjw"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="8_sq6ew"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="9_8qusk"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/light = 0.7
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-43, -73)
+
+[node name="Layer_wall_s3" type="TileMapLayer" parent="."]
+z_as_relative = false
+position = Vector2(0, 60)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD///3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_s2" type="TileMapLayer" parent="."]
+z_as_relative = false
+position = Vector2(0, 40)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD///3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_s1" type="TileMapLayer" parent="."]
+z_as_relative = false
+position = Vector2(0, 20)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD///3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Polygons" type="Node2D" parent="."]
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-225, -254)
+texture = ExtResource("2_pof7k")
+texture_scale = Vector2(1.25, 1.25)
+polygon = PackedVector2Array(195, 164, 313, 253, 236, 288, 44, 239)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-29.4126, -309.353)
+polygon = PackedVector2Array(119.413, 310.353, 119.413, 306.353, -0.587433, 216.353, -0.587433, 220.353)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-95.4126, -275.353)
+polygon = PackedVector2Array(105.413, 315.353, 186.413, 275.353, 184.413, 268.353, 104.413, 306.353, -86.5874, 257.353, -86.5874, 261.353)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+visible = false
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8/wIAGAAAAAAAAAD9/wIAGAAAAAAAAAD+/wIAGAAAAAAAAAD//wIAGAAAAAAAAAD8/wEAGAAAAAAAAAD9/wEAGAAAAAAAAAD8/wAAGAAAAAAAAAD8////GAAAAAAAAAD8//7/GAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD///3/RAAAAAAAAAD7/wIAQwAAAAAAAAAAAP3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD///3/RAAAAAAAAAD7/wIAQwAAAAAAAAAAAP3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD///3/RAAAAAAAAAD7/wIAQwAAAAAAAAAAAP3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/RAAAAAAAAAD9//3/RAAAAAAAAAD8//3/RAAAAAAAAAD7//7/QwAAAAAAAAD7////QwAAAAAAAAD7/wAAQwAAAAAAAAD7/wEAQwAAAAAAAAD///3/RAAAAAAAAAD7/wIAQwAAAAAAAAAAAP3/RAAAAAAAAAA=")
+tile_set = ExtResource("1_yi35k")
+
+[node name="GlowTorch" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-74, -106.5)
+scale = Vector2(0.31111112, 0.8611111)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 0.5
+range_z_max = 600
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("9_8qusk")
+texture_scale = 1.5
+
+[node name="GlowTorch2" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-140.00002, -73.50001)
+scale = Vector2(0.41111112, 0.8277778)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 0.5
+range_z_max = 600
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("9_8qusk")
+texture_scale = 1.5
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, 27)
+points = PackedVector2Array(-173, -12, 21.2588, 47.467)
+width = 1.5
+default_color = Color(0, 0, 0, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-deck" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-103, -72.44)
+texture = ExtResource("6_yi35k")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "z-ship-1"
+metadata/target_pos = Vector3(146.935, 73.685, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-ship-1" parent="Characters" instance=ExtResource("8_sq6ew")]
+position = Vector2(-10.469376, -73.70048)
+animation = &"walk-left"
+frame_progress = 0.0
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-ship-2"
+metadata/direction_init = "left"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(-2, -2)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-32, -159, 90, -69, 90, 1, 2, 42, 94, 35, 146, -4, 136, -125, -26, -206, -193, -114, -199, -78)
+
+[node name="Ship-003-tmp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-36, -45)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("7_fcbiq")
+
+[node name="Window-005" type="Sprite2D" parent="."]
+position = Vector2(-72, -105)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_qnsjw")
+
+[node name="Window-006" type="Sprite2D" parent="."]
+position = Vector2(-138, -72)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_qnsjw")

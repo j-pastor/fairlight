@@ -1,0 +1,329 @@
+[gd_scene load_steps=13 format=4 uid="uid://dp42aj14gshab"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_p3j5k"]
+[ext_resource type="Texture2D" uid="uid://dj1be8ih0dpr1" path="res://assets/decoration/shelf-001.png" id="2_ik3an"]
+[ext_resource type="Texture2D" uid="uid://crjpmawnh18ka" path="res://assets/doors/door-001-right-closed.png" id="6_pcb5t"]
+[ext_resource type="Texture2D" uid="uid://coa5tbkmhde1i" path="res://assets/decoration/bed-head.png" id="7_uhkb3"]
+[ext_resource type="Texture2D" uid="uid://c3fck2wf0c1f8" path="res://assets/decoration/bed-001-right.png" id="8_6b86b"]
+[ext_resource type="Texture2D" uid="uid://df8skw26xgxq8" path="res://assets/decoration/post.png" id="8_cq1g7"]
+[ext_resource type="Texture2D" uid="uid://dhnsng8b5xfkv" path="res://assets/decoration/table-001-right.png" id="9_k8d7i"]
+[ext_resource type="Texture2D" uid="uid://d3f0r7jir170u" path="res://assets/objects/stool.png" id="10_uhkb3"]
+[ext_resource type="Texture2D" uid="uid://cpg65vts136wu" path="res://assets/objects/book-001.png" id="13_x480l"]
+[ext_resource type="Texture2D" uid="uid://wd67130sv1tx" path="res://assets/objects/book-003.png" id="14_pcb5t"]
+[ext_resource type="Texture2D" uid="uid://un4mc81reno8" path="res://assets/objects/book-002.png" id="15_cq1g7"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="15_x480l"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD///7/DQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAD8/wIADQAAAAAAAAD9/wIADQAAAAAAAAD+/wIADQAAAAAAAAD//wIADQAAAAAAAAAAAAIADQAAAAAAAAAAAAEADQAAAAAAAAAAAP7/DQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAAAAAAADQAAAAAAAAAAAP//DQAAAAAAAAA=")
+tile_set = ExtResource("1_p3j5k")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_p3j5k")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_p3j5k")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_p3j5k")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_p3j5k")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="bedhead" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-70, -75.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-58, -66.5)
+texture = ExtResource("8_6b86b")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-47, -64.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-118, -51.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-106, -42.5)
+texture = ExtResource("8_6b86b")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-95, -40.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-166, -27.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bed2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-154, -18.5)
+texture = ExtResource("8_6b86b")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bedfeet2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-143, -16.5)
+texture = ExtResource("7_uhkb3")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="door-to-second-corridor" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(37.810097, -75.184)
+texture = ExtResource("6_pcb5t")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "second-corridor-1"
+metadata/target_pos = Vector3(93.558, 58.115, 0)
+metadata/target_direction = "right"
+metadata/has_frame = true
+
+[node name="Post7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(16, 21.5)
+texture = ExtResource("8_cq1g7")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(42, 8.5)
+texture = ExtResource("8_cq1g7")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="shelf4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(48, -4.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(32, 3.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(17, 11.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="Post9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, 45.5)
+texture = ExtResource("8_cq1g7")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-4, 32.5)
+texture = ExtResource("8_cq1g7")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="shelf5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(2, 19.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-14, 27.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, 35.5)
+texture = ExtResource("2_ik3an")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="stool4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-52, -8)
+texture = ExtResource("10_uhkb3")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-1-2"
+metadata/weight = 4
+
+[node name="Table2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-72, -6)
+texture = ExtResource("9_k8d7i")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-second-bedroom-1-1"
+metadata/weight = 7
+
+[node name="stool3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(4, -35)
+texture = ExtResource("10_uhkb3")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-1-4"
+metadata/weight = 4
+
+[node name="Table" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-17, -34)
+texture = ExtResource("9_k8d7i")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-second-bedroom-1-2"
+metadata/weight = 7
+
+[node name="book" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(19, 4)
+texture = ExtResource("13_x480l")
+metadata/size = Vector3(8.9, 13, 4)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "book-second-bedroom-1-1"
+metadata/weight = 2
+
+[node name="book2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(24, 0)
+texture = ExtResource("14_pcb5t")
+metadata/size = Vector3(8.9, 13, 4)
+metadata/pos = Vector3(0, 0, 22)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "book-second-bedroom-1-2"
+metadata/weight = 2
+
+[node name="book3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(18, -2)
+texture = ExtResource("15_cq1g7")
+metadata/size = Vector3(8.9, 13, 4)
+metadata/pos = Vector3(0, 0, 26)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "book-second-bedroom-1-3"
+metadata/weight = 2
+
+[node name="stool1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-75, 25)
+texture = ExtResource("10_uhkb3")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-1-1"
+metadata/weight = 4
+
+[node name="stool2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-5, -10)
+texture = ExtResource("10_uhkb3")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-1-3"
+metadata/weight = 4
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-second-bedroom-1" parent="Characters" instance=ExtResource("15_x480l")]
+position = Vector2(-14, -63)
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-second-bedroom-1"
+metadata/direction_init = "down"
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-14, -7.5)
+points = PackedVector2Array(-185, -16.5, -16, 68, 143, -11.5)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.061, -20.7694)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(1272.16, -23.4263)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

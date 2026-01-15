@@ -1,0 +1,262 @@
+[gd_scene load_steps=13 format=4 uid="uid://btsjxa2ud68wi"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_dlhk0"]
+[ext_resource type="Texture2D" uid="uid://b2p2rhd1uigos" path="res://assets/doors/door-001-left-closed.png" id="4_8p05y"]
+[ext_resource type="Texture2D" uid="uid://dhnsng8b5xfkv" path="res://assets/decoration/table-001-right.png" id="6_gcwqi"]
+[ext_resource type="Texture2D" uid="uid://df8skw26xgxq8" path="res://assets/decoration/post.png" id="7_871x0"]
+[ext_resource type="Texture2D" uid="uid://dj1be8ih0dpr1" path="res://assets/decoration/shelf-001.png" id="7_gut52"]
+[ext_resource type="Texture2D" uid="uid://d1083qsisru2t" path="res://assets/objects/key.png" id="9_jfcp7"]
+[ext_resource type="Texture2D" uid="uid://8m1x2ib2e5nr" path="res://assets/objects/helmet.png" id="10_gut52"]
+[ext_resource type="Texture2D" uid="uid://b3uy4vqht1hep" path="res://assets/objects/jug.png" id="11_wyny0"]
+[ext_resource type="Texture2D" uid="uid://cqr14adkwnid1" path="res://assets/objects/chicken.png" id="12_jfcp7"]
+[ext_resource type="Texture2D" uid="uid://fhjbhqg4buog" path="res://assets/objects/gold.png" id="13_gut52"]
+[ext_resource type="Texture2D" uid="uid://d3f0r7jir170u" path="res://assets/objects/stool.png" id="14_gut52"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="15_wyny0"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD///7/DQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAD8/wIADQAAAAAAAAD9/wIADQAAAAAAAAD+/wIADQAAAAAAAAD//wIADQAAAAAAAAAAAAIADQAAAAAAAAAAAAEADQAAAAAAAAAAAP7/DQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAAAAAAADQAAAAAAAAAAAP//DQAAAAAAAAA=")
+tile_set = ExtResource("1_dlhk0")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dlhk0")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dlhk0")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dlhk0")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_dlhk0")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-cell-3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-99.411255, -74.44)
+texture = ExtResource("4_8p05y")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "cell-3"
+metadata/target_pos = Vector3(85.709, 102.031, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="Post7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, 46.5)
+texture = ExtResource("7_871x0")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-4, 33.5)
+texture = ExtResource("7_871x0")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 15)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="shelf4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(0, 20.5)
+texture = ExtResource("7_gut52")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-15, 28.5)
+texture = ExtResource("7_gut52")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="shelf2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, 36.5)
+texture = ExtResource("7_gut52")
+metadata/size = Vector3(17, 17, 2)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "fixed"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="Table2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-33, -17)
+texture = ExtResource("6_gcwqi")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-cell-guards-1"
+metadata/weight = 7
+
+[node name="Table" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(16, -41)
+texture = ExtResource("6_gcwqi")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-cell-guards-2"
+metadata/weight = 7
+
+[node name="key" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-31, 36)
+texture = ExtResource("9_jfcp7")
+metadata/size = Vector3(8, 2, 1)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "portable"
+metadata/subtype = "key"
+metadata/uid = "key2"
+metadata/weight = 1
+
+[node name="helmet" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-8, 21)
+texture = ExtResource("10_gut52")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "portable"
+metadata/subtype = "helmet"
+metadata/uid = "helmet-cell-guard"
+metadata/weight = 4
+
+[node name="jug" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(21, -51)
+texture = ExtResource("11_wyny0")
+metadata/size = Vector3(6, 6, 14)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "jug-cell-guard-1"
+metadata/weight = 1
+
+[node name="jug2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-28, -27)
+texture = ExtResource("11_wyny0")
+metadata/size = Vector3(6, 6, 14)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "jug-cell-guard-2"
+metadata/weight = 1
+
+[node name="chicken1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(9, -54)
+texture = ExtResource("12_jfcp7")
+metadata/size = Vector3(6, 6, 6)
+metadata/pos = Vector3(0, 0, 15)
+metadata/type = "portable"
+metadata/subtype = "food"
+metadata/uid = "chicken-cell-guard"
+metadata/weight = 1
+
+[node name="gold1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-79, -34)
+texture = ExtResource("13_gut52")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "gold"
+metadata/uid = "gold-cell-guard"
+metadata/weight = 5
+
+[node name="stool1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-59, -16)
+texture = ExtResource("14_gut52")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-cell-guard1"
+metadata/weight = 4
+
+[node name="stool2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(33, -28)
+texture = ExtResource("14_gut52")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-cell-guard2"
+metadata/weight = 4
+
+[node name="stool3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-7, -38)
+texture = ExtResource("14_gut52")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-cell-guard3"
+metadata/weight = 4
+
+[node name="stool4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-16, -3)
+texture = ExtResource("14_gut52")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-cell-guard4"
+metadata/weight = 4
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-cells" parent="Characters" instance=ExtResource("15_wyny0")]
+position = Vector2(-19, 19)
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-cells"
+metadata/direction_init = "left"
+metadata/z_init = 18.0
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-14, -7)
+points = PackedVector2Array(-184.388, -16.8287, -16.1391, 67.8562, 145, -13)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.075, -19.6541)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1272.02, -23.046)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

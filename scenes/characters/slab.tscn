@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://4t0q5xehedv5"]
+
+[ext_resource type="Texture2D" uid="uid://ch4ttv02dhn86" path="res://assets/characters/slab.png" id="1_hux03"]
+[ext_resource type="Script" uid="uid://bkon1t2fwpwj1" path="res://scripts/slab.gd" id="2_f7dus"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hux03")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hux03")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hux03")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hux03")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}]
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-up"
+script = ExtResource("2_f7dus")
+metadata/type = "slab"
+metadata/subtype = ""
+metadata/size = Vector3(17, 21, 5)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 6

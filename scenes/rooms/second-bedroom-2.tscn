@@ -1,0 +1,278 @@
+[gd_scene load_steps=9 format=4 uid="uid://b0fjiplexhoey"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_hfrif"]
+[ext_resource type="Texture2D" uid="uid://coa5tbkmhde1i" path="res://assets/decoration/bed-head.png" id="2_1c8cy"]
+[ext_resource type="Texture2D" uid="uid://c3fck2wf0c1f8" path="res://assets/decoration/bed-001-right.png" id="3_2bs5r"]
+[ext_resource type="Texture2D" uid="uid://crjpmawnh18ka" path="res://assets/doors/door-001-right-closed.png" id="4_6dpp4"]
+[ext_resource type="Texture2D" uid="uid://d1083qsisru2t" path="res://assets/objects/key.png" id="10_d5rfe"]
+[ext_resource type="Texture2D" uid="uid://d3f0r7jir170u" path="res://assets/objects/stool.png" id="10_hm5mo"]
+[ext_resource type="Texture2D" uid="uid://dhnsng8b5xfkv" path="res://assets/decoration/table-001-right.png" id="11_k7nur"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="11_n136y"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD///7/DQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAD8/wIADQAAAAAAAAD9/wIADQAAAAAAAAD+/wIADQAAAAAAAAD//wIADQAAAAAAAAAAAAIADQAAAAAAAAAAAAEADQAAAAAAAAAAAP7/DQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAAAAAAADQAAAAAAAAAAAP//DQAAAAAAAAA=")
+tile_set = ExtResource("1_hfrif")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_hfrif")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_hfrif")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_hfrif")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_hfrif")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, -7.5)
+points = PackedVector2Array(-185, -16.5, -16, 68, 143, -11.5)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-second-corridor" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(37.810097, -75.184)
+texture = ExtResource("4_6dpp4")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "second-corridor-2"
+metadata/target_pos = Vector3(92.058, 57.615, 0)
+metadata/target_direction = "right"
+metadata/has_frame = true
+
+[node name="bedhead" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-79, -70.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-79, -86.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="bed" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-67, -61.5)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bed4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-68, -76.5)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "fixed"
+
+[node name="bedfeet" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-56, -59.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedfeet4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-56, -75.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="bedhead2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-122, -48.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-122, -64.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="bed2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-110, -39.5)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bed5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-111, -54.5)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "fixed"
+
+[node name="bedfeet2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-99, -37.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedfeet5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-99, -53.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="bedhead3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-165, -26.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedhead6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-165, -42.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="bed3" type="Sprite2D" parent="FixedObjects/bedhead6"]
+position = Vector2(12, 25)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 14, 5)
+metadata/pos = Vector3(0, 0, 2)
+metadata/type = "fixed"
+
+[node name="bed6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-154, -32.5)
+texture = ExtResource("3_2bs5r")
+metadata/size = Vector3(23, 20, 5)
+metadata/pos = Vector3(0, 0, 18)
+metadata/type = "fixed"
+
+[node name="bedfeet3" type="Sprite2D" parent="FixedObjects/bed6"]
+position = Vector2(12, 17)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="bedfeet6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-142, -31.5)
+texture = ExtResource("2_1c8cy")
+metadata/size = Vector3(2, 18, 15)
+metadata/pos = Vector3(0, 0, 16)
+metadata/type = "fixed"
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="stool4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-43, -2)
+texture = ExtResource("10_hm5mo")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-2-2"
+metadata/weight = 4
+
+[node name="Table2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-72, -6)
+texture = ExtResource("11_k7nur")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-second-bedroom-2-1"
+metadata/weight = 7
+
+[node name="Table" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-17, -34)
+texture = ExtResource("11_k7nur")
+metadata/size = Vector3(30, 16, 14)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "movable"
+metadata/subtype = "table"
+metadata/uid = "table-second-bedroom-2-2"
+metadata/weight = 7
+
+[node name="stool2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-23, -23)
+texture = ExtResource("10_hm5mo")
+metadata/size = Vector3(7.5, 7.5, 10)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "stool"
+metadata/uid = "stool-second-bedroom-2-3"
+metadata/weight = 4
+
+[node name="key" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-120, -41)
+texture = ExtResource("10_d5rfe")
+metadata/size = Vector3(8, 2, 1)
+metadata/pos = Vector3(0, 0, 7)
+metadata/type = "portable"
+metadata/subtype = "key"
+metadata/uid = "key4"
+metadata/weight = 1
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-second-bedroom-2" parent="Characters" instance=ExtResource("11_n136y")]
+position = Vector2(-64, -44)
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-second-bedroom-2"
+metadata/direction_init = "down"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.061, -20.7694)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(1272.16, -23.4263)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

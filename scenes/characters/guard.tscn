@@ -1,0 +1,172 @@
+[gd_scene load_steps=22 format=3 uid="uid://qlewkn0c7d3r"]
+
+[ext_resource type="Texture2D" uid="uid://dbb85gn5bma83" path="res://assets/characters/guard-rebirth-001.png" id="1_06l6h"]
+[ext_resource type="Script" uid="uid://b3tvshbxcnmbi" path="res://scripts/guard-pirate.gd" id="1_wda85"]
+[ext_resource type="Texture2D" uid="uid://brh5h5flif1wc" path="res://assets/characters/guard-rebirth-002.png" id="2_m2sys"]
+[ext_resource type="Texture2D" uid="uid://c4gd7xnaeylbv" path="res://assets/characters/guard-down-000.png" id="2_wda85"]
+[ext_resource type="Texture2D" uid="uid://eodbwma6yir6" path="res://assets/characters/guard-rebirth-003.png" id="3_e74r5"]
+[ext_resource type="Texture2D" uid="uid://cyx0bxiu3ctf4" path="res://assets/characters/guard-down-001.png" id="3_sb46g"]
+[ext_resource type="Texture2D" uid="uid://c33hflwi4kt35" path="res://assets/characters/guard-rebirth-004.png" id="4_jixix"]
+[ext_resource type="Texture2D" uid="uid://co747633uvals" path="res://assets/characters/guard-down-002.png" id="4_w3yl7"]
+[ext_resource type="Texture2D" uid="uid://cuucdjnn6baml" path="res://assets/characters/guard-left-000.png" id="5_i2bal"]
+[ext_resource type="Texture2D" uid="uid://b64npfxhyvuo5" path="res://assets/characters/guard-left-001.png" id="6_06l6h"]
+[ext_resource type="Texture2D" uid="uid://cf6ddv543pd2v" path="res://assets/characters/guard-left-002.png" id="7_m2sys"]
+[ext_resource type="Texture2D" uid="uid://deltejmdkwhh5" path="res://assets/characters/guard-right-000.png" id="8_e74r5"]
+[ext_resource type="Texture2D" uid="uid://c3v308oh7obqm" path="res://assets/characters/guard-right-001.png" id="9_jixix"]
+[ext_resource type="Texture2D" uid="uid://3q86mj6arg1i" path="res://assets/characters/guard-right-002.png" id="10_bjp0y"]
+[ext_resource type="Texture2D" uid="uid://d2jefh21tudno" path="res://assets/characters/guard-up-000.png" id="11_5co82"]
+[ext_resource type="Texture2D" uid="uid://caqsyabcesayw" path="res://assets/characters/guard-up-001.png" id="12_0y6mx"]
+[ext_resource type="Texture2D" uid="uid://r13dh2jcx6w8" path="res://assets/characters/guard-up-002.png" id="13_221gx"]
+[ext_resource type="AudioStream" uid="uid://28glefmb7j63" path="res://assets/sounds/running-6358.mp3" id="18_m2sys"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="19_e74r5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_06l6h")
+}],
+"loop": true,
+"name": &"await",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_06l6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_m2sys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e74r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jixix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sb46g")
+}],
+"loop": true,
+"name": &"rebirth",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wda85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sb46g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w3yl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sb46g")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i2bal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_06l6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m2sys")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_06l6h")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_e74r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jixix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bjp0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jixix")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5co82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0y6mx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_221gx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0y6mx")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e74r5"]
+polygon = PackedVector2Array(6, 26, 4, 23, 2, 23, 0, 23, -2, 26)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-up"
+script = ExtResource("1_wda85")
+metadata/type = ""
+metadata/subtype = ""
+metadata/size = Vector3(10, 10, 26)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 6
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_m2sys")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("19_e74r5")
+texture_scale = 4.0
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -14)
+occluder = SubResource("OccluderPolygon2D_e74r5")
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -14)
+occluder = SubResource("OccluderPolygon2D_e74r5")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-4, -14)
+occluder = SubResource("OccluderPolygon2D_e74r5")
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-3, -14)
+occluder = SubResource("OccluderPolygon2D_e74r5")

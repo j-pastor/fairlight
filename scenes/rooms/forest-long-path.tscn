@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=3 uid="uid://co0brwojwujwf"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_spwto"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_gok7j"]
+[ext_resource type="Texture2D" uid="uid://d3kmqno7asy60" path="res://assets/decoration/mountain-09.png" id="2_x336e"]
+[ext_resource type="Texture2D" uid="uid://h5atn383u13t" path="res://assets/doors/door-001-right-open.png" id="5_w6sf8"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 1
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 90)
+metadata/north = "forest-cross-road2"
+metadata/south = "forest-no-exit"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, -10, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(32, -79)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_spwto")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_spwto")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+z_index = 4000
+position = Vector2(-12, -88)
+points = PackedVector2Array(-195, -22, -154.3505, -4.8967133, -126, 6, -50.8152, 44.716526, -33.92065, 57.639595, -21, 67, -6, 78, 6, 87, 24, 93, 40, 97, 53, 106, 67, 116, 98, 124, 106, 130, 112, 134, 118, 139, 215, 183)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-192, -295)
+polygon = PackedVector2Array(90, 243, 131, 265, 147, 277, 163, 288, 174, 297, 188, 306, 210, 313, 221, 316, 247, 334, 278, 342, 298, 357, 323, 368, 318, 373, 229.051, 333.583, 222, 331, 195, 319, 90, 256)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-175, -208)
+texture = ExtResource("2_gok7j")
+polygon = PackedVector2Array(236, 146, 352, 189, 389, 225, 389, 273, 332, 272, 281, 273, 261, 258, 230, 250, 205, 232, 186, 227, 168, 220, 142, 201, 113, 179, 71, 157, 36, 140, 28, 137, 16, 132, 6, 129, 11, 83, 120, 136, 133, 129, 145, 124, 158, 118, 183, 110)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-104, -305)
+polygon = PackedVector2Array(60, 252, 67, 256, 83, 260, 103, 267, 108.37012, 269.8625, 112.147, 272.27563, 115.68351, 270.26468, 112.87356, 270.28055, 103, 259, 56, 222, 4, 204, -1, 220, 10, 225, 27, 234, 40, 238)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(34, -236)
+polygon = PackedVector2Array(42, 245, 47, 247, 55, 248, 67, 251, 81, 258, 92, 263, 118, 268, 117, 262, 56, 222, 4, 204, -1.0280991, 210.83406, -2.7616806, 216.38153, -0.5426941, 219.70999, 5, 224, 16, 228, 27, 235)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Mountain-09" type="Sprite2D" parent="."]
+position = Vector2(48, -71)
+texture = ExtResource("2_x336e")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-crypt" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(20.943916, -63.913513)
+texture = ExtResource("5_w6sf8")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "crypt"
+metadata/target_pos = Vector3(66.058, 147.615, 0)
+metadata/target_direction = "right"
+metadata/has_frame = true
+metadata/key = "crown"
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(-10, 40)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-103, -219, -156, -219, -155, -237, -123, -294, 349, -244, 307, -131, 253, -127, 242, -107, 251, -53, 245, 9, 217, 17, 217, -114, 214, -115, 209, -115, 206, -116, 204, -116, 178, -91, 164, -85, 130, -97, 107, -110, 80, -115, 61, -128, 48, -136, 35, -141, 13, -156, -10, -170, -26, -181, -40, -190, -63, -199, -74, -207)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(58, -62)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-223, -221, -223, 3, -305, -13, -251, -206)

@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=3 uid="uid://uo8usgh4mxu4"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_s31yr"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_mjumt"]
+[ext_resource type="Texture2D" uid="uid://dmmy0g5oegs70" path="res://assets/decoration/mountain-05.png" id="2_s31yr"]
+[ext_resource type="Texture2D" uid="uid://vmd11cjdwhwu" path="res://assets/decoration/mountain-06.png" id="3_ns7ur"]
+[ext_resource type="Texture2D" uid="uid://durgk1g6jc33r" path="res://assets/objects/barrel.png" id="4_ns7ur"]
+[ext_resource type="Texture2D" uid="uid://fhjbhqg4buog" path="res://assets/objects/gold.png" id="5_1ct8a"]
+[ext_resource type="PackedScene" uid="uid://cfetwf834yr7j" path="res://scenes/characters/ogre.tscn" id="6_46jqw"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 1
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(120, 150)
+metadata/north = "none"
+metadata/south = "forest-cave"
+metadata/west = "none"
+metadata/east = "forest-cross-road"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(10, 42, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(60, 25, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-10, -74)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray(0, 0, 248, 255, 0, 0, 40, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_s31yr")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_s31yr")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-175, -208)
+texture = ExtResource("2_mjumt")
+polygon = PackedVector2Array(240, 121, 352, 189, 357, 240, 361, 272, 245, 232, 202, 208, 170, 220, 155, 238, 106, 255, 95, 250, 74, 235, 63, 232, 55, 226, 48, 218, 31, 217, 9, 206, 0, 198, 27, 185, 39, 178, 48, 175, 55, 169, 61, 166, 73, 160, 83, 154, 97, 149, 104, 145, 120, 136, 133, 129, 145, 124, 158, 118, 178, 114)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-201, -230)
+polygon = PackedVector2Array(37, 220, 38, 224, 44, 230, 52, 231, 58, 237, 78, 237, 85, 245, 90, 250, 96, 253, 102, 256, 107, 259, 112, 263, 122, 270, 132, 276, 146, 270, 179, 259, 194, 241, 228, 228, 272, 252, 186, 279, 115, 288, 3, 213, 35, 100, 101, 85, 183, 118, 188, 145, 178, 148, 170, 152, 150, 163, 128, 173, 117, 181, 110, 183, 105, 186, 98, 192, 92, 194, 77, 201, 55, 213, 38, 218)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(4, -278)
+polygon = PackedVector2Array(41, 240, 53, 244, 58, 248, 70, 254, 83, 261, 125, 275, 125, 263, 56, 222, 1, 212, 1, 219, 8, 222, 18, 227, 29, 233)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Mountain-05" type="Sprite2D" parent="."]
+position = Vector2(-74, -133)
+texture = ExtResource("2_s31yr")
+
+[node name="Mountain-06" type="Sprite2D" parent="."]
+position = Vector2(87, -129)
+texture = ExtResource("3_ns7ur")
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="barrel9" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-134, -37)
+texture = ExtResource("4_ns7ur")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel9"
+metadata/weight = 9
+
+[node name="barrel10" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-122, -29)
+texture = ExtResource("4_ns7ur")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel10"
+metadata/weight = 9
+
+[node name="barrel6" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-147, -31)
+texture = ExtResource("4_ns7ur")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel6"
+metadata/weight = 9
+
+[node name="barrel7" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-147, -55)
+texture = ExtResource("4_ns7ur")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 23)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel7"
+metadata/weight = 9
+
+[node name="barrel8" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-134, -24)
+texture = ExtResource("4_ns7ur")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel8"
+metadata/weight = 9
+
+[node name="gold1" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-148, -69)
+texture = ExtResource("5_1ct8a")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 46)
+metadata/type = "portable"
+metadata/subtype = "gold"
+metadata/uid = "gold1"
+metadata/weight = 5
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-8, -34)
+points = PackedVector2Array(-175, 3, -158, 18, -136, 29, -119, 30, -112, 38, -104, 44, -93, 47, -72, 62, -61, 67, -12, 50, 2, 33, 35, 20, 42, 24, 48, 27, 53, 30, 60, 34, 65, 37, 70, 39, 78, 44, 89, 48, 176, 78)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(34, -249)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, -8, 89, 10, 161, 41, 190, 314, 131, 304, 132, 137, 86, 122, 52, 110, 26, 106, 13, 95, -6, 94, -27, 87, -62, 87, -96, 89, -126, 93, -144, 96, -160, 100, -178, 107, -192, 116, -202, 126, -205, 138, -209, 161, -209, 231, -216, 232, -281, 32, -120, -6)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="ogre-west" parent="Characters" instance=ExtResource("6_46jqw")]
+position = Vector2(-23, -60)
+animation = &"walk-right"
+metadata/uid = "ogre-west"
+metadata/direction_init = "right"

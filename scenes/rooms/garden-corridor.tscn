@@ -1,0 +1,148 @@
+[gd_scene load_steps=5 format=4 uid="uid://df6itqm7fjccc"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_5lgte"]
+[ext_resource type="Texture2D" uid="uid://b2p2rhd1uigos" path="res://assets/doors/door-001-left-closed.png" id="2_tpwuh"]
+[ext_resource type="Texture2D" uid="uid://dff6qebljapg0" path="res://assets/doors/door-001-left-open.png" id="4_tpwuh"]
+[ext_resource type="PackedScene" uid="uid://dlghyplx1p8tt" path="res://scenes/characters/bubble.tscn" id="6_2ugwg"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(30, 210)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "garden-yard"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-121, -65)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//7/KQAAAAAAAAD8////KQAAAAAAAAD8/wAAKQAAAAAAAAD8/wEAKQAAAAAAAAD8/wIAKQAAAAAAAAD8/wMAKQAAAAAAAAD8/wQAKQAAAAAAAAD7/wQALwAAAAAAAAD7/wMALwAAAAAAAAD7/wIALwAAAAAAAAD6/wIALwAAAAAAAAD6/wMALwAAAAAAAAD6/wQALwAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD8//3/BQAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD7/wMABAAAAAAAAAD7/wQABAAAAAAAAAA=")
+tile_set = ExtResource("1_5lgte")
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-194, -37)
+points = PackedVector2Array(-138.497, 6.58714, -15.9129, 67.9223, 201.397, -40.6857)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Layers"]
+position = Vector2(-80.1423, 28.9288)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-cross-entry" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-50.411255, -98.44)
+texture = ExtResource("2_tpwuh")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "castle-entry-cross"
+metadata/target_pos = Vector3(147.354, 21.266, 0)
+metadata/target_direction = "up"
+metadata/has_frame = true
+
+[node name="door-to-basement" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-24.411255, -82.44)
+texture = ExtResource("4_tpwuh")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "basement-stairs"
+metadata/target_pos = Vector3(0.354, 12.266, 51)
+metadata/target_direction = "down"
+metadata/has_frame = true
+metadata/key = "key3"
+
+[node name="door-to-big-first" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-171, -9.440001)
+texture = ExtResource("4_tpwuh")
+metadata/type = "door"
+metadata/size = Vector3(3, 22, 40)
+metadata/pos = Vector3(100, 25, 0)
+metadata/target = "big-tower-first"
+metadata/target_pos = Vector3(0.354, 60.266, 0)
+metadata/target_direction = "down"
+metadata/has_frame = true
+metadata/key = "key5"
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="bubble" parent="Characters" instance=ExtResource("6_2ugwg")]
+position = Vector2(-45, -166)
+metadata/uid = "bubble-garden-corridor"
+metadata/z_init = 90.0
+metadata/direction_init_x = "down"
+metadata/direction_init_y = "left"
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(251.441, -30.0195)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -251.397, -2.95364, -251, -206)

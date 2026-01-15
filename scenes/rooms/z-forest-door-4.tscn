@@ -1,0 +1,130 @@
+[gd_scene load_steps=10 format=4 uid="uid://c6msk4i6osx5c"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_ojrdu"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_iwsy7"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_qxfu5"]
+[ext_resource type="Texture2D" uid="uid://doyjuldrs6n5g" path="res://assets/textures/texture-floor-002.png" id="4_iwsy7"]
+[ext_resource type="Texture2D" uid="uid://byoi7ckt76dgx" path="res://assets/decoration/mountain-bridge-2.png" id="6_d05xk"]
+[ext_resource type="Texture2D" uid="uid://bx7qmecobmpam" path="res://assets/decoration/mountain-10.png" id="6_qxfu5"]
+[ext_resource type="PackedScene" uid="uid://l0gv07rskdfg" path="res://scenes/characters/pirate.tscn" id="7_d05xk"]
+[ext_resource type="Texture2D" path="res://assets/tmp/Sin nombre-3.png" id="9_1d36b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1d36b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ojrdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(100, 150)
+metadata/north = "z-forest-door-3"
+metadata/south = "z-bridge"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-62, -72)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(-165, -22)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_1d36b")
+autoplay = "default"
+script = ExtResource("2_iwsy7")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(281.98566, -7.250202)
+scale = Vector2(2.9066312, 1.19793)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-128.12004, 24.083183, -128.26828, 44.52661, -236.81529, 100.192116, -204.02835, -65.201836)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+/wIAQQAAAAAAAAD9/wIAQQAAAAAAAAD8/wIAQQAAAAAAAAD7/wIAQQAAAAAAAAD6/wIAQQAAAAAAAAD5/wIAQQAAAAAAAAD4/wIAQQAAAAAAAAD3/wIAQQAAAAAAAAA=")
+tile_set = ExtResource("2_qxfu5")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-154, -78)
+
+[node name="floor2" type="Polygon2D" parent="Polygons"]
+texture = ExtResource("4_iwsy7")
+polygon = PackedVector2Array(153.391, 30.8519, 160.405, 34.4491, 344.089, 131.17648, 318.04797, 145.6075, 171.59683, 71.90851, 164.654, 74.0892, 149.582, 76.1256, 137.892, 78.6436, 123.503, 85.6581, 103.683, 90.6675, 87.9265, 93.789, 73.9539, 99.8834, 56.1167, 104.789, -173.232, -15.8272, -119.428, -43.841, -54.5436, -32.5441, -26.1565, -25.5922, -14.2803, -20.6679, 40.9197, -56.4845, 125.333, -15.3718, 140.286, 13.5795, 144.419, 21.0619)
+uv = PackedVector2Array(381.0987, 154.8878, 388.1127, 158.485, 571.7967, 255.21239, 545.7557, 269.6434, 399.30453, 195.94441, 392.3617, 198.1251, 377.2897, 200.1615, 365.5997, 202.6795, 351.2107, 209.694, 331.3907, 214.7034, 315.63422, 217.8249, 301.66162, 223.91931, 283.8244, 228.8249, 54.475708, 108.2087, 108.2797, 80.1949, 173.16411, 91.491806, 201.55121, 98.4437, 213.4274, 103.368004, 268.6274, 67.55141, 353.0407, 108.6641, 367.9937, 137.6154, 372.1267, 145.09781)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Mountain-10" type="Sprite2D" parent="Polygons"]
+position = Vector2(89.548, 139.238)
+texture = ExtResource("6_qxfu5")
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(0, -1)
+texture = ExtResource("4_iwsy7")
+polygon = PackedVector2Array(197.155, 56.627, 343.532, 131.213, 317.448, 145.761, 169.88, 71.5201)
+uv = PackedVector2Array(434.423, 167.941, 441.437, 171.538, 486.402, 198.696, 469.824, 201.344, 458.672, 207.099, 445.686, 211.178, 430.614, 213.214, 418.924, 215.732, 404.535, 222.747, 384.715, 227.756, 368.958, 230.878, 354.986, 236.972, 337.148, 241.878, 107.8, 121.261, 161.604, 93.2476, 226.488, 104.545, 254.875, 111.496, 266.751, 116.421, 321.951, 80.6041, 406.365, 121.717)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Line2D2" type="Line2D" parent="."]
+visible = false
+z_index = 4096
+position = Vector2(5, -16.5)
+points = PackedVector2Array(-211.194, -30.3817, 136.456, 141.991)
+width = 1.75
+default_color = Color(5.86594e-08, 0.143815, 9.62615e-08, 1)
+
+[node name="SinNombre" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-30.4317, -44.2463)
+scale = Vector2(0.267973, 0.254707)
+texture = ExtResource("9_1d36b")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(7879.62, 56.3229)
+scale = Vector2(53.2052, 30.2551)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -151.011, 3, -152, 3, -152, -1)
+
+[node name="Bridge" type="Sprite2D" parent="."]
+position = Vector2(103.084, 42.2498)
+texture = ExtResource("6_d05xk")
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(136, -83)
+points = PackedVector2Array(-462.93, -11.1888, -409.393, -38.6101, -373.218, -32.3984, -326.579, -23.2563, -314.39716, -20.358673, -304.816, -15.3425, -249.51883, -51.73465, -164.94, -10.5942, -149.267, 18.5795, -145.246, 26.1736, -136.45, 36.0971, -91.739716, 60.50433, 54.005615, 136.0658)
+width = 1.0
+default_color = Color(0, 0.23529412, 0, 1)
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="pirate-beach-3" parent="Characters" instance=ExtResource("7_d05xk")]
+position = Vector2(-23.273575, -65.27507)
+animation = &"walk-left"
+frame_progress = 0.0
+metadata/subtype = "pirate-y"
+metadata/uid = "pirate-forest-door-4"
+metadata/direction_init = "left"

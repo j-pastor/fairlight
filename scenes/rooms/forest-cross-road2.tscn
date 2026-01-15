@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgh5c0jn516kn"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_djs0r"]
+[ext_resource type="Texture2D" uid="uid://oq5xd2kdbcaj" path="res://assets/decoration/mountain-08.png" id="2_oeqyg"]
+[ext_resource type="Texture2D" uid="uid://c7cr8dso75n8" path="res://assets/textures/texture-floor-001.png" id="2_tsuk4"]
+[ext_resource type="Texture2D" uid="uid://bnxpm1trpaqnc" path="res://assets/decoration/mountain-08-b.png" id="3_djs0r"]
+[ext_resource type="Texture2D" uid="uid://by26nau5vsro3" path="res://assets/decoration/plant-fixed.png" id="4_djs0r"]
+[ext_resource type="PackedScene" uid="uid://ctb1ofvqprhqv" path="res://scenes/characters/twister.tscn" id="5_047od"]
+[ext_resource type="Texture2D" uid="uid://bb2m2en3yxklh" path="res://assets/doors/bigdoor-invisible.png" id="6_bfkbw"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 1
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 180)
+metadata/north = "none"
+metadata/south = "forest-long-path"
+metadata/west = "forest-secret-entry"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 10, 0)
+metadata/west_offset = Vector3(-30, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-21, -104)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(2, -74)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray(0, 0, 252, 255, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_djs0r")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("1_djs0r")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="wall3" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-45, -129)
+polygon = PackedVector2Array(37, 220, -73, 174, 9, 131, 14, 130, 23, 128, 31, 128, 40, 129, 48, 132, 70, 142, 80, 134, 92, 128, 119, 137, 133, 142, 144, 147, 152, 150, 160, 155, 186, 164, 240, 188, 232, 192, 150, 163, 128, 173, 117, 181, 110, 183, 105, 186, 92, 194, 77, 201, 55, 213, 38, 218)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-175, -208)
+texture = ExtResource("2_tsuk4")
+polygon = PackedVector2Array(240, 121, 352, 189, 357, 240, 368, 266, 254, 220, 249, 218, 242, 215, 236, 213, 222, 209, 213, 214, 201, 223, 182, 214, 173, 210, 166, 208, 157, 208, 149, 209, 142, 211, 64, 253, 10, 226, 40, 212, 45, 208, 45, 204, 42, 201, 35, 198, 20, 189, 39, 178, 48, 175, 53, 175, 58, 174, 67, 170, 77, 163, 92, 154, 107, 147, 120, 136, 133, 129, 145, 124, 158, 118, 183, 110)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="wall" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(-265, -343)
+polygon = PackedVector2Array(122, 270, 132, 276, 146, 270, 179, 259, 194, 241, 228, 228, 272, 250, 231, 265, 220, 271, 204, 282, 194, 289, 179, 295, 152, 313, 140, 315, 127, 317, 118, 322, 115, 326, 126, 334, 133, 335, 137, 338, 137, 342, 134, 346, 129, 349, 123, 352, 98, 365, 96, 350, 74, 290)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="wall2" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(4, -276)
+polygon = PackedVector2Array(55, 236, 62, 238, 84, 256, 98, 266, 124, 278, 125, 263, 56, 222, 4, 204, -1, 220, 10, 225, 25, 230, 43, 234)
+metadata/type = "wall"
+metadata/z_from = 0
+metadata/z_size = 3000
+
+[node name="Mountain-08" type="Sprite2D" parent="."]
+position = Vector2(-77, -88)
+texture = ExtResource("2_oeqyg")
+
+[node name="Mountain-09" type="Sprite2D" parent="."]
+position = Vector2(80, -79)
+texture = ExtResource("3_djs0r")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(-95, -37)
+points = PackedVector2Array(-79, 36, -16, 68, 61, 26, 70, 24, 78, 23, 86, 23, 93, 25, 98, 27, 121, 38, 133.13196, 29.360643, 142, 24, 161, 30, 169, 33, 172, 34, 175, 36, 178, 37, 181, 38, 184, 39, 188, 41, 193, 42, 198, 45, 202.71103, 46.14199, 207, 48, 213, 51, 217.82394, 52.21299, 223, 55, 229.4062, 57.939537, 235, 60, 241, 62, 245, 64, 249, 65, 255, 68, 276, 76)
+width = 1.0
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-165, -52, -162, -44, -158, -36, -154, -32, -147, -26, -138, -22, -132, -20, -130, -17, -131, -14, -133, -12, -138, -9, -145, -6, -163, 4, -163, 6, -178, 12, -185, -17, -195, -41, -195, -156, -26, -170, 221, -171, 221, 71, 178, 57, 178, -152, -13, -146, -35, -146, -57, -141, -84, -135, -98, -131, -113, -124, -124, -122, -140, -116, -149, -111, -150, -109, -153, -105, -158, -100, -161, -93, -162, -86, -163, -78)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="plant" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(10, -39)
+texture = ExtResource("4_djs0r")
+metadata/size = Vector3(13, 13, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="door-to-caves" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(-14, -113)
+texture = ExtResource("6_bfkbw")
+metadata/type = "door"
+metadata/size = Vector3(35, 2, 60)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "forest-cave"
+metadata/target_pos = Vector3(1.5, 175, 0)
+metadata/target_direction = "right"
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="twister-forest-2" parent="Characters" instance=ExtResource("5_047od")]
+position = Vector2(-81, -13)
+metadata/uid = "twister-forest-2"
+metadata/direction_init_x = "up"
+metadata/direction_init_y = "left"

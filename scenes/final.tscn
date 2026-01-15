@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://c628ow7qnfwiw"]
+
+[ext_resource type="Script" uid="uid://c4i2qaho7ir8v" path="res://scripts/final.gd" id="1_gh6hq"]
+[ext_resource type="Texture2D" uid="uid://byccoa8ytndxa" path="res://assets/splash/black-background.png" id="2_y0die"]
+[ext_resource type="Texture2D" uid="uid://dcqdgsr3y0ot6" path="res://assets/splash/end.png" id="3_gh6hq"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="4_3hs2o"]
+
+[node name="End" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_gh6hq")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y0die")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -573.0
+offset_top = 32.0
+offset_right = -125.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gh6hq")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message_kingdom" type="Label" parent="."]
+offset_left = 522.0
+offset_top = 333.0
+offset_right = 1260.0
+offset_bottom = 428.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_3hs2o")
+theme_override_font_sizes/font_size = 40
+text = "The Kingdom of Fairlight
+has not been restored..."
+uppercase = true
+
+[node name="message_wizard" type="Label" parent="."]
+offset_left = 523.0
+offset_top = 237.0
+offset_right = 1127.0
+offset_bottom = 291.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_3hs2o")
+theme_override_font_sizes/font_size = 40
+text = "The wizard is not free..."
+uppercase = true
+
+[node name="message_result" type="Label" parent="."]
+offset_left = 523.0
+offset_top = 91.0
+offset_right = 1259.0
+offset_bottom = 157.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_3hs2o")
+theme_override_font_sizes/font_size = 40
+text = "You have failed
+in your quest..."
+uppercase = true
+
+[node name="message_gameover" type="Label" parent="."]
+offset_left = 523.0
+offset_top = 571.0
+offset_right = 776.0
+offset_bottom = 637.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_3hs2o")
+theme_override_font_sizes/font_size = 40
+text = "Game over"
+uppercase = true
+
+[node name="FadeRect" type="ColorRect" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=4 uid="uid://brkmt6e5cian8"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_1wyua"]
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="2_4a4ga"]
+[ext_resource type="Texture2D" uid="uid://dtss2jixqk1in" path="res://assets/decoration/mountain-sea-1.png" id="3_gcni8"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 4
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(14, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-2, -146)
+
+[node name="Layers" type="Node2D" parent="."]
+visible = false
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -10)
+tile_map_data = PackedByteArray("AAD4//7/JwAAAAAAAAD3//7/JwAAAAAAAAD2//7/JwAAAAAAAAD1//7/JwAAAAAAAAD9//z/AQAAAAAAAAD9//3/AQAAAAAAAAD9//7/AQAAAAAAAAD9////AQAAAAAAAAD9/wAAAQAAAAAAAAD9/wEAAQAAAAAAAAD9/wIAAQAAAAAAAAD9/wMAAQAAAAAAAAD+//z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAD+////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD+/wIAAQAAAAAAAAD+/wMAAQAAAAAAAAD///z/AQAAAAAAAAD///3/AQAAAAAAAAD///7/AQAAAAAAAAD/////AQAAAAAAAAD//wAAAQAAAAAAAAD//wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAAAAPz/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAP7/AQAAAAAAAAAAAP//AQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAD5//7/AQAAAAAAAAD5////AQAAAAAAAAD5/wAAAQAAAAAAAAD5/wEAAQAAAAAAAAD5/wIAAQAAAAAAAAD5/wMAAQAAAAAAAAD5/wQAAQAAAAAAAAD6//7/AQAAAAAAAAD6////AQAAAAAAAAD6/wAAAQAAAAAAAAD6/wEAAQAAAAAAAAD6/wIAAQAAAAAAAAD6/wMAAQAAAAAAAAD6/wQAAQAAAAAAAAD7//7/AQAAAAAAAAD7////AQAAAAAAAAD7/wAAAQAAAAAAAAD7/wEAAQAAAAAAAAD7/wIAAQAAAAAAAAD7/wMAAQAAAAAAAAD7/wQAAQAAAAAAAAD8//7/AQAAAAAAAAD8////AQAAAAAAAAD8/wAAAQAAAAAAAAD8/wEAAQAAAAAAAAD8/wIAAQAAAAAAAAD8/wMAAQAAAAAAAAD8/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAA=")
+tile_set = ExtResource("1_1wyua")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+visible = false
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(3, 60)
+color = Color(4.81308e-08, 0.352548, 0.570839, 1)
+texture = ExtResource("2_4a4ga")
+texture_scale = Vector2(5, 5)
+polygon = PackedVector2Array(-199.1172, -93.30624, 120.8828, 66.69376, 233.01503, -233.94809, -199.83508, -266.51227)
+uv = PackedVector2Array(48.845142, 211.48077, 389.5117, 374.43317, 739.8194, 194.19266, 385.28424, 31.741966)
+
+[node name="Mountain-sea-1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(48, -194)
+texture = ExtResource("3_gcni8")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(-18, -123)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(332, 24)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-159, -358, -160, 30, -89, -51, -49, -61, -11, -380)

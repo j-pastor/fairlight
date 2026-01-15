@@ -1,0 +1,477 @@
+[gd_scene load_steps=20 format=4 uid="uid://cl4fmaq31ivxj"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_cs6il"]
+[ext_resource type="Texture2D" uid="uid://df8skw26xgxq8" path="res://assets/decoration/post.png" id="2_05u6y"]
+[ext_resource type="Texture2D" uid="uid://ch60rw8qsu0ka" path="res://assets/steps/step-4-small-right-05.png" id="2_ipdnt"]
+[ext_resource type="Texture2D" uid="uid://dlnqdweerv8xi" path="res://assets/steps/step-4-small-right-04.png" id="3_05u6y"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="3_s2ay1"]
+[ext_resource type="Texture2D" uid="uid://cvqnd2d3urlf8" path="res://assets/steps/step-4-small-right-03.png" id="4_84ppi"]
+[ext_resource type="Texture2D" uid="uid://cy2twwdxv2ef2" path="res://assets/steps/step-4-small-right-02.png" id="5_1lx3v"]
+[ext_resource type="Texture2D" uid="uid://bu64msunhc04s" path="res://assets/steps/step-4-small-right-01.png" id="6_weg53"]
+[ext_resource type="Texture2D" uid="uid://crjpmawnh18ka" path="res://assets/doors/door-001-right-closed.png" id="11_xs7br"]
+[ext_resource type="Texture2D" uid="uid://d28b2h2sx3c3q" path="res://assets/decoration/stairs-to-underneath.png" id="12_84ppi"]
+[ext_resource type="Texture2D" uid="uid://di5k2wv837lhx" path="res://assets/decoration/torch-001-left.png" id="13_wdbi4"]
+[ext_resource type="Texture2D" uid="uid://h5atn383u13t" path="res://assets/doors/door-001-right-open.png" id="13_xtcfq"]
+[ext_resource type="Texture2D" uid="uid://durgk1g6jc33r" path="res://assets/objects/barrel.png" id="14_1lx3v"]
+[ext_resource type="Texture2D" uid="uid://cmmxm51lgdtkc" path="res://assets/decoration/torch-002-left.png" id="14_s2ay1"]
+[ext_resource type="Texture2D" uid="uid://b0o6bbpwxn0sg" path="res://assets/decoration/torch-003-left.png" id="15_xs7br"]
+[ext_resource type="Texture2D" uid="uid://xfywnlsiajlf" path="res://assets/decoration/torch-004-left.png" id="16_xtcfq"]
+[ext_resource type="PackedScene" uid="uid://qlewkn0c7d3r" path="res://scenes/characters/guard.tscn" id="20_xs7br"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c775o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_wdbi4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_s2ay1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_xs7br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xtcfq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_s2ay1"]
+script/source = "extends Node2D
+
+func _process(_delta):
+	queue_redraw()
+
+func _draw():
+	for id in Mainglobal.scene_objects.keys():
+		var obj = Mainglobal.scene_objects[id]
+		var pos = obj[\"pos\"]
+		var size = obj[\"size\"]
+
+		# Punto central de la base
+		var P3D = pos + Vector3(size.x / 2.0, size.y / 2.0, 0)
+		var P2D = Mainglobal.iso_to_screen(P3D, Mainglobal.origin, Mainglobal.SCALE)
+
+
+		# Dibujar puntos
+		draw_circle(P2D/Mainglobal.SCALE, 4, Color.RED)
+"
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9//7/DQAAAAAAAAD+//7/DQAAAAAAAAD9/wAADQAAAAAAAAD9////DQAAAAAAAAD+////DQAAAAAAAAD+/wAADQAAAAAAAAD8//7/DQAAAAAAAAD8////DQAAAAAAAAD8/wAADQAAAAAAAAD///7/DQAAAAAAAAD//wEADQAAAAAAAAD+/wEADQAAAAAAAAD9/wEADQAAAAAAAAD8/wEADQAAAAAAAAD8/wIADQAAAAAAAAD9/wIADQAAAAAAAAD+/wIADQAAAAAAAAD//wIADQAAAAAAAAAAAAIADQAAAAAAAAAAAAEADQAAAAAAAAAAAP7/DQAAAAAAAAD//wAADQAAAAAAAAD/////DQAAAAAAAAAAAAAADQAAAAAAAAAAAP//DQAAAAAAAAA=")
+tile_set = ExtResource("1_cs6il")
+
+[node name="Stairs-to-underneath" type="Sprite2D" parent="Layers"]
+position = Vector2(32, 3)
+texture = ExtResource("12_84ppi")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_floor_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_floor_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_floor_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_set = ExtResource("1_cs6il")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAD7/wAABAAAAAAAAAD7/wEABAAAAAAAAAD7/wIABAAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAD8//3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_cs6il")
+
+[node name="GlowTorch" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-104, -96)
+color = Color(1, 0.768627, 0.537255, 1)
+range_z_max = 600
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("3_s2ay1")
+texture_scale = 1.5
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-14, -7)
+points = PackedVector2Array(-184.388, -16.8287, -16.1391, 67.8562, 145, -13)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Stairs-to-underneath" type="Sprite2D" parent="FixedObjects"]
+visible = false
+position = Vector2(36, 7)
+texture = ExtResource("12_84ppi")
+metadata/type = "gate"
+metadata/size = Vector3(44, 50, 0)
+metadata/target = "underneath-stairs"
+metadata/target_offset = Vector3(-100, -34, 40)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Step-small-right-23" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-18, -92)
+texture = ExtResource("2_ipdnt")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-16" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-20, -91)
+texture = ExtResource("2_ipdnt")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-21" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-22, -90)
+texture = ExtResource("2_ipdnt")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-22" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-24, -89)
+texture = ExtResource("2_ipdnt")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 20)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-04" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-28, -85)
+texture = ExtResource("3_05u6y")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 16)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-05" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-30, -84)
+texture = ExtResource("3_05u6y")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 16)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-06" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-32, -83)
+texture = ExtResource("3_05u6y")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 16)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-07" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-34, -82)
+texture = ExtResource("3_05u6y")
+metadata/type = "step-4"
+metadata/size = Vector3(31, 4, 16)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-08" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-38, -78.5)
+texture = ExtResource("4_84ppi")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-09" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-40, -77.5)
+texture = ExtResource("4_84ppi")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-42, -76.5)
+texture = ExtResource("4_84ppi")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-11" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-44, -75.5)
+texture = ExtResource("4_84ppi")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 12)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-12" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-48, -71.5)
+texture = ExtResource("5_1lx3v")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 8)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-13" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-50, -70.5)
+texture = ExtResource("5_1lx3v")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 8)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-14" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-52, -69.5)
+texture = ExtResource("5_1lx3v")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 8)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-15" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-54, -68.5)
+texture = ExtResource("5_1lx3v")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 8)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-17" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-58, -64.5)
+texture = ExtResource("6_weg53")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 4)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-18" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-60, -63.5)
+texture = ExtResource("6_weg53")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 4)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-19" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-62, -62.5)
+texture = ExtResource("6_weg53")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 4)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="Step-small-right-20" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-64, -61.5)
+texture = ExtResource("6_weg53")
+metadata/type = "step-4"
+metadata/size = Vector3(32, 4, 4)
+metadata/pos = Vector3(0, 0, 0)
+metadata/orientation = "westeast"
+
+[node name="door-to-yard-from-warehouse" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-17.189903, -123.184)
+texture = ExtResource("11_xs7br")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 20)
+metadata/target = "yard"
+metadata/target_pos = Vector3(3.058, 146.615, 40)
+metadata/target_direction = "right"
+metadata/has_frame = true
+
+[node name="Post6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(27, -30)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(9, -21)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-9, -12)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-27, -3)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-10, 5)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(7, 14)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="Post10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(23, 22)
+texture = ExtResource("2_05u6y")
+metadata/type = "fixed"
+metadata/size = Vector3(7, 7, 16)
+metadata/pos = Vector3(0, 0, 0)
+
+[node name="door-to-castle-north-corridor" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-88.05609, 11.086487)
+texture = ExtResource("13_xtcfq")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "castle-north-corridor"
+metadata/target_pos = Vector3(59.721, -0.589, 0)
+metadata/target_direction = "left"
+metadata/has_frame = true
+
+[node name="torch" type="AnimatedSprite2D" parent="FixedObjects"]
+position = Vector2(-104, -92)
+sprite_frames = SubResource("SpriteFrames_c775o")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+position = Vector2(0.705215, -1.0087)
+script = SubResource("GDScript_s2ay1")
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="barrel4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-155, -32)
+texture = ExtResource("14_1lx3v")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel4"
+metadata/weight = 9
+
+[node name="barrel5" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-143, -24)
+texture = ExtResource("14_1lx3v")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel5"
+metadata/weight = 9
+
+[node name="barrel" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-168, -26)
+texture = ExtResource("14_1lx3v")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel1"
+metadata/weight = 9
+
+[node name="barrel2" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-168, -50)
+texture = ExtResource("14_1lx3v")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 24)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel2"
+metadata/weight = 9
+
+[node name="barrel3" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-155, -19)
+texture = ExtResource("14_1lx3v")
+metadata/size = Vector3(10, 10, 23)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "barrel"
+metadata/uid = "barrel3"
+metadata/weight = 9
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="guard-yard" parent="Characters" instance=ExtResource("20_xs7br")]
+position = Vector2(-143, -49)
+animation = &"walk-down"
+metadata/type = "guard"
+metadata/subtype = "guard-rebirth"
+metadata/uid = "guard-warehouse"
+metadata/direction_init = "left"
+metadata/z_init = 24.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(992.075, -19.6541)
+scale = Vector2(5.72922, 2.96415)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(1272.02, -23.046)
+scale = Vector2(9.68877, 3.9931)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -152, 3, -152, -1)

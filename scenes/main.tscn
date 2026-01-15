@@ -1,0 +1,223 @@
+[gd_scene load_steps=12 format=3 uid="uid://bck166x2paylq"]
+
+[ext_resource type="Script" uid="uid://c0o0gf80rundw" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://cibg473h1xpqs" path="res://assets/UI/frame.png" id="2_choun"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="3_sugp2"]
+[ext_resource type="AudioStream" uid="uid://c2d146cfk6lox" path="res://assets/sounds/fire-cracklingwav-14834.mp3" id="4_jyhfs"]
+[ext_resource type="AudioStream" uid="uid://nlevihl50hx1" path="res://assets/sounds/lava-loop-2-67306.mp3" id="5_choun"]
+[ext_resource type="AudioStream" uid="uid://bku5y1ihorp1q" path="res://assets/sounds/sea-and-seagull-wave-5932.mp3" id="5_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://cl8oyjm3p5a4m" path="res://assets/sounds/bubble-pop-04-323580.mp3" id="5_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://dlw8gwmjfvn6" path="res://assets/sounds/lightning.mp3" id="6_tefeu"]
+[ext_resource type="AudioStream" uid="uid://tekp7ewmdy7u" path="res://assets/sounds/nazgul-w-low-bass-37269.mp3" id="7_tipki"]
+[ext_resource type="AudioStream" uid="uid://c7jtguas4paeb" path="res://assets/sounds/exhale-317875.mp3" id="8_85g3d"]
+[ext_resource type="AudioStream" uid="uid://bvq0a3nncgsr1" path="res://assets/sounds/10-minute-rain-and-thunder-323964.mp3" id="10_ya4ey"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(1, 1)
+script = ExtResource("1_0wfyh")
+
+[node name="Room" type="Node2D" parent="."]
+
+[node name="UI2" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="UI2"]
+
+[node name="Control" type="Control" parent="UI2/CanvasLayer2"]
+z_index = 4096
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Frame" type="TextureRect" parent="UI2/CanvasLayer2/Control"]
+z_index = 4096
+layout_mode = 1
+offset_right = 1514.0
+offset_bottom = 1006.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_choun")
+
+[node name="message" type="Label" parent="UI2/CanvasLayer2/Control/Frame"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 18.0
+offset_right = 705.0
+offset_bottom = 123.0
+theme_override_colors/font_color = Color(0.212305, 0.212305, 0.212305, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_sugp2")
+theme_override_font_sizes/font_size = 42
+text = "     LIFE
+      99"
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="FadeControl" type="Control" parent="FadeLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -700.0
+offset_right = 186.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeRect" type="ColorRect" parent="FadeLayer/FadeControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -7.0
+offset_right = -4.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryLayer" type="CanvasLayer" parent="UI"]
+
+[node name="inv1" type="Polygon2D" parent="UI/InventoryLayer"]
+position = Vector2(0, -8)
+color = Color(0, 0, 0, 0.647059)
+polygon = PackedVector2Array(602, 16, 602, 52, 601, 53, 601, 62, 601, 64, 601, 86, 600, 97, 600, 113, 726, 113, 726, 40, 724, 35, 724, 21, 719, 16, 689, 16, 687, 14, 682, 14, 680, 16)
+
+[node name="inv2" type="Polygon2D" parent="UI/InventoryLayer"]
+position = Vector2(128, 0)
+color = Color(0, 0, 0, 0.647059)
+polygon = PackedVector2Array(600, 10, 601, 50, 601, 53, 601, 62, 600, 65, 601, 88, 601, 96, 600, 97, 600, 104, 605, 105, 713, 105, 715, 103, 717, 101, 717, 61, 715, 57, 715, 22, 715, 12, 710, 7, 603, 7)
+
+[node name="inv3" type="Polygon2D" parent="UI/InventoryLayer"]
+position = Vector2(248, 0)
+color = Color(0, 0, 0, 0.647059)
+polygon = PackedVector2Array(600, 10, 600, 104, 605, 105, 705, 105, 708, 103, 709, 100, 709, 65, 707, 63, 709, 61, 709, 21, 708, 15, 705, 12, 705, 9, 702, 8, 603, 7)
+
+[node name="inv4" type="Polygon2D" parent="UI/InventoryLayer"]
+position = Vector2(360, 0)
+color = Color(0, 0, 0, 0.647059)
+polygon = PackedVector2Array(600, 10, 600, 65, 600, 97, 600, 104, 605, 105, 705, 105, 708, 103, 709, 100, 709, 63, 707, 61, 709, 60, 709, 21, 708, 15, 706, 10, 703, 7, 604, 6)
+
+[node name="inv5" type="Polygon2D" parent="UI/InventoryLayer"]
+position = Vector2(472, 0)
+color = Color(0, 0, 0, 0.647059)
+polygon = PackedVector2Array(599, 11, 599, 65, 599, 97, 600, 104, 605, 105, 686, 107, 689, 107, 693, 107, 699, 109, 705, 113, 707, 116, 709, 119, 711, 120, 710, 75, 710, 72, 710, 69, 708, 66, 709, 64, 709, 63, 708, 61, 709, 60, 711, 31, 710, 25, 706, 21, 701, 14, 696, 11, 692, 9, 688, 7, 678, 6, 603, 6)
+
+[node name="sprite_inv1" type="Sprite2D" parent="UI/InventoryLayer"]
+position = Vector2(663, 56)
+
+[node name="sprite_inv2" type="Sprite2D" parent="UI/InventoryLayer"]
+position = Vector2(785, 56)
+
+[node name="sprite_inv3" type="Sprite2D" parent="UI/InventoryLayer"]
+position = Vector2(905, 56)
+
+[node name="sprite_inv4" type="Sprite2D" parent="UI/InventoryLayer"]
+position = Vector2(1014, 56)
+
+[node name="sprite_inv5" type="Sprite2D" parent="UI/InventoryLayer"]
+position = Vector2(1127, 56)
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="UI"]
+layer = -100
+
+[node name="Control2" type="Control" parent="UI/CanvasLayer2"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -700.0
+offset_right = 186.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI/CanvasLayer2/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Fire" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_jyhfs")
+
+[node name="Lava" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_choun")
+
+[node name="Sea" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_o6xl0")
+volume_db = -5.0
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_tbgi4")
+
+[node name="Monkshout" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("7_tipki")
+pitch_scale = 1.51
+
+[node name="Exhale" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("8_85g3d")
+volume_db = 20.0
+pitch_scale = 1.35
+
+[node name="Rain" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("10_ya4ey")
+volume_db = -1.311
+pitch_scale = 1.35
+bus = &"RainBus"
+
+[node name="music_player_a" type="AudioStreamPlayer2D" parent="."]
+
+[node name="music_player_b" type="AudioStreamPlayer2D" parent="."]
+
+[node name="FadeFull" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="FadeControl" type="Control" parent="FadeFull"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2000.0
+offset_top = -700.0
+offset_right = 186.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeRect" type="ColorRect" parent="FadeFull/FadeControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="light" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tefeu")
+volume_db = 1.0

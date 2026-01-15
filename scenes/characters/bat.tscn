@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://d26g6fcowsb6k"]
+
+[ext_resource type="Texture2D" uid="uid://3bpoa4vhpvr3" path="res://assets/characters/bat-down-001.png" id="1_fc0x5"]
+[ext_resource type="Texture2D" uid="uid://hidj42jdhc16" path="res://assets/characters/bat-down-002.png" id="2_qov6m"]
+[ext_resource type="Texture2D" uid="uid://dr4ltt7svykcv" path="res://assets/characters/bat-down-003.png" id="3_wnq08"]
+[ext_resource type="Texture2D" uid="uid://cmskuna0jebxy" path="res://assets/characters/bubble-none.png" id="5_cq3a3"]
+[ext_resource type="Script" uid="uid://bsm8q08diyf6r" path="res://scripts/bat.gd" id="5_fc0x5"]
+[ext_resource type="AudioStream" uid="uid://2tpuehnbmnxa" path="res://assets/sounds/wing-flaps-1.mp3" id="6_lol2x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": ExtResource("1_fc0x5")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_qov6m")
+}, {
+"duration": 0.51,
+"texture": ExtResource("3_wnq08")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_qov6m")
+}],
+"loop": true,
+"name": &"bat",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_cq3a3")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"bat"
+script = ExtResource("5_fc0x5")
+metadata/type = "bat"
+metadata/subtype = "bat"
+metadata/size = Vector3(8, 2, 8)
+metadata/uid = "bat"
+metadata/z_init = 30.0
+metadata/weight = 1
+metadata/direction_init_x = ""
+metadata/direction_init_y = ""
+
+[node name="Flap" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_lol2x")

@@ -1,0 +1,110 @@
+[gd_scene load_steps=4 format=4 uid="uid://qbeoknj0nxdw"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_bsfgp"]
+[ext_resource type="Texture2D" uid="uid://dwi24nsmbh814" path="res://assets/decoration/window-y-001.png" id="2_7j07a"]
+[ext_resource type="PackedScene" uid="uid://ctb1ofvqprhqv" path="res://scenes/characters/twister.tscn" id="3_tlqmb"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 4
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "yard-entry"
+metadata/west = "none"
+metadata/east = "yard-big"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-6, -44)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9/wIAKQAAAAAAAAD+/wIAKQAAAAAAAAD//wIAKQAAAAAAAAAAAAIAKQAAAAAAAAD9//7/KQAAAAAAAAD+//7/KQAAAAAAAAD///7/KQAAAAAAAAAAAP7/KQAAAAAAAAAAAP//KQAAAAAAAAAAAAAAKQAAAAAAAAAAAAEAKQAAAAAAAAD//wEAKQAAAAAAAAD+/wEAKQAAAAAAAAD9/wEAKQAAAAAAAAD9/wAAKQAAAAAAAAD9////KQAAAAAAAAD+////KQAAAAAAAAD/////KQAAAAAAAAD//wAAKQAAAAAAAAD+/wAAKQAAAAAAAAD8//7/KQAAAAAAAAD8////KQAAAAAAAAD8/wAAKQAAAAAAAAD8/wEAKQAAAAAAAAD8/wIAKQAAAAAAAAABAAIAKQAAAAAAAAACAAIAKQAAAAAAAAADAAIAKQAAAAAAAAABAAEAKQAAAAAAAAACAAEAKQAAAAAAAAADAAEAKQAAAAAAAAAEAAEAKQAAAAAAAAABAAAAKQAAAAAAAAACAAAAKQAAAAAAAAADAAAAKQAAAAAAAAAEAAAAKQAAAAAAAAABAP//KQAAAAAAAAACAP//KQAAAAAAAAADAP//KQAAAAAAAAABAP7/KQAAAAAAAAACAP7/KQAAAAAAAAD8//3/KQAAAAAAAAD7//3/KQAAAAAAAAD9//3/KQAAAAAAAAD+//3/KQAAAAAAAAD///3/KQAAAAAAAAAAAP3/KQAAAAAAAAABAP3/KQAAAAAAAAACAP3/KQAAAAAAAAADAP7/KQAAAAAAAAAEAP//KQAAAAAAAAAFAAAAKQAAAAAAAAD7//z/KQAAAAAAAAD8//z/KQAAAAAAAAD9//z/KQAAAAAAAAD+//z/KQAAAAAAAAD///z/KQAAAAAAAAAAAPz/KQAAAAAAAAABAPz/KQAAAAAAAAD6//z/KQAAAAAAAAD5//v/KQAAAAAAAAD6//v/KQAAAAAAAAD7//v/KQAAAAAAAAD8//v/KQAAAAAAAAD9//v/KQAAAAAAAAD+//v/KQAAAAAAAAD///v/KQAAAAAAAAAAAPv/KQAAAAAAAAD5//r/KQAAAAAAAAD6//r/KQAAAAAAAAD7//r/KQAAAAAAAAD8//r/KQAAAAAAAAD9//r/KQAAAAAAAAD+//r/KQAAAAAAAAD///r/KQAAAAAAAAD8//n/KQAAAAAAAAD9//n/KQAAAAAAAAD+//n/KQAAAAAAAAD9//j/KQAAAAAAAAD7//n/KQAAAAAAAAD8//j/KQAAAAAAAAAFAP//KQAAAAAAAAAEAP7/KQAAAAAAAAADAP3/KQAAAAAAAAACAPz/KQAAAAAAAAABAPv/KQAAAAAAAAAAAPr/KQAAAAAAAAD///n/KQAAAAAAAAD///j/KQAAAAAAAAD+//j/KQAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAD7/wIABwAAAAAAAAD7/wEABwAAAAAAAAD7/wAABwAAAAAAAAD7////BwAAAAAAAAD7//7/BwAAAAAAAAA=")
+tile_set = ExtResource("1_bsfgp")
+
+[node name="Window-y-001" type="Sprite2D" parent="Layers"]
+position = Vector2(-99, -102)
+texture = ExtResource("2_7j07a")
+
+[node name="Polygon2D" type="Polygon2D" parent="Layers"]
+position = Vector2(-21, 11)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-16, -7)
+points = PackedVector2Array(-200, -26, 76, 113)
+width = 1.5
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="twister-yard-zen-1" parent="Characters" instance=ExtResource("3_tlqmb")]
+position = Vector2(-99, 5)
+metadata/uid = "twister-yard-zen-1"
+metadata/direction_init_x = "up"
+metadata/direction_init_y = "left"
+
+[node name="twister-yard-zen-2" parent="Characters" instance=ExtResource("3_tlqmb")]
+position = Vector2(-5, 8)
+metadata/uid = "twister-yard-zen-2"
+metadata/direction_init_x = "up"
+metadata/direction_init_y = "left"

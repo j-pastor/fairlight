@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://84keqhvw2ad6"]
+
+[ext_resource type="Texture2D" uid="uid://djcwvjmb2m0ti" path="res://assets/characters/carnivore-1.png" id="1_urxa7"]
+[ext_resource type="Texture2D" uid="uid://pbdpi381u0hg" path="res://assets/characters/carnivore-2.png" id="2_le2yg"]
+[ext_resource type="Texture2D" uid="uid://dfukxajrnd3kn" path="res://assets/characters/carnivore-3.png" id="3_2ievq"]
+[ext_resource type="Script" uid="uid://de611saaocwf4" path="res://scripts/carnivore.gd" id="4_urxa7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_urxa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_le2yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2ievq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_le2yg")
+}],
+"loop": true,
+"name": &"carnivore",
+"speed": 8.0
+}]
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"carnivore"
+script = ExtResource("4_urxa7")
+metadata/type = "carnivore"
+metadata/subtype = "carnivore"
+metadata/size = Vector3(10, 10, 23)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 6

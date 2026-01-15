@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://xugfmln0kpmc"]
+
+[ext_resource type="Script" uid="uid://ccx06ypv7ivl" path="res://scripts/splash_screen.gd" id="1_4gp4q"]
+[ext_resource type="Texture2D" uid="uid://dcstxqk4wucm5" path="res://assets/splash/splash-background.png" id="2_4gp4q"]
+[ext_resource type="Texture2D" uid="uid://cymspg1drhsin" path="res://assets/splash/splash-screen-an.png" id="3_3mj2l"]
+[ext_resource type="Texture2D" uid="uid://7wqn0b6l8yb0" path="res://assets/splash/title.png" id="4_3mj2l"]
+
+[node name="SplashScreen" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_4gp4q")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4gp4q")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -538.0
+offset_top = 38.0
+offset_right = 545.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3mj2l")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 68.0
+offset_right = 299.0
+offset_bottom = 264.0
+grow_horizontal = 2
+texture = ExtResource("4_3mj2l")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="WaitTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="music_player_a" type="AudioStreamPlayer2D" parent="."]
+
+[node name="music_player_b" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]

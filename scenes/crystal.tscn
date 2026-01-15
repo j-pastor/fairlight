@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddy2mdj15yj3l"]
+
+[ext_resource type="Texture2D" uid="uid://b1y6hkghb5lpd" path="res://assets/objects/crystal-002.png" id="1_c5q1o"]
+[ext_resource type="Texture2D" uid="uid://bu85evyls3thp" path="res://assets/objects/crystal-003.png" id="2_jxjg7"]
+[ext_resource type="Texture2D" uid="uid://ia3w2cs6rktx" path="res://assets/objects/crystal-004.png" id="3_psy0v"]
+[ext_resource type="Texture2D" uid="uid://bgx08om48hfq8" path="res://assets/objects/crystal-001.png" id="4_73je4"]
+[ext_resource type="Script" uid="uid://clu75rnseew5e" path="res://scripts/crystal.gd" id="6_c5q1o"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="7_c5q1o"]
+[ext_resource type="AudioStream" uid="uid://cl8oyjm3p5a4m" path="res://assets/sounds/bubble-pop-04-323580.mp3" id="7_vktbv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c5q1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jxjg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_psy0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jxjg7")
+}],
+"loop": true,
+"name": &"active",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_73je4")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"none"
+script = ExtResource("6_c5q1o")
+metadata/type = "blob"
+metadata/subtype = "blob"
+metadata/size = Vector3(8, 8, 8)
+metadata/uid = "blob"
+metadata/z_init = 0.0
+metadata/weight = 1
+metadata/direction_init_x = ""
+metadata/direction_init_y = ""
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_vktbv")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.23238373, 0.7460518)
+color = Color(0.2901961, 0.5411765, 0.6901961, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("7_c5q1o")
+texture_scale = 3.32
+height = 6.0

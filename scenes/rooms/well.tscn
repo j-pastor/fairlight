@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3 uid="uid://dr73p0cjrishl"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_y845t"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_cfuwd"]
+[ext_resource type="PackedScene" uid="uid://dlghyplx1p8tt" path="res://scenes/characters/bubble.tscn" id="3_kq7nl"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(30, 30)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "none"
+metadata/east = "none"
+metadata/light = 0.45
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(7, -154)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray(0, 0, 252, 255, 254, 255, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray(0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0, 251, 255, 254, 255, 50, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray(0, 0, 252, 255, 253, 255, 51, 0, 0, 0, 0, 0, 0, 0, 251, 255, 254, 255, 4, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray(0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0, 251, 255, 254, 255, 54, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray(0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0, 251, 255, 254, 255, 4, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray(0, 0, 251, 255, 254, 255, 4, 0, 0, 0, 0, 0, 0, 0, 252, 255, 253, 255, 52, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray(0, 0, 251, 255, 254, 255, 4, 0, 0, 0, 0, 0, 0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray(0, 0, 251, 255, 254, 255, 50, 0, 0, 0, 0, 0, 0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray(0, 0, 251, 255, 254, 255, 4, 0, 0, 0, 0, 0, 0, 0, 252, 255, 253, 255, 51, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray(0, 0, 251, 255, 254, 255, 54, 0, 0, 0, 0, 0, 0, 0, 252, 255, 253, 255, 5, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_y845t")
+
+[node name="GlowTorch3" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-30.3855, -269.892)
+color = Color(1, 0.768627, 0.537255, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("2_cfuwd")
+texture_scale = 1.95
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(-15, -127)
+points = PackedVector2Array(-67.4651, 40.2758, -15.9274, 67.8815, 17.9477, 50.818)
+width = 1.5
+default_color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Layers"]
+position = Vector2(100.133, -84.8315)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -305, -31, -251, -206)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Layers"]
+position = Vector2(252.473, -29.7349)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-160, -204, -160, 30, -251.397, -2.95364, -251, -206)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
+
+[node name="bubble-well" parent="Characters" instance=ExtResource("3_kq7nl")]
+position = Vector2(-29.9666, -77.8675)
+metadata/uid = "bubble-well"
+metadata/direction_init_x = "up"
+metadata/direction_init_y = "left"

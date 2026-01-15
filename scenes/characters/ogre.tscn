@@ -1,0 +1,145 @@
+[gd_scene load_steps=19 format=3 uid="uid://cfetwf834yr7j"]
+
+[ext_resource type="Texture2D" uid="uid://c3mk3140448n4" path="res://assets/characters/ogre-down-001.png" id="1_0nn4f"]
+[ext_resource type="Texture2D" uid="uid://c01fa4uactovg" path="res://assets/characters/ogre-none.png" id="1_ay7jo"]
+[ext_resource type="Texture2D" uid="uid://c1a8vhj22g6g3" path="res://assets/characters/ogre-down-002.png" id="2_ay7jo"]
+[ext_resource type="Texture2D" uid="uid://dkahd5pb5ddt7" path="res://assets/characters/ogre-down-003.png" id="3_2pi4n"]
+[ext_resource type="Texture2D" uid="uid://ci2nect6q3ufy" path="res://assets/characters/ogre-left-001.png" id="4_0nn4f"]
+[ext_resource type="Texture2D" uid="uid://cmilkk5lpl48p" path="res://assets/characters/ogre-left-002.png" id="5_ay7jo"]
+[ext_resource type="Texture2D" uid="uid://r68svvvdy8cu" path="res://assets/characters/ogre-left-003.png" id="6_2pi4n"]
+[ext_resource type="Texture2D" uid="uid://bx3j7f4qxb417" path="res://assets/characters/ogre-right-001.png" id="7_hhu2w"]
+[ext_resource type="Texture2D" uid="uid://b10rkh60dr8rl" path="res://assets/characters/ogre-right-002.png" id="8_jboif"]
+[ext_resource type="Texture2D" uid="uid://b6q4j5aqppdbp" path="res://assets/characters/ogre-right-003.png" id="9_qxo4n"]
+[ext_resource type="Texture2D" uid="uid://bdegyvu560lnl" path="res://assets/characters/ogre-up-001.png" id="10_hkfu0"]
+[ext_resource type="Texture2D" uid="uid://cgo7kxmhf8i6l" path="res://assets/characters/ogre-up-002.png" id="11_qqgta"]
+[ext_resource type="Texture2D" uid="uid://brmhh23otui30" path="res://assets/characters/ogre-up-003.png" id="12_1n2l3"]
+[ext_resource type="Script" uid="uid://dla7rggsopm15" path="res://scripts/enemy.gd" id="14_2pi4n"]
+[ext_resource type="AudioStream" uid="uid://28glefmb7j63" path="res://assets/sounds/running-6358.mp3" id="15_2pi4n"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="16_hhu2w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ay7jo")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0nn4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ay7jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2pi4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ay7jo")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0nn4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ay7jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2pi4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ay7jo")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hhu2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jboif")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qxo4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jboif")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hkfu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qqgta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1n2l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qqgta")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 10.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hhu2w"]
+polygon = PackedVector2Array(13, 27, 11, 29, -1, 29, -3, 27, 0, 24, 5, 28, 10, 24)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-left"
+script = ExtResource("14_2pi4n")
+metadata/type = "ogre"
+metadata/subtype = "ogre"
+metadata/size = Vector3(9, 9, 33)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 8
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_2pi4n")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("16_hhu2w")
+texture_scale = 4.0
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, -12)
+occluder = SubResource("OccluderPolygon2D_hhu2w")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, -12)
+occluder = SubResource("OccluderPolygon2D_hhu2w")
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, -12)
+occluder = SubResource("OccluderPolygon2D_hhu2w")
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5, -12)
+occluder = SubResource("OccluderPolygon2D_hhu2w")

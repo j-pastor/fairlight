@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=4 uid="uid://c26m4xfbs28j"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_6086d"]
+[ext_resource type="Texture2D" uid="uid://c48ltf02h6um8" path="res://assets/decoration/treetrunk-2.png" id="2_gwhgs"]
+[ext_resource type="Texture2D" uid="uid://b1ldqt77r6e76" path="res://assets/decoration/treetop-2.png" id="3_agx34"]
+[ext_resource type="Texture2D" uid="uid://cdgn3vmoa0n6o" path="res://assets/decoration/treetop-3.png" id="4_btqme"]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 4
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "yard"
+metadata/south = "yard-gate"
+metadata/west = "yard-zen"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-8, -57)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD9/wIAKQAAAAAAAAD+/wIAKQAAAAAAAAD//wIAKQAAAAAAAAAAAAIAKQAAAAAAAAD9//7/KQAAAAAAAAD+//7/KQAAAAAAAAD///7/KQAAAAAAAAAAAP7/KQAAAAAAAAAAAP//KQAAAAAAAAAAAAAAKQAAAAAAAAAAAAEAKQAAAAAAAAD//wEAKQAAAAAAAAD+/wEAKQAAAAAAAAD9/wEAKQAAAAAAAAD9/wAAKQAAAAAAAAD9////KQAAAAAAAAD+////KQAAAAAAAAD/////KQAAAAAAAAD//wAAKQAAAAAAAAD+/wAAKQAAAAAAAAD8//7/KQAAAAAAAAD8////KQAAAAAAAAD8/wAAKQAAAAAAAAD8/wEAKQAAAAAAAAD8/wIAKQAAAAAAAAD7/wIAKQAAAAAAAAD7/wEAKQAAAAAAAAD6/wEAKQAAAAAAAAD7/wAAKQAAAAAAAAD6/wAAKQAAAAAAAAD5/wAAKQAAAAAAAAD7////KQAAAAAAAAD6////KQAAAAAAAAD5////KQAAAAAAAAD4////KQAAAAAAAAD7//7/KQAAAAAAAAD6//7/KQAAAAAAAAD5//7/KQAAAAAAAAD4//7/KQAAAAAAAAD3//7/KQAAAAAAAAABAAIAKQAAAAAAAAACAAIAKQAAAAAAAAADAAIAKQAAAAAAAAABAAEAKQAAAAAAAAACAAEAKQAAAAAAAAADAAEAKQAAAAAAAAAEAAEAKQAAAAAAAAABAAAAKQAAAAAAAAACAAAAKQAAAAAAAAADAAAAKQAAAAAAAAAEAAAAKQAAAAAAAAABAP//KQAAAAAAAAACAP//KQAAAAAAAAADAP//KQAAAAAAAAABAP7/KQAAAAAAAAACAP7/KQAAAAAAAAD6/wIAKQAAAAAAAAD5/wEAKQAAAAAAAAD4/wAAKQAAAAAAAAD3////KQAAAAAAAAAEAP//KQAAAAAAAAADAP7/KQAAAAAAAAD7/wMAKQAAAAAAAAD8/wMAKQAAAAAAAAD9/wMAKQAAAAAAAAD+/wMAKQAAAAAAAAD//wMAKQAAAAAAAAAAAAMAKQAAAAAAAAABAAMAKQAAAAAAAAD8/wQAKQAAAAAAAAD9/wQAKQAAAAAAAAD+/wQAKQAAAAAAAAD//wQAKQAAAAAAAAAAAAQAKQAAAAAAAAD9/wUAKQAAAAAAAAD+/wUAKQAAAAAAAAABAPz/QQAAAAAAAAAAAPz/QQAAAAAAAAD///z/QQAAAAAAAAD+//z/QQAAAAAAAAD9//z/QQAAAAAAAAD8//z/QQAAAAAAAAD7//z/QQAAAAAAAAD6//z/QQAAAAAAAAABAPv/QQAAAAAAAAAAAPv/QQAAAAAAAAD///v/QQAAAAAAAAD+//r/QQAAAAAAAAD9//r/QQAAAAAAAAD8//r/QQAAAAAAAAD8//v/QQAAAAAAAAD7//v/QQAAAAAAAAD6//v/QQAAAAAAAAD+//v/QQAAAAAAAAD///r/QQAAAAAAAAD9//v/QQAAAAAAAAD7//r/QQAAAAAAAAD6//r/QQAAAAAAAAD6//n/QQAAAAAAAAD7//n/QQAAAAAAAAD8//n/QQAAAAAAAAD9//n/QQAAAAAAAAAAAPr/QQAAAAAAAAAAAPn/QQAAAAAAAAD///n/QQAAAAAAAAD+//n/QQAAAAAAAAAAAPj/QQAAAAAAAAD///j/QQAAAAAAAAD+//j/QQAAAAAAAAD9//j/QQAAAAAAAAD8//j/QQAAAAAAAAD7//j/QQAAAAAAAAD6//j/QQAAAAAAAAA=")
+tile_set = ExtResource("1_6086d")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD8//3/BgAAAAAAAAD9//3/BgAAAAAAAAD+//3/BgAAAAAAAAD///3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAD5//3/BgAAAAAAAAD4//3/BgAAAAAAAAD3//3/BgAAAAAAAAABAP3/BgAAAAAAAAACAP3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_6086d")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD+//3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAD5//3/BgAAAAAAAAABAP3/BgAAAAAAAAACAP3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_6086d")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD+//3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAD7//3/BgAAAAAAAAD6//3/BgAAAAAAAAABAP3/BgAAAAAAAAACAP3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_6086d")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD///3/BgAAAAAAAAD+//3/BgAAAAAAAAD9//3/BgAAAAAAAAD8//3/BgAAAAAAAAAAAP3/BgAAAAAAAAABAP3/BgAAAAAAAAACAP3/BgAAAAAAAAD7//3/BgAAAAAAAAA=")
+tile_set = ExtResource("1_6086d")
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Treetrunk2" type="Sprite2D" parent="."]
+position = Vector2(145, -130.5)
+texture = ExtResource("2_gwhgs")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-9" type="Sprite2D" parent="."]
+position = Vector2(129, -150.5)
+texture = ExtResource("3_agx34")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-10" type="Sprite2D" parent="."]
+position = Vector2(161, -150.5)
+texture = ExtResource("3_agx34")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-11" type="Sprite2D" parent="."]
+position = Vector2(145, -158.5)
+texture = ExtResource("4_btqme")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-12" type="Sprite2D" parent="."]
+position = Vector2(145, -152.5)
+texture = ExtResource("3_agx34")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-13" type="Sprite2D" parent="."]
+position = Vector2(137, -164.5)
+texture = ExtResource("3_agx34")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-14" type="Sprite2D" parent="."]
+position = Vector2(152, -168.5)
+texture = ExtResource("4_btqme")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"

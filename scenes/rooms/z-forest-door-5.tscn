@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgomdn77m56jo"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_gc6qv"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_6n3oo"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_d3c3s"]
+[ext_resource type="Texture2D" uid="uid://daotifsstvqtd" path="res://assets/decoration/mountain-chasm-003.png" id="3_gc6qv"]
+[ext_resource type="Texture2D" uid="uid://doyjuldrs6n5g" path="res://assets/textures/texture-floor-002.png" id="3_w4se0"]
+[ext_resource type="Texture2D" uid="uid://byoi7ckt76dgx" path="res://assets/decoration/mountain-bridge-2.png" id="4_84an7"]
+[ext_resource type="Texture2D" path="res://assets/tmp/Sin nombre-4.png" id="6_gc6qv"]
+[ext_resource type="Texture2D" uid="uid://be7ymby6y0l7n" path="res://assets/doors/door-005-right-open.png" id="7_loxtp"]
+[ext_resource type="Texture2D" uid="uid://c48ltf02h6um8" path="res://assets/decoration/treetrunk-2.png" id="11_84an7"]
+[ext_resource type="Texture2D" uid="uid://b1ldqt77r6e76" path="res://assets/decoration/treetop-2.png" id="12_rmabw"]
+[ext_resource type="Texture2D" uid="uid://cdgn3vmoa0n6o" path="res://assets/decoration/treetop-3.png" id="13_xc6wk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_44nqn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gc6qv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "z-bridge"
+metadata/south = "z-forest-cave-entry"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, -63, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-58, -53)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(-63, 47.000004)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_44nqn")
+autoplay = "default"
+script = ExtResource("2_d3c3s")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("2_6n3oo")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-154, -78)
+
+[node name="Mountain-chasm" type="Sprite2D" parent="Polygons"]
+position = Vector2(98.348, 96.304)
+texture = ExtResource("3_gc6qv")
+
+[node name="Polygon2D" type="Polygon2D" parent="Polygons"]
+visible = false
+position = Vector2(8626.49, 117.223)
+scale = Vector2(56.5496, 30.2551)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-150, -1, -150, 3, -151.011, 3, -152, 3, -152, -1)
+
+[node name="SinNombre" type="Sprite2D" parent="Polygons"]
+visible = false
+position = Vector2(123.568, 33.7537)
+scale = Vector2(0.267973, 0.254707)
+texture = ExtResource("6_gc6qv")
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-309, -92)
+texture = ExtResource("3_w4se0")
+polygon = PackedVector2Array(192.97333, 55.76394, 339.86, 129.707, 345.123, 127.571, 411.942, 140.157, 472.945, 134.276, 517.78, 142.138, 569.264, 151.056, 592.101, 156.461, 651.512, 157.047, 657.016, 276.679, 438.514, 235.398, 348.176, 188.798, 340.376, 184.382, 330.528, 175.55, 326.35513, 166.15546, 326.10944, 164.18993, 317.228, 155.549, 313.274, 145.321, 169.88, 71.5201)
+uv = PackedVector2Array(434.423, 167.941, 441.437, 171.538, 486.402, 198.696, 469.824, 201.344, 458.672, 207.099, 445.686, 211.178, 430.614, 213.214, 418.924, 215.732, 404.535, 222.747, 384.715, 227.756, 368.958, 230.878, 354.986, 236.972, 337.148, 241.878, 107.8, 121.261, 161.604, 93.2476, 226.488, 104.545, 254.875, 111.496, 266.751, 116.421, 321.951, 80.6041, 406.365, 121.717)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Bridge" type="Sprite2D" parent="Polygons"]
+position = Vector2(-52.916, 29.249802)
+texture = ExtResource("4_84an7")
+
+[node name="Line2D3" type="Line2D" parent="."]
+position = Vector2(-175, -175)
+points = PackedVector2Array(-93.6668, 60.8263, 51.7043, 134.724, 57.242, 132.71, 124.268, 145.113, 184.717, 139.269, 257.153, 152.373, 270.022, 154.561, 281.64, 156.697, 303.997, 161.501)
+width = 1.0
+default_color = Color(0, 0.23529412, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="."]
+position = Vector2(-175, -175)
+points = PackedVector2Array(170.452, 244.534, 150.683, 240.52, 52.3758, 189.286, 42.766754, 180.31998, 40.736237, 176.15744, 39.294632, 172.91635, 38.54431, 170.70589)
+width = 1.0
+default_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="door-to-fc-room-door-5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-94, 8.086)
+texture = ExtResource("7_loxtp")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "z-fc-room-door-5"
+metadata/target_pos = Vector3(39.25, -0.75, 0)
+metadata/target_direction = "left"
+metadata/has_frame = true
+
+[node name="Treetrunk2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(80, 42)
+texture = ExtResource("11_84an7")
+metadata/size = Vector3(17, 17, 31)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "fixed"
+
+[node name="Treetop-9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(64, 22)
+texture = ExtResource("12_rmabw")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(96, 22)
+texture = ExtResource("12_rmabw")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-11" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(80, 14)
+texture = ExtResource("13_xc6wk")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-12" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(80, 20)
+texture = ExtResource("12_rmabw")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 32)
+metadata/type = "fixed"
+
+[node name="Treetop-13" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(72, 8)
+texture = ExtResource("12_rmabw")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"
+
+[node name="Treetop-14" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(87, 4)
+texture = ExtResource("13_xc6wk")
+metadata/size = Vector3(11, 11, 17)
+metadata/pos = Vector3(0, 0, 49)
+metadata/type = "fixed"

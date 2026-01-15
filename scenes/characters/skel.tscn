@@ -1,0 +1,158 @@
+[gd_scene load_steps=22 format=3 uid="uid://ck5arq1mouok8"]
+
+[ext_resource type="Texture2D" uid="uid://c01fa4uactovg" path="res://assets/characters/ogre-none.png" id="1_pblb3"]
+[ext_resource type="Texture2D" uid="uid://bqnwo0uyap2v4" path="res://assets/characters/ske-down-001.png" id="2_hqqep"]
+[ext_resource type="Texture2D" uid="uid://c4sd732x3mvxk" path="res://assets/characters/ske-down-002.png" id="3_2y572"]
+[ext_resource type="Texture2D" uid="uid://ckknyc6dpr51t" path="res://assets/characters/ske-down-003.png" id="4_pblb3"]
+[ext_resource type="Texture2D" uid="uid://drct1kgxgea2x" path="res://assets/characters/ske-left-001.png" id="5_pblb3"]
+[ext_resource type="Texture2D" uid="uid://d1ybbhfa6gtuq" path="res://assets/characters/ske-left-002.png" id="6_52ipj"]
+[ext_resource type="Texture2D" uid="uid://cipc40s3ie6dk" path="res://assets/characters/ske-left-003.png" id="7_hckcc"]
+[ext_resource type="Texture2D" uid="uid://0shig0qgo3" path="res://assets/characters/ske-right-001.png" id="8_71eb8"]
+[ext_resource type="Texture2D" uid="uid://i6vvyy38irit" path="res://assets/characters/ske-right-002.png" id="9_pnt6u"]
+[ext_resource type="Texture2D" uid="uid://dkrmqgf3tr1w1" path="res://assets/characters/ske-right-003.png" id="10_56vxq"]
+[ext_resource type="Texture2D" uid="uid://b4ff70qprrqcp" path="res://assets/characters/ske-up-001.png" id="11_sa6mw"]
+[ext_resource type="Texture2D" uid="uid://c51u22pu85h2r" path="res://assets/characters/ske-up-002.png" id="12_406uv"]
+[ext_resource type="Texture2D" uid="uid://bp5ddy6ouicgw" path="res://assets/characters/ske-up-003.png" id="13_omhwy"]
+[ext_resource type="Script" uid="uid://dla7rggsopm15" path="res://scripts/enemy.gd" id="14_s5p4v"]
+[ext_resource type="AudioStream" uid="uid://28glefmb7j63" path="res://assets/sounds/running-6358.mp3" id="15_t1ues"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="16_kbki5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pblb3")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hqqep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2y572")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_hqqep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pblb3")
+}],
+"loop": true,
+"name": &"walk-down",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_pblb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_52ipj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pblb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hckcc")
+}],
+"loop": true,
+"name": &"walk-left",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_71eb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pnt6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_71eb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_56vxq")
+}],
+"loop": true,
+"name": &"walk-right",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sa6mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_406uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sa6mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_omhwy")
+}],
+"loop": true,
+"name": &"walk-up",
+"speed": 7.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kbki5"]
+polygon = PackedVector2Array(8.155334, 24.99034, 3.2770061, 27.121649, -0.2751751, 25.748138, 3.9400806, 28.495157)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7bsib"]
+polygon = PackedVector2Array(8.439508, 26.884836, 5.3609505, 27.879448, -0.13308907, 25.984951, 5.9293003, 28.874058)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qdo1o"]
+polygon = PackedVector2Array(8.2974205, 26.505938, 3.987442, 28.54252, -0.46462536, 26.648024, 3.5138168, 29.489769)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ou06u"]
+polygon = PackedVector2Array(6.7290745, 25.1744, 2.987442, 26.121649, -0.75418854, 23.658802, 2.845356, 27.305708)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"walk-up"
+script = ExtResource("14_s5p4v")
+metadata/type = "ogre"
+metadata/subtype = "ogre"
+metadata/size = Vector3(9, 9, 33)
+metadata/uid = ""
+metadata/direction_init = ""
+metadata/z_init = 0.0
+metadata/weight = 8
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_t1ues")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-1, -2)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("16_kbki5")
+texture_scale = 4.0
+
+[node name="occluder-down" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, -10)
+occluder = SubResource("OccluderPolygon2D_kbki5")
+
+[node name="occluder-left" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5.5521793, -11.184061)
+occluder = SubResource("OccluderPolygon2D_7bsib")
+
+[node name="occluder-up" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-5.5521793, -11.184061)
+occluder = SubResource("OccluderPolygon2D_qdo1o")
+
+[node name="occluder-right" type="LightOccluder2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -9)
+occluder = SubResource("OccluderPolygon2D_ou06u")

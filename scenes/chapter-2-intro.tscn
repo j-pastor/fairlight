@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://dss2q67fgsneq"]
+
+[ext_resource type="Script" uid="uid://dtl3fu1x083rp" path="res://scripts/chapter_change.gd" id="1_skpmn"]
+[ext_resource type="Texture2D" uid="uid://byccoa8ytndxa" path="res://assets/splash/black-background.png" id="2_k0bw6"]
+[ext_resource type="Texture2D" uid="uid://cuk27c336h0at" path="res://assets/splash/chapter-2-intro.png" id="3_skpmn"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="4_fma4m"]
+[ext_resource type="AudioStream" uid="uid://cc5uomtat8if5" path="res://assets/music/scary-horror-dark-music-372674.mp3" id="5_skpmn"]
+
+[node name="chapter2" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_skpmn")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_k0bw6")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -528.0
+offset_top = 58.0
+offset_right = -67.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_skpmn")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message_result2" type="Label" parent="."]
+offset_left = 539.0
+offset_top = 316.0
+offset_right = 1211.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_fma4m")
+theme_override_font_sizes/font_size = 40
+text = "As Isvar leaves Avars Castle,
+the Dark Lord surprises him
+and casts a sleeping spell
+to steal the Magic Crown
+and the Book of Light..."
+horizontal_alignment = 1
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="chapter_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_skpmn")

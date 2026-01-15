@@ -1,0 +1,219 @@
+[gd_scene load_steps=11 format=4 uid="uid://bp50nc13wmr6u"]
+
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="1_mtb3l"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="2_2bu5x"]
+[ext_resource type="Texture2D" uid="uid://boptjijjewe5d" path="res://assets/decoration/torch-001-right.png" id="3_76yh6"]
+[ext_resource type="Texture2D" uid="uid://bhoas7sokxjka" path="res://assets/decoration/torch-002-right.png" id="4_l0vt6"]
+[ext_resource type="Texture2D" uid="uid://dt0f4fr3jtphv" path="res://assets/decoration/torch-003-right.png" id="5_7jkp3"]
+[ext_resource type="Texture2D" uid="uid://bj5vpbv8wqo13" path="res://assets/decoration/torch-004-right.png" id="6_67ckp"]
+[ext_resource type="Texture2D" uid="uid://ccjeddgihdyhf" path="res://assets/decoration/spears-001-right.png" id="8_fkunj"]
+[ext_resource type="Texture2D" uid="uid://crjpmawnh18ka" path="res://assets/doors/door-001-right-closed.png" id="11_2bu5x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8stph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_76yh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l0vt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7jkp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_67ckp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xyhek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_76yh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l0vt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7jkp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_67ckp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 60)
+metadata/north = "none"
+metadata/south = "castle-middle-north-corridor"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/fire = true
+metadata/_edit_horizontal_guides_ = [-147.0]
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(84, -97)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAD8////GAAAAAAAAAD9////GAAAAAAAAAD+////GAAAAAAAAAD/////GAAAAAAAAAAAAP//GAAAAAAAAAABAP//GAAAAAAAAAACAP//GAAAAAAAAAADAP//GAAAAAAAAAAEAP//GAAAAAAAAAAFAP//GAAAAAAAAAD8//7/GAAAAAAAAAD9//7/GAAAAAAAAAD+//7/GAAAAAAAAAD///7/GAAAAAAAAAAAAP7/GAAAAAAAAAABAP7/GAAAAAAAAAACAP7/GAAAAAAAAAADAP7/GAAAAAAAAAAEAP7/GAAAAAAAAAAFAP7/GAAAAAAAAAAGAP7/GAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_map_data = PackedByteArray("AAD7////BAAAAAAAAAD7//7/BAAAAAAAAAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_2" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -20)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_3" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -40)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_4" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -60)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_5" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -80)
+tile_map_data = PackedByteArray("AAD8//3/BQAAAAAAAAD9//3/BQAAAAAAAAD+//3/BQAAAAAAAAD///3/BQAAAAAAAAAAAP3/BQAAAAAAAAABAP3/BQAAAAAAAAACAP3/BQAAAAAAAAADAP3/BQAAAAAAAAAEAP3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_6" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -100)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7//7/BAAAAAAAAAD7////BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_7" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -120)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_8" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -140)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAD7////BAAAAAAAAAD7//7/BAAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_9" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -160)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_10" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -180)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_11" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -200)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_12" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -220)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="Layer_wall_13" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+position = Vector2(0, -240)
+tile_map_data = PackedByteArray("AAAEAP3/BQAAAAAAAAADAP3/BQAAAAAAAAACAP3/BQAAAAAAAAABAP3/BQAAAAAAAAAAAP3/BQAAAAAAAAD///3/BQAAAAAAAAD+//3/BQAAAAAAAAD9//3/BQAAAAAAAAD8//3/BQAAAAAAAAAFAP3/BQAAAAAAAAAGAP3/BQAAAAAAAAA=")
+tile_set = ExtResource("1_mtb3l")
+
+[node name="GlowTorch2" type="PointLight2D" parent="Layers"]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(8, -114)
+color = Color(1, 0.768627, 0.537255, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_2bu5x")
+texture_scale = 1.5
+
+[node name="Line2D" type="Line2D" parent="Layers"]
+position = Vector2(48, -65)
+points = PackedVector2Array(-152, -2, 75, 111)
+width = 2.0
+default_color = Color(0.309804, 0.231373, 0.105882, 1)
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="torch" type="AnimatedSprite2D" parent="FixedObjects"]
+position = Vector2(9, -110)
+sprite_frames = SubResource("SpriteFrames_8stph")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="door-to-warehouse" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(39.810097, -74.184)
+texture = ExtResource("11_2bu5x")
+metadata/type = "door"
+metadata/size = Vector3(22, 3, 40)
+metadata/pos = Vector3(0, 0, 0)
+metadata/target = "warehouse"
+metadata/target_pos = Vector3(81.058, 148.615, 0)
+metadata/target_direction = "right"
+metadata/has_frame = true
+
+[node name="GlowTorch2" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(157, -39)
+color = Color(1, 0.768627, 0.537255, 1)
+shadow_enabled = true
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_2bu5x")
+texture_scale = 1.5
+
+[node name="torch" type="AnimatedSprite2D" parent="."]
+position = Vector2(155, -38)
+sprite_frames = SubResource("SpriteFrames_xyhek")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Spears" type="Sprite2D" parent="."]
+position = Vector2(179, -25)
+texture = ExtResource("8_fkunj")
+metadata/type = "fixed"
+metadata/size = Vector3(20, 5, 48)
+metadata/pos = Vector3(0, 0, 15)

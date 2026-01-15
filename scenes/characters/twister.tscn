@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctb1ofvqprhqv"]
+
+[ext_resource type="Texture2D" uid="uid://kbyvb2l52kq8" path="res://assets/characters/twister-none.png" id="1_sv7h8"]
+[ext_resource type="Script" uid="uid://3f31h0w8jr6t" path="res://scripts/twister.gd" id="4_fso6y"]
+[ext_resource type="Texture2D" uid="uid://dpbsr45d4rm8x" path="res://assets/characters/twister-bis-001.png" id="5_eepjv"]
+[ext_resource type="Texture2D" uid="uid://dydjcq0ce3byn" path="res://assets/characters/twister-bis-002.png" id="6_75i1g"]
+[ext_resource type="AudioStream" uid="uid://dkp2ljvirurph" path="res://assets/sounds/lonely-winter-breeze-36867.mp3" id="7_eeuc0"]
+[ext_resource type="Texture2D" uid="uid://bfnmcv7ogyjau" path="res://assets/characters/twister-bis-003.png" id="7_wahtr"]
+[ext_resource type="Texture2D" uid="uid://c0urb3qfq802k" path="res://assets/characters/twister-bis-004.png" id="8_bx231"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="8_wpx0q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sv7h8")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_eepjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_75i1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wahtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bx231")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wahtr")
+}],
+"loop": true,
+"name": &"twister",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"twister"
+script = ExtResource("4_fso6y")
+metadata/type = "twister"
+metadata/subtype = "twister"
+metadata/size = Vector3(6, 6, 23)
+metadata/uid = ""
+metadata/z_init = 0.0
+metadata/weight = 8
+metadata/direction_init_x = ""
+metadata/direction_init_y = ""
+
+[node name="Wind" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_eeuc0")
+volume_db = 2.0
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-0.59210205, -1.5921097)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("8_wpx0q")
+texture_scale = 4.0

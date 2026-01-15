@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://by10f5y5wwfxd"]
+
+[ext_resource type="Script" uid="uid://baektaemn55sj" path="res://scripts/death.gd" id="1_tympj"]
+[ext_resource type="Texture2D" uid="uid://byccoa8ytndxa" path="res://assets/splash/black-background.png" id="2_qwkea"]
+[ext_resource type="Texture2D" uid="uid://djf7lj0v3eeyn" path="res://assets/splash/death-type-1.png" id="3_tympj"]
+[ext_resource type="FontFile" uid="uid://bp22okysky5kf" path="res://fonts/Macondo-Regular.ttf" id="4_tii1s"]
+[ext_resource type="AudioStream" uid="uid://jm456cb776lr" path="res://assets/music/dark-mysterious-piano-music-267083.mp3" id="5_ndcby"]
+
+[node name="SplashScreen" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_tympj")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qwkea")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -108.0
+offset_top = 261.0
+offset_right = 432.0
+offset_bottom = -197.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tympj")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="message" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 159.0
+offset_right = 998.0
+offset_bottom = 318.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/line_spacing = -11
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_tii1s")
+theme_override_font_sizes/font_size = 40
+text = "You have DIED AND FAILED IN YOUR QUEST...
+
+
+      Game OVER"
+uppercase = true
+
+[node name="FadeRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="chapter_music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ndcby")

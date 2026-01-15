@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=3 uid="uid://coch03tr8cmmb"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_uogch"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_8q5sd"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_uogch"]
+[ext_resource type="Texture2D" uid="uid://bew0hhal7k3xx" path="res://assets/textures/sand.png" id="3_8nhwn"]
+[ext_resource type="Texture2D" uid="uid://doyjuldrs6n5g" path="res://assets/textures/texture-floor-002.png" id="4_6lw7f"]
+[ext_resource type="Texture2D" uid="uid://c6bc6vwsmiv33" path="res://assets/objects/boulder-001.png" id="4_7ya1i"]
+[ext_resource type="Texture2D" uid="uid://7omdao68bded" path="res://assets/objects/boulder-004.png" id="5_8nhwn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q5sd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uogch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "z-beach-1"
+metadata/south = "z-beach-3"
+metadata/west = "none"
+metadata/east = "none"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(-195, -90)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_8q5sd")
+autoplay = "default"
+script = ExtResource("2_uogch")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("2_8q5sd")
+
+[node name="Polygons" type="Node2D" parent="."]
+position = Vector2(-154, -78)
+
+[node name="floor2" type="Polygon2D" parent="Polygons"]
+position = Vector2(-374.83398, -302.541)
+color = Color(1.347661e-06, 0.4078063, 0.7722352, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 304.73602, 203.67963, 313.193, 206.385, 319.6193, 206.83612, 329.19495, 209.66528, 338.11777, 212.7121, 651.2695, 369.41577, 675.45844, 399.20673, 686.82477, 448.56018, 583.5134, 482.68536, 198, 292, 92.3081, 240.443, 96.646, 230.382, 102.184, 216.999, 105.322, 214.138, 111.69, 208.047, 119.72, 201.586, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor3" type="Polygon2D" parent="Polygons"]
+position = Vector2(-376.83398, -299.541)
+color = Color(0, 0.47058824, 0.8117647, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 304.73602, 203.67963, 313.193, 206.385, 319.6193, 206.83612, 329.19495, 209.66528, 338.11777, 212.7121, 651.2695, 369.41577, 675.45844, 399.20673, 686.82477, 448.56018, 583.5134, 482.68536, 198, 292, 92.3081, 240.443, 96.646, 230.382, 102.184, 216.999, 105.322, 214.138, 111.69, 208.047, 119.72, 201.586, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor4" type="Polygon2D" parent="Polygons"]
+position = Vector2(-377.83398, -296.541)
+color = Color(0.5571548, 0.8125106, 1, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 304.73602, 203.67963, 313.193, 206.385, 319.6193, 206.83612, 329.19495, 209.66528, 338.11777, 212.7121, 651.2695, 369.41577, 675.45844, 399.20673, 686.82477, 448.56018, 583.5134, 482.68536, 198, 292, 92.3081, 240.443, 96.646, 230.382, 102.184, 216.999, 105.322, 214.138, 111.69, 208.047, 119.72, 201.586, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor5" type="Polygon2D" parent="Polygons"]
+position = Vector2(-379.83398, -294.541)
+color = Color(0.8117647, 0.6156863, 0.13333334, 1)
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 304.73602, 203.67963, 313.193, 206.385, 319.6193, 206.83612, 329.19495, 209.66528, 338.11777, 212.7121, 651.2695, 369.41577, 675.45844, 399.20673, 686.82477, 448.56018, 583.5134, 482.68536, 198, 292, 92.3081, 240.443, 96.646, 230.382, 102.184, 216.999, 105.322, 214.138, 111.69, 208.047, 119.72, 201.586, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="floor" type="Polygon2D" parent="Polygons"]
+position = Vector2(-376.83398, -288.541)
+texture = ExtResource("3_8nhwn")
+polygon = PackedVector2Array(165.96, 187.834, 183.404, 186.542, 200.896, 185.434, 213.449, 185.065, 222.401, 186.173, 230.616, 187.465, 238.83, 188.849, 248.06, 189.864, 254.151, 190.972, 259.043, 192.264, 263.381, 193.372, 268.18, 194.848, 272.703, 195.771, 277.594, 197.248, 282.302, 198.448, 289.64, 200.274, 296.764, 202.048, 304.73602, 203.67963, 313.193, 206.385, 319.6193, 206.83612, 329.19495, 209.66528, 338.11777, 212.7121, 642.3583, 364.26776, 649.57153, 369.17084, 655.0775, 375.8738, 669.0927, 393.57095, 682.53516, 448.31683, 583.5134, 482.68536, 198, 292, 92.3081, 240.443, 96.646, 230.382, 102.184, 216.999, 105.322, 214.138, 111.69, 208.047, 119.72, 201.586, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="Line2D3" type="Line2D" parent="."]
+visible = false
+position = Vector2(134, -81)
+points = PackedVector2Array(-360.447, -105.237, -9.299698, 70.61821, 15.190247, 102.23155)
+width = 1.0
+default_color = Color(0.883429, 0.643523, 0.159252, 1)
+
+[node name="floor2" type="Polygon2D" parent="."]
+z_index = 4096
+position = Vector2(-364.061, -233.453)
+texture = ExtResource("4_6lw7f")
+polygon = PackedVector2Array(157.221, 185.935, 279.627, 246.953, 513.923, 363.618, 172.735, 323.038, 58.1468, 263.768, 126.273, 196.233, 134.026, 193.741, 145.009, 191.341, 154.331, 188.849)
+uv = PackedVector2Array(248.303, 121.382, 319.147, 163.055, 294.144, 246.401, 185.794, 283.906, 92.03, 250.568, 33.6877, 246.401, 158.707, 121.382)
+metadata/type = "floor"
+metadata/z = -1
+
+[node name="Line2D2" type="Line2D" parent="."]
+z_index = 4096
+position = Vector2(5, -16.5)
+points = PackedVector2Array(-211.194, -30.3817, 136.456, 141.991)
+width = 1.0
+default_color = Color(0, 0.23529412, 0, 1)
+
+[node name="NonFixedObjects" type="Node2D" parent="."]
+
+[node name="rock4" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-95.859, -32.1652)
+texture = ExtResource("4_7ya1i")
+metadata/size = Vector3(6, 6, 9)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-1-beach-2"
+metadata/weight = 9
+
+[node name="rock5" type="Sprite2D" parent="NonFixedObjects"]
+position = Vector2(-27.0908, -23.8835)
+texture = ExtResource("5_8nhwn")
+metadata/size = Vector3(6, 6, 11)
+metadata/pos = Vector3(0, 0, 0)
+metadata/type = "portable"
+metadata/subtype = "rock"
+metadata/uid = "rock-2-beach-2"
+metadata/weight = 9

@@ -1,0 +1,346 @@
+[gd_scene load_steps=13 format=3 uid="uid://b222vmpuhy4l6"]
+
+[ext_resource type="Texture2D" uid="uid://dhh3m22f1fiak" path="res://assets/textures/sea.png" id="1_du7e0"]
+[ext_resource type="TileSet" uid="uid://dlx3psaetvnhp" path="res://tileset/tiles.tres" id="2_2lphm"]
+[ext_resource type="Texture2D" uid="uid://bgopm4chruv0x" path="res://assets/decoration/well3.png" id="2_du7e0"]
+[ext_resource type="Script" uid="uid://bv3x2bn457utt" path="res://scripts/sea.gd" id="2_xx1hp"]
+[ext_resource type="Texture2D" uid="uid://bk8ar7xr8qwub" path="res://assets/chof/chof-012.png" id="3_85eyt"]
+[ext_resource type="Texture2D" uid="uid://rh1iv53pn8i3" path="res://assets/chof/chof-011.png" id="4_hy16y"]
+[ext_resource type="Texture2D" uid="uid://cx2c4cl3t7o2y" path="res://assets/decoration/block-wood-small.png" id="4_xx1hp"]
+[ext_resource type="Texture2D" uid="uid://b3n8dr7u08ald" path="res://assets/chof/chof-010.png" id="5_2os2d"]
+[ext_resource type="Texture2D" uid="uid://co1uwhpkfov2k" path="res://assets/chof/chof-004.png" id="6_26pwn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohsil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_du7e0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2leh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_85eyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hy16y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2os2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_26pwn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33qmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_2os2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hy16y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_85eyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_26pwn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RoomElements" type="Node2D"]
+z_as_relative = false
+metadata/wall_levels = 8
+metadata/tile_rr = Vector2i(-4, -2)
+metadata/size = Vector2(150, 150)
+metadata/north = "none"
+metadata/south = "none"
+metadata/west = "z-beach-dock"
+metadata/east = "z-ship-1"
+metadata/north_offset = Vector3(0, 0, 0)
+metadata/south_offset = Vector3(0, 0, 0)
+metadata/west_offset = Vector3(0, 0, 0)
+metadata/east_offset = Vector3(0, 0, 0)
+metadata/sea = true
+
+[node name="origin" type="Marker2D" parent="."]
+position = Vector2(-30, -90)
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(-30, -59)
+
+[node name="sea" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(0, 0.54509807, 0.8666667, 1)
+position = Vector2(35.999992, 11.000002)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ohsil")
+autoplay = "default"
+script = ExtResource("2_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.99167, 37.969578)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_2leh8")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-41.99166, 55.969574)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_33qmv")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof3" type="AnimatedSprite2D" parent="."]
+position = Vector2(54.008335, 5.9695706)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_2leh8")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof4" type="AnimatedSprite2D" parent="."]
+position = Vector2(22.008333, 23.969604)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_33qmv")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof5" type="AnimatedSprite2D" parent="."]
+position = Vector2(86.00834, -9.0303955)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_33qmv")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof6" type="AnimatedSprite2D" parent="."]
+position = Vector2(150.00833, -41.030434)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_2leh8")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="chof7" type="AnimatedSprite2D" parent="."]
+position = Vector2(118.00833, -24.030396)
+scale = Vector2(0.65, 0.65)
+sprite_frames = SubResource("SpriteFrames_33qmv")
+autoplay = "default"
+metadata/type = "fixed"
+metadata/size = Vector3(6, 3, 15)
+metadata/pos = Vector3(0, 0, 35)
+
+[node name="Mastil" type="Sprite2D" parent="."]
+position = Vector2(21.9423, 15.0719)
+texture = ExtResource("2_du7e0")
+
+[node name="Mastil5" type="Sprite2D" parent="."]
+position = Vector2(53.9423, -0.928131)
+texture = ExtResource("2_du7e0")
+
+[node name="Mastil6" type="Sprite2D" parent="."]
+position = Vector2(85.9423, -16.9281)
+texture = ExtResource("2_du7e0")
+
+[node name="Mastil7" type="Sprite2D" parent="."]
+position = Vector2(117.942, -32.9281)
+texture = ExtResource("2_du7e0")
+
+[node name="Mastil8" type="Sprite2D" parent="."]
+position = Vector2(149.942, -48.9281)
+texture = ExtResource("2_du7e0")
+
+[node name="Layers" type="Node2D" parent="."]
+
+[node name="Layer_floor_1" type="TileMapLayer" parent="Layers"]
+z_as_relative = false
+tile_set = ExtResource("2_2lphm")
+
+[node name="FixedObjects" type="Node2D" parent="."]
+
+[node name="mastil" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-74.28194, 63.75495)
+texture = ExtResource("2_du7e0")
+metadata/type = "fixed"
+metadata/size = Vector3(4, 4, 34)
+metadata/pos = Vector3(0, 0, -24)
+
+[node name="mastil2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-42.281937, 47.75495)
+texture = ExtResource("2_du7e0")
+metadata/type = "fixed"
+metadata/size = Vector3(4, 4, 34)
+metadata/pos = Vector3(0, 0, -24)
+
+[node name="mastil3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-10.281937, 30.754951)
+texture = ExtResource("2_du7e0")
+metadata/type = "fixed"
+metadata/size = Vector3(4, 4, 34)
+metadata/pos = Vector3(0, 0, -24)
+
+[node name="bridgeblock6" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(157.618, -68.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock7" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(143.618, -61.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock8" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(129.618, -54.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock9" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(115.618, -47.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock10" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(101.618, -40.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock1" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(87.6185, -33.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock2" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(73.6185, -26.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock3" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(59.6185, -19.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock4" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(45.6185, -12.727)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock5" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(31.6185, -5.72703)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock11" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(17.6185, 1.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock12" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(3.6185, 8.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock13" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-10.3815, 15.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock14" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-24.3815, 22.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock15" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-38.3815, 29.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock16" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-52.3815, 36.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock17" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-66.382, 43.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock18" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-80.382, 50.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock19" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-94.382, 57.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)
+
+[node name="bridgeblock20" type="Sprite2D" parent="FixedObjects"]
+position = Vector2(-108.382, 64.273)
+texture = ExtResource("4_xx1hp")
+metadata/type = "fixed"
+metadata/size = Vector3(22, 16, 6)
+metadata/pos = Vector3(0, 0, 10)

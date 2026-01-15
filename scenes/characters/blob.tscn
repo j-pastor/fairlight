@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://bkxjtyccasxpu"]
+
+[ext_resource type="Texture2D" uid="uid://bbc3xr2ncxigi" path="res://assets/characters/blob-001.png" id="1_50kq6"]
+[ext_resource type="Texture2D" uid="uid://cmskuna0jebxy" path="res://assets/characters/bubble-none.png" id="2_50kq6"]
+[ext_resource type="Texture2D" uid="uid://c2fdpkmrswq2t" path="res://assets/characters/blob-002.png" id="2_pjcp6"]
+[ext_resource type="Texture2D" uid="uid://br1nruuek2rq8" path="res://assets/characters/blob-003.png" id="3_pjcp6"]
+[ext_resource type="Texture2D" uid="uid://bnypg32ow5n2k" path="res://assets/characters/blob-004.png" id="4_1oscj"]
+[ext_resource type="AudioStream" uid="uid://cl8oyjm3p5a4m" path="res://assets/sounds/bubble-pop-04-323580.mp3" id="4_nlap5"]
+[ext_resource type="Script" uid="uid://dhxvajnn30lms" path="res://scripts/bubble-blob.gd" id="6_mt6qh"]
+[ext_resource type="Texture2D" uid="uid://ba0x454ale4hk" path="res://assets/decoration/glow_torch.png" id="7_nlap5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m0ick"]
+animations = [{
+"frames": [{
+"duration": 2.41,
+"texture": ExtResource("1_50kq6")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_pjcp6")
+}, {
+"duration": 0.51,
+"texture": ExtResource("3_pjcp6")
+}, {
+"duration": 0.51,
+"texture": ExtResource("4_1oscj")
+}, {
+"duration": 0.51,
+"texture": ExtResource("3_pjcp6")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_pjcp6")
+}],
+"loop": true,
+"name": &"bubble",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_50kq6")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mt6qh"]
+polygon = PackedVector2Array(3, 10, 5, 10, 6, 9, 5, 11, 3, 12, -1, 12, -3, 11, -4, 9, -3, 10, -1, 10)
+
+[node name="Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_m0ick")
+animation = &"bubble"
+frame = 3
+frame_progress = 0.84162426
+script = ExtResource("6_mt6qh")
+metadata/type = "blob"
+metadata/subtype = "blob"
+metadata/size = Vector3(8, 8, 8)
+metadata/uid = "blob"
+metadata/z_init = 0.0
+metadata/weight = 1
+metadata/direction_init_x = ""
+metadata/direction_init_y = ""
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nlap5")
+
+[node name="flash" type="PointLight2D" parent="."]
+self_modulate = Color(0.00820202, 0.00820202, 0.00820202, 1)
+position = Vector2(-2, -3)
+color = Color(0.28950414, 0.5406808, 0.68985236, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("7_nlap5")
+texture_scale = 4.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-1, -5)
+occluder = SubResource("OccluderPolygon2D_mt6qh")
