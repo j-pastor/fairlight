@@ -63,19 +63,17 @@ See the `LICENSE.txt` file for the full license terms.
 
 ## Credits
 
-- **Original games:**  
-  - *Fairlight – A Prelude*  
-  - *Fairlight II – A Trail of Darkness*  
-  — EDGE Games, Inc.
-
+- **Original games: *Fairlight – A Prelude*  and *Fairlight II – A Trail of Darkness*: EDGE Games, Inc.
 - **PC port development:** Juan-Antonio Pastor-Sánchez  
-- **Engine:** Godot Engine  
+- **Engine:** Godot Engine
 
 ---
 
 ## Acknowledgements
 
-Special thanks to **EDGE Games, Inc.** for their availability, good faith, and support in making this project publicly available under clear and respectful terms.
+- **EDGE Games, Inc.** for their availability, good faith, and support in making this project publicly available under clear and respectful terms.
+- Bo Jangeborg, original creator and programmer of Fairlight, for taking the time to review this PC port and for sharing his opinions, insights, and constructive comments.
+- Thanks to Richard Jordan, whose Fairlight PC demo showed that a PC port was possible and encouraged me to pursue this project.
 
 This project is shared with the hope that it will be useful to **fans, researchers, and developers**, and that it will help keep *Fairlight – A Prelude* and *Fairlight II – A Trail of Darkness* alive as part of video game history.
 
