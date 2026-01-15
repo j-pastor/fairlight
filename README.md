@@ -17,6 +17,8 @@ The port has been developed **from scratch**, with all the programming work carr
 
 Fairlight – A Prelude and Fairlight II – A Trail of Darkness were originally developed in the 1980s for 8-bit home computers, including ZX Spectrum, Amstrad CPC, Amstrad PCW and Commodore 64. Both games are considered landmark titles of the isometric adventure genre, notable for their advanced game engine, systemic design, and technical ambition on very limited hardware.
 
+This PC port of Fairlight – A Prelude and Fairlight II – A Trail of Darkness has been developed by organizing the game progression into three distinct chapters. The first chapter, A Prelude, includes the full content of the original Fairlight game. The second chapter, A Trail of Darkness, covers the first part of Fairlight II. Finally, the third chapter, A Quest in the Shadows, is based on the content of the second part of Fairlight II, extending and completing the narrative arc of the original games.
+
 For reference and historical context, full walkthroughs of the original games can be found online:
 
 - Fairlight – A Prelude (original version): https://www.youtube.com/watch?v=eWe7dhAWF-A
@@ -26,11 +28,6 @@ A video showing the final result of this PC port is also available online: https
 
 The project is published with the **explicit permission of EDGE Games, Inc.**, respecting all rights related to the original games.
 
-
-
-## Screenshots
-
-## Screenshots
 
 ## Screenshots
 
