@@ -2,7 +2,7 @@
 
 PC port of *Fairlight – A Prelude* and *Fairlight II – A Trail of Darkness* developed with Godot.
 
----
+
 
 ## About the project
 
@@ -26,7 +26,7 @@ A video showing the final result of this PC port is also available online: https
 
 The project is published with the **explicit permission of EDGE Games, Inc.**, respecting all rights related to the original games.
 
----
+
 
 ## Technology
 
@@ -34,7 +34,7 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
 - **Platform:** PC (Windows binaries provided)  
 - **Programming:** Original implementation developed for this PC port  
 
----
+
 
 ## Project scope
 
@@ -46,7 +46,7 @@ This repository includes:
 
 The project is made available for **educational, preservation, and development purposes**, and follows a **custom source-available license**. Please read the `LICENSE.txt` file carefully before using the code or assets.
 
----
+
 
 ## License
 
@@ -57,7 +57,7 @@ This project is released under a **custom Source-Available License**.
 
 See the `LICENSE.txt` file for the full license terms.
 
----
+
 
 ## ⚠️ Important notice
 
@@ -68,13 +68,13 @@ See the `LICENSE.txt` file for the full license terms.
 > Anyone is welcome to explore this code and assets and improve on it, or create alternate versions of it.  
 > You are invited to submit any work you do on this code and assets to EDGE Games through its website (https://www.edgegames.com).”
 
----
+
 
 ## How to use this repository
 
 This section explains how to obtain the source code, open the project in Godot, and run or explore the PC port.
 
----
+
 
 ### 1️⃣ Clone the repository
 
@@ -86,7 +86,7 @@ git clone https://github.com/j-pastor/fairlight.git
 
 Alternatively, you can download the repository as a ZIP file using **Code → Download ZIP** on GitHub.
 
----
+
 
 ### 2️⃣ Open the project in Godot
 
@@ -98,7 +98,7 @@ This project has been developed using **Godot 4.5**.
 * Choose the folder where you cloned or extracted the repository.
 * Godot will automatically detect the `project.godot` file and import the project.
 
----
+
 
 ### 3️⃣ Run the project
 
@@ -108,7 +108,7 @@ Once the project is open in Godot:
 * Press **F5** or click **Run Project**.
 * The game should start and run directly from the editor.
 
----
+
 
 ### 4️⃣ Explore and modify the code
 
@@ -121,7 +121,7 @@ The repository is intended to be **explored, studied, and experimented with**:
 > ⚠️ **Important**
 > While the **code may be reused and adapted**, any reuse of *Fairlight – A Prelude* or *Fairlight II – A Trail of Darkness* content is subject to the limitations described in the `LICENSE.txt` file.
 
----
+
 
 ### 5️⃣ Exporting / building the project
 
@@ -132,7 +132,7 @@ To build your own executable using Godot:
 3. Make sure the appropriate export templates for **Godot 4.5** are installed.
 4. Export the project.
 
----
+
 
 ### ℹ️ Notes
 
@@ -140,7 +140,7 @@ To build your own executable using Godot:
 * ✔️ This repository is intended for **educational, preservation, and development purposes**.
 * ✔️ Please read the license carefully before redistributing the project or its contents.
 
----
+
 
 <details>
 <summary><strong>Need help?</strong></summary>
@@ -154,7 +154,7 @@ If you are new to Godot or GitHub projects, you can:
 </details>
 
 
----
+
 
 ## Credits
 
@@ -163,7 +163,7 @@ If you are new to Godot or GitHub projects, you can:
 - **Music and sound effects:** All music and sound effects included in this project are distributed under the Pixabay License.
 - **Engine:** Godot Engine
 
----
+
 
 ## Acknowledgements
 
