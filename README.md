@@ -32,68 +32,50 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
 
 ## Screenshots
 
-<table>
-  <tr>
-    <td>
-      <figure>
-        <img src="images/fairlight-front.png" width="240" alt="Splash Screen">
-        <figcaption>Splash Screen</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-01.png" width="240" alt="Start room (Chapter 1)">
-        <figcaption>Start room (Chapter 1)</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-02.png" width="240" alt="Carnivore plants room (Chapter 1)">
-        <figcaption>Carnivore plants room (Chapter 1)</figcaption>
-      </figure>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <figure>
-        <img src="images/f-ss-03.png" width="240" alt="Entry to cave (Chapter 1)">
-        <figcaption>Entry to cave (Chapter 1)</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-04.png" width="240" alt="Outdoor bridge (Chapter 2)">
-        <figcaption>Outdoor bridge (Chapter 2)</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-05.png" width="240" alt="Forbidden City (Chapter 2)">
-        <figcaption>Forbidden City (Chapter 2)</figcaption>
-      </figure>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <figure>
-        <img src="images/f-ss-06.png" width="240" alt="Entry to Dark Lord Castle (Chapter 3)">
-        <figcaption>Entry to Dark Lord Castle (Chapter 3)</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-07.png" width="240" alt="Flying on a magic carpet (Chapter 3)">
-        <figcaption>Flying on a magic carpet (Chapter 3)</figcaption>
-      </figure>
-    </td>
-    <td>
-      <figure>
-        <img src="images/f-ss-08.png" width="240" alt="Using a magic crystal (Chapter 3)">
-        <figcaption>Using a magic crystal (Chapter 3)</figcaption>
-      </figure>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <figure>
+    <img src="images/fairlight-front.png" width="240" alt="Splash Screen">
+    <figcaption>Splash Screen</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-01.png" width="240" alt="Start room (Chapter 1)">
+    <figcaption>Start room (Chapter 1)</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-02.png" width="240" alt="Carnivore plants room (Chapter 1)">
+    <figcaption>Carnivore plants room (Chapter 1)</figcaption>
+  </figure>
+</p>
+
+<p align="center">
+  <figure>
+    <img src="images/f-ss-03.png" width="240" alt="Entry to cave (Chapter 1)">
+    <figcaption>Entry to cave (Chapter 1)</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-04.png" width="240" alt="Outdoor bridge (Chapter 2)">
+    <figcaption>Outdoor bridge (Chapter 2)</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-05.png" width="240" alt="Forbidden City (Chapter 2)">
+    <figcaption>Forbidden City (Chapter 2)</figcaption>
+  </figure>
+</p>
+
+<p align="center">
+  <figure>
+    <img src="images/f-ss-06.png" width="240" alt="Entry to Dark Lord Castle (Chapter 3)">
+    <figcaption>Entry to Dark Lord Castle (Chapter 3)</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-07.png" width="240" alt="Flying on a magic carpet (Chapter 3)">
+    <figcaption>Flying on a magic carpet (Chapter 3)</figcaption>
+  </figure>
+  <figure>
+    <img src="images/f-ss-08.png" width="240" alt="Using a magic crystal (Chapter 3)">
+    <figcaption>Using a magic crystal (Chapter 3)</figcaption>
+  </figure>
+</p>
 
 
 ## Technology
