@@ -15,6 +15,15 @@ The port has been developed **from scratch**, with all the programming work carr
 - Allowing fans and developers to explore, study, and experiment with the code  
 - Contributing to the preservation and dissemination of two important historical titles  
 
+Fairlight – A Prelude and Fairlight II – A Trail of Darkness were originally developed in the 1980s for 8-bit home computers, including ZX Spectrum, Amstrad CPC, Amstrad PCW and Commodore 64. Both games are considered landmark titles of the isometric adventure genre, notable for their advanced game engine, systemic design, and technical ambition on very limited hardware.
+
+For reference and historical context, full walkthroughs of the original games can be found online:
+
+- Fairlight – A Prelude (original version): https://www.youtube.com/watch?v=eWe7dhAWF-A
+- Fairlight II – A Trail of Darkness (original version): https://www.youtube.com/watch?v=tK3L46D6S7A
+
+A video showing the final result of this PC port is also available online: https://www.youtube.com/watch?v=DhGVymi0Aoo . This video demonstrates the current state of the project, including gameplay, visuals, and overall behaviour of the PC port.
+
 The project is published with the **explicit permission of EDGE Games, Inc.**, respecting all rights related to the original games.
 
 ---
@@ -64,7 +73,8 @@ See the `LICENSE.txt` file for the full license terms.
 ## Credits
 
 - **Original games: *Fairlight – A Prelude*  and *Fairlight II – A Trail of Darkness*: EDGE Games, Inc.
-- **PC port development:** Juan-Antonio Pastor-Sánchez  
+- **PC port development:** Juan-Antonio Pastor-Sánchez
+- **Music and sound effects:** All music and sound effects included in this project are distributed under the Pixabay License.
 - **Engine:** Godot Engine
 
 ---
