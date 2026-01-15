@@ -28,6 +28,17 @@ The project is published with the **explicit permission of EDGE Games, Inc.**, r
 
 
 
+## Screenshots
+
+![Splash Screen](images/fairlight-front.png)
+![Start room (Chapter 1)](images/f-ss-01.png)
+![Carnivore plants room (Chapter 1)](images/f-ss-02.png)
+![Entry to cave (Chapter 1)](images/f-ss-03.png)
+![Outdoor bridge (Chapter 2)](images/f-ss-04.png)
+![Forbidden City (Chapter 2)](images/f-ss-05.png)
+![Entry to Dark Lord Castle (Chapter 3)](images/f-ss-06.png)
+![Flying on a magic carpet (Chapter 3)](images/f-ss-07.png)
+![Using a magic crystal (Chapter 3)](images/f-ss-08.png)
 
 ## Technology
 
